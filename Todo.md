@@ -1,3 +1,3 @@
 # Todo List
 
-* [ ] Check to see if this works 
+* [x] Check to see if this works 
