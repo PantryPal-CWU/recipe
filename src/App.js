@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import Navbar from './components/Navbar';
+import {Navbar, Login} from "./components";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path='/' exact />
+          <Route path='/login' exact component={() => <Login />} />
         </Switch>
       </Router>
      

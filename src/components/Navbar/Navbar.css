@@ -1,0 +1,10 @@
+.navbar-logo { 
+    padding: 5px;
+    border: solid;
+    border-style:solid;
+    color: inherit;
+    
+}
+.navbar-container {
+    height:25px;
+}

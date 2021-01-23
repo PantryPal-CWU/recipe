@@ -1,0 +1,15 @@
+#container {
+    display: flex;
+    justify-content: center;
+    border-bottom: solid;
+    border-top: solid;
+    border-color: black;
+    border-width: 1px;
+    visibility:collapse;
+    visibility: visible;
+}
+#break {
+    flex-basis: 5%;
+    height: 0;
+    
+}
