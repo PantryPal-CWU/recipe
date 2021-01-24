@@ -4,6 +4,13 @@ import {Navbar, Login} from "./components";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 function App() {
+  //const [open, setOpen] = useState(false);
+  //const node = useRef();
+  const menuId = "main-menu";
+
+
+  //useOnClickOutside(node, () => setOpen(false));
+
   return (
     <>
       <Router>

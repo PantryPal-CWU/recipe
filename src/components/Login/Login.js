@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Login } from '..'
 import './Login.css'
 
 
@@ -32,4 +33,4 @@ function login() {
     )
 }
 
-export default login
+export default Login;
