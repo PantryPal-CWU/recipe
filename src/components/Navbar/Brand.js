@@ -4,7 +4,7 @@ import logo from "../images/chef(1).png";
 
 const Brand = () => {
     return (
-      <Image src={logo} alt="Company Logo" />
+      <a href="/"> <Image src={logo} alt="Company Logo" /></a>
     )
   }
   
