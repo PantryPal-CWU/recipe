@@ -6,7 +6,7 @@ import { Login } from '..'
 import './Login.css'
 
 
-function login() {
+function Login() {
     return (
         <div id='container'>
             <form>
@@ -33,4 +33,4 @@ function login() {
     )
 }
 
-export default Login;
+export default Login; 

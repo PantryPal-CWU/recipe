@@ -1,28 +1,28 @@
-import React from 'react'
-import './App.css';
-import {Navbar, Login} from "./components";
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import React, { Component } from 'react';
+import Navbar from "./components/Navbar/Navbar";
+import GlobalStyle from './styles/Global';
 
-function App() {
-  //const [open, setOpen] = useState(false);
-  //const node = useRef();
-  const menuId = "main-menu";
+class App extends Component {
+  state = {
+    navbarOpen: false
+  }
 
+  handleNavbar = () => {
+    this.setState({ navbarOpen: !this.state.navbarOpen });
+  }
 
-  //useOnClickOutside(node, () => setOpen(false));
+  render() {
 
-  return (
-    <>
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route path='/' exact />
-          <Route path='/login' exact component={() => <Login />} />
-        </Switch>
-      </Router>
-     
-    </>
-  );
+    return (
+      <>
+        <Navbar 
+         navbarState={this.state.navbarOpen} 
+          handleNavbar={this.handleNavbar}
+        />
+        <GlobalStyle />
+     </>
+  )
+  }
 }
 
 export default App;
