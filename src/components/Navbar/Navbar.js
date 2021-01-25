@@ -25,10 +25,11 @@ const Navbar = (props) => {
         <FlexContainer>
           <Brand />
           <NavLinks style={linkAnimation}>
-            <a href="/">link n1</a>
-            <a href="/">link n2</a>
-            <a href="/">link n3</a>
-            <a href="/">link n4</a>
+            <a href="../pages/Home.js" onClick={props.handleNavbar}>Home</a>
+            <a href="../pages/Pantry.js" onClick={props.handleNavbar}>Your Pantry</a>
+            <a href="../pages/Ingredients.js" onClick={props.handleNavbar}>Add Ingredients</a>
+            <a href="../pages/About.js" onClick={props.handleNavbar}>About / Contact</a>
+            <a href="/" onClick={props.handleNavbar}>Login</a>
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu

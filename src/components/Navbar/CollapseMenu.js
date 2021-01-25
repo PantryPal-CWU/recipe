@@ -16,10 +16,11 @@ const CollapseMenu = (props) => {
       }}
       >
         <NavLinks>
-          <li><a href="/" onClick={props.handleNavbar}>link n1</a></li>
-          <li><a href="/" onClick={props.handleNavbar}>link n2</a></li>
-          <li><a href="/" onClick={props.handleNavbar}>link n3</a></li>
-          <li><a href="/" onClick={props.handleNavbar}>link n4</a></li>
+          <li><a href="../pages/Home.js" onClick={props.handleNavbar}>Home</a></li>
+          <li><a href="../pages/Pantry.js" onClick={props.handleNavbar}>Your Pantry</a></li>
+          <li><a href="../pages/Ingredients.js" onClick={props.handleNavbar}>Add Ingredients</a></li>
+          <li><a href="../pages/About.js" onClick={props.handleNavbar}>About / Contact</a></li>
+          <li><a href="/" onClick={props.handleNavbar}>Login</a></li>
         </NavLinks>
       </CollapseWrapper>
     );
