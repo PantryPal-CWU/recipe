@@ -6,6 +6,9 @@ import Brand from "./Brand";
 import BurgerMenu from "./Menu";
 import CollapseMenu from "./CollapseMenu";
 
+import Login from "../Login/Login";
+import { Router, Route, Switch } from 'react-router-dom';
+
 const Navbar = (props) => {
   const barAnimation = useSpring({
     from: { transform: 'translate3d(0, -10rem, 0)' },
@@ -29,7 +32,7 @@ const Navbar = (props) => {
             <a href="../pages/Pantry.js" onClick={props.handleNavbar}>Your Pantry</a>
             <a href="../pages/Ingredients.js" onClick={props.handleNavbar}>Add Ingredients</a>
             <a href="../pages/About.js" onClick={props.handleNavbar}>About / Contact</a>
-            <a href="/" onClick={props.handleNavbar}>Login</a>
+            <a href="../login" onClick={props.handleNavbar}>Login</a>
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu
@@ -44,6 +47,7 @@ const Navbar = (props) => {
         handleNavbar={props.handleNavbar}
       />
    </>
+   
   )
 }
 

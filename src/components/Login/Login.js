@@ -1,35 +1,33 @@
 
 
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Login } from '..'
-import './Login.css'
+import React, { useState } from 'react';
+import LoginForm from './LoginForm';
+//import { Login } from '..';
+import './Login.css';
 
 
 function Login() {
+    const [user, setUser] = useState({ name: "", email: "" });
+    const [error, setError] = useState("");
+
+    const Login = (details) => {
+        console.log(details);
+
+        //if(details.email == email && details.password == password)
+        //console.log("Logging in")
+        //setUser({ name: user.name, email: details.email})
+        //else, setError("Details do not match!")
+
+        console.log("You need a place to store user information!");
+
+    }
+    
+    const Logout = () => {
+        setUser({ name: "", email: "" });
+    }
+    
     return (
-        <div id='container'>
-            <form>
-                <label>
-                    Username:
-                    <input type='text' name='username' />
-                </label>
-                {" "}
-                <label>
-                    Password:
-                    <input type='text' name='password' />
-                </label>
-                <input type='submit' value='Submit' />
-            </form>
-            <div id="break"></div>
-            <Link to='/signup' className='signUp-link'>
-                Sign Up!
-            </Link>
-            <div id="break"></div>
-            <Link to='/forgot' className='signUp-link'>
-                Forgot Password?
-            </Link>
-        </div>
+        <LoginForm Login={Login} error={error} />
     )
 }
 
