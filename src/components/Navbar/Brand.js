@@ -14,8 +14,8 @@ const Brand = () => {
   export default Brand
   
   const Image = styled.img`
-    padding-top: 1%;
-    height: 85%;
+    padding-top: 2%;
+    height: 50px;
     width:50px
     
   `;
@@ -23,21 +23,21 @@ const Brand = () => {
     font-color: black;
     margin: auto;
     width: 60%;
-    padding-left: 1%;
+    text-transform: uppercase;
     font-weight:bold;
     text-decoration:none;
     font-family: 'Montserrat',sans-serif;
     font-size: 1.4rem;
     fo
       &:hover{
-        color: white;
-        text-decoration:underline;
+        color: black;
+        text-decoration: none;
       }
       &:visited{
         color: black;
       }
         &:hover{
-          color: white;
-          text-decoration:underline;
+          color: black;
+          text-decoration: none;
         }
   `;
