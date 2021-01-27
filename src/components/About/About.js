@@ -1,16 +1,6 @@
-import React from "react";
- 
+import ReactDOM from 'react'
 
-class About extends React.Component {
-  render() {
-    return (
-
-      <div className="About">
-        <header>
-        <p>Hello World!</p>
-        </header>
-
-      </div>
-    );
-  }
-}
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+);
