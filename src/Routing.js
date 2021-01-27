@@ -13,7 +13,7 @@ export function Routing() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/Home">
+                <Route exact path="/pages/Home.js">
                     <Home />
                 </Route>
             
