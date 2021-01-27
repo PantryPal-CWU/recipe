@@ -1,17 +1,30 @@
+import React, { useState, createContext } from 'react';
 const bcrypt = require('bcryptjs');
 //Need to do: npm install bcryptjs in your recipe directory
 
-module.exports = {
+export {
     authenticate,
     register
 };
 
-async function register() {
+const adminUser = {
+    name: "Alek",
+    email: "test@test.test",
+    password: "12345"
+}
+
+async function register(name, email, password) {
     
 }
 
 async function authenticate(email, password) {
-    
+    if (email == adminUser.email && password == adminUser.password) {
+        console.log("Success! Log in.");
+        return true;
+    } else {
+        console.log("Unsuccessful log in.");
+        return false;
+    }
 }
 
 const hashPassword = async (password, saltRounds = 10) => {
