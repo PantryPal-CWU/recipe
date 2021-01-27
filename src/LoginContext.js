@@ -15,6 +15,7 @@ export function LoginStatusProvider({ children, status }) {
     const [loginStatus, setLoginStatus] = useState(true);
 
     function toggleLoginStatus() {
+        
         setLoginStatus(prev => !prev);
         console.log({loginStatus});
     }

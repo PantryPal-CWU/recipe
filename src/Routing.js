@@ -8,19 +8,22 @@ import { LoginStatusProvider, useLoginStatus, useLoginUpdateStatus } from './Log
 
 
 export function Routing() {
-    const { loginStatus } = useLoginUpdateStatus();
+    const { loginStatus } = useLoginStatus();
     return (
         <BrowserRouter>
             <Switch>
-            <Route exact path="/Home">
-                <Home />
-            </Route>
-        
-            <Route path="/login">
-                {((loginStatus === false) ? <Login /> : <Redirect from='/login' to="/Home" />)}
-                
-            </Route>
+                <Route exact path="/Home">
+                    <Home />
+                </Route>
+            
+                <Route path="/login">
+                    {((loginStatus) ? <Login /> : <Redirect from='/login' to="/Home" />)}
+                    
+                </Route>
 
+                <Route path="/signout">
+                    <SignOut />
+                </Route>
             </Switch>
         </BrowserRouter>
     )

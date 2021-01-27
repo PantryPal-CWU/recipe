@@ -22,17 +22,7 @@ const Navbar = (props) => {
     config: config.wobbly,
   });
 
-  var { loginStatus, toggleLoginStatus } = useLoginStatus();
-  var { LoginUpdateContext } = useLoginUpdateStatus();
-  
-
-  function ComponentDidUpdate() {
-
-    toggleLoginStatus();
-    
-    //window.location.reload(false);
-  }
-  
+  const { loginStatus } = useLoginStatus();
 
   return (
     <>
@@ -44,8 +34,8 @@ const Navbar = (props) => {
             <a href="../pages/Pantry.js" onClick={props.handleNavbar}>Your Pantry</a>
             <a href="../pages/Ingredients.js" onClick={props.handleNavbar}>Add Ingredients</a>
             <a href="../About/About.js" onClick={props.handleNavbar}>About / Contact</a>
-            {(LoginUpdateContext) ? <a href="../login" onClick={props.handleNavbar}>Login</a> 
-            : <button onClick={ComponentDidUpdate}>Sign Out</button>}
+            {({ loginStatus }) ? <a href="../login" onClick={props.handleNavbar}>Login</a> 
+            : <a href="../signout" onClick={props.handleNavbar}>Sign Out</a>}
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu
