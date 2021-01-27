@@ -10,5 +10,3 @@ class About extends Component {
     )
   }
 }
-
-ReactDOM.render(<Hi/>, document.querySelector('#root'));
