@@ -5,8 +5,8 @@ import logo from "../images/logo.png";
 const Brand = () => {
     return (
       <>
-        <a href="/home"><Image src={logo} alt="Company Logo" /></a>
-        <Link href="/home"> PantryPal</Link>
+        <a href="/pages/Home.js"><Image src={logo} alt="Company Logo" /></a>
+        <Link href="/pages/Home.js"> PantryPal</Link>
       </>
     )
   }
@@ -28,7 +28,7 @@ const Brand = () => {
     text-decoration:none;
     font-family: 'Montserrat',sans-serif;
     font-size: 1.4rem;
-    fo
+    
       &:hover{
         color: black;
         text-decoration: none;

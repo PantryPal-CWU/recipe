@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function Hi() {
-  return <div>Hello World!</div>;
+class About extends React.Component {
+  render() {
+    return (
+      <div>
+        <br></br>
+        <p> HelloWorld! </p>
+      </div>
+    )
+  }
 }
 
-ReactDOM.render(<Hi/>, document.querySelector('#root'));
+export default About;
