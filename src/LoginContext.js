@@ -12,17 +12,17 @@ export function useLoginUpdateStatus() {
 }
 
 export function LoginStatusProvider({ children, status }) {
-    const [loginStatus, setLoginStatus] = useState(true);
+    const [loginStatus, setLoginStatus] = useState(false);
 
-    function toggleLoginStatus() {
+    const toggleLoginStatus = React.useCallback( 
         
-        setLoginStatus(prev => !prev);
-        console.log({loginStatus});
-    }
+        ()=>setLoginStatus(!loginStatus),
+        [loginStatus]
+    );
     
     return (
         <>
-            <LoginContext.Provider value={{ status: loginStatus, toggleLoginStatus }}>
+            <LoginContext.Provider value={{ loginStatus, toggleLoginStatus }}>
                 <LoginUpdateContext.Provider value={toggleLoginStatus}>
                     {children}
                 </LoginUpdateContext.Provider>

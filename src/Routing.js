@@ -8,7 +8,7 @@ import { LoginStatusProvider, useLoginStatus, useLoginUpdateStatus } from './Log
 
 
 export function Routing() {
-    const { loginStatus } = useLoginStatus();
+    var { loginStatus } = useLoginStatus();
     return (
         <BrowserRouter>
             <Switch>
@@ -22,7 +22,8 @@ export function Routing() {
                 </Route>
 
                 <Route path="/signout">
-                    <SignOut />
+                    {((!loginStatus) ? <SignOut /> : <Redirect from='/signout' to="/Home" />)}
+                    
                 </Route>
             </Switch>
         </BrowserRouter>
