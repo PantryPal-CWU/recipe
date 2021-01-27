@@ -6,8 +6,8 @@ import Brand from "./Brand";
 import BurgerMenu from "./Menu";
 import CollapseMenu from "./CollapseMenu";
 
-import Login from "../Login/Login";
 import { Router, Route, Switch } from 'react-router-dom';
+import { useLoginStatus, useLoginUpdateStatus } from '../../LoginContext'
 
 const Navbar = (props) => {
   const barAnimation = useSpring({
@@ -22,6 +22,8 @@ const Navbar = (props) => {
     config: config.wobbly,
   });
 
+  const { loginStatus } = useLoginStatus();
+
   return (
     <>
       <NavBar style={barAnimation}>
@@ -32,8 +34,8 @@ const Navbar = (props) => {
             <a href="../pages/Pantry.js" onClick={props.handleNavbar}>Your Pantry</a>
             <a href="../pages/Ingredients.js" onClick={props.handleNavbar}>Add Ingredients</a>
             <a href="../About/About.js" onClick={props.handleNavbar}>About / Contact</a>
-            {(props.loggedIn != true) ? <a href="../login" onClick={props.handleNavbar}>Login</a> 
-            : <a href="../signout" onClick={props.handleNavbar}>Sign out</a>}
+            {({ loginStatus }) ? <a href="../login" onClick={props.handleNavbar}>Login</a> 
+            : <a href="../signout" onClick={props.handleNavbar}>Sign Out</a>}
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu

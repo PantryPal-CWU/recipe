@@ -1,4 +1,5 @@
 import React, { useState, createContext } from 'react';
+import { useLoginStatus } from '../../LoginContext'
 const bcrypt = require('bcryptjs');
 //Need to do: npm install bcryptjs in your recipe directory
 
@@ -18,7 +19,7 @@ async function register(name, email, password) {
 }
 
 async function authenticate(email, password) {
-    if (email == adminUser.email && password == adminUser.password) {
+    if (email === adminUser.email && password === adminUser.password) {
         console.log("Success! Log in.");
         return true;
     } else {
