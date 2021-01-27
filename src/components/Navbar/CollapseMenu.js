@@ -2,9 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { useSpring, animated } from 'react-spring';
+import { useLoginStatus } from '../../LoginContext'
 
 const CollapseMenu = (props) => {
   const { open } = useSpring({ open: props.navbarState ? 0 : 1 });
+
+  const { loginStatus } = useLoginStatus();
 
   if (props.navbarState === true) {
     return (
@@ -20,7 +23,7 @@ const CollapseMenu = (props) => {
           <li><a href="../pages/Pantry.js" onClick={props.handleNavbar}>Your Pantry</a></li>
           <li><a href="../pages/Ingredients.js" onClick={props.handleNavbar}>Add Ingredients</a></li>
           <li><a href="../About/About.js" onClick={props.handleNavbar}>About / Contact</a></li>
-          <li>{(props.loggedIn != true) ? <a href="../login" onClick={props.handleNavbar}>Login</a> 
+          <li>{(loginStatus) ? <a href="../login" onClick={props.handleNavbar}>Login</a> 
             : <a href="../signout" onClick={props.handleNavbar}>Sign out</a>}</li>
         </NavLinks>
       </CollapseWrapper>

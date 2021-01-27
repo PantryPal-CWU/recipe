@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import LoginForm from './LoginForm';
+import { LoginStatusProvider, useLoginStatus, useLoginUpdateStatus } from '../../LoginContext'
 //import { Redirect } from 'react-router-dom';
 //import AccountServices from './AccountServices';
 
@@ -15,13 +16,15 @@ var authenticate = require('./AccountServices.js');
 function Login(props) {
     const [user, setUser] = useState({ name: props.loginState, email: "" });
     const [error, setError] = useState("");
+    const { loginStatus, toggleLoginStatus } = useLoginStatus();
 
     const Login = (email, password) => {
         console.log(email);
 
         if(authenticate.authenticate(email, password)) {
             setUser({ email: email })
-            props.loginHandler();
+            toggleLoginStatus();
+            
         } else {
             alert("Incorrect combination Email/Password");
         }
@@ -32,10 +35,6 @@ function Login(props) {
 
         
 
-    }
-    
-    const Logout = () => {
-        setUser({ name: "", email: "" });
     }
 
   
