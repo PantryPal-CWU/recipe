@@ -4,7 +4,13 @@ import React from "react";
 class About extends React.Component {
   render() {
     return (
-      <h1>Hello World!</h1>
+
+      <div className="About">
+        <header>
+        <p>Hello World!</p>
+        </header>
+
+      </div>
     );
   }
 }

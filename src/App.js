@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from "./components/Navbar/Navbar";
 import GlobalStyle from './styles/Global';
 import Login from "./components/Login/Login"
+import About from "./components/About/About"
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import Home from "./components/pages/Home";
