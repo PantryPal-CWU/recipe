@@ -4,6 +4,7 @@ import Login from "./components/Login/Login";
 import { SignOut } from "./components/Login/SignOut"
 import Home from "./components/pages/Home";
 import { LoginStatusProvider, useLoginStatus, useLoginUpdateStatus } from './LoginContext'
+import About from "./components/About/About.js"
 
 
 
@@ -24,6 +25,9 @@ export function Routing() {
                 <Route path="/signout">
                     {((!loginStatus) ? <SignOut /> : <Redirect from='/signout' to="/Home" />)}
                     
+                </Route>
+                <Route path="/About/About.js">
+                    <About />
                 </Route>
             </Switch>
         </BrowserRouter>
