@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 const IngredientList = ({ingredientList=[]}) => {
     return (
       <>
-      { ingredientList.map((data,index) => {
+      {ingredientList.map((data,index) => {
           if (data) {
             return (
               <div key={data.name}>
