@@ -9,6 +9,13 @@ import { LoginStatusProvider, useLoginStatus, useLoginUpdateStatus } from './Log
 
 export function Routing() {
     var { loginStatus } = useLoginStatus();
+
+    localStorage.setItem("loginStatus", loginStatus);
+
+    const isLogged = () => {
+        return localStorage.getItem("loginStatus")===true;
+    }
+
     return (
         <BrowserRouter>
             <Switch>
