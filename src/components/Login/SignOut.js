@@ -4,10 +4,12 @@ import { useLoginStatus } from '../../LoginContext'
 import './Login.css';
 
 export function SignOut() {
-    const { toggleLoginStatus } = useLoginStatus();
+    const { loginStatus, toggleLoginStatus } = useLoginStatus();
     const clickHandle = () => {
         
         toggleLoginStatus();
+        localStorage.setItem("loginStatus", loginStatus);
+        console.log(localStorage.getItem("loginStatus")===true);
         
     }
     return (
