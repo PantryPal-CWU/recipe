@@ -1,56 +1,42 @@
 import React, { Component } from 'react';
 import Navbar from "./components/Navbar/Navbar";
 import GlobalStyle from './styles/Global';
-import Login from "./components/Login/Login"
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import Home from "./components/pages/Home";
-
+import { LoginStatusProvider } from './LoginContext'
+import { Routing } from './Routing';
 
 class App extends Component {
+  
+  
   state = {
     navbarOpen: false,
-    loggedIn: false
+    // loggedIn: LoginStatus
   }
 
   handleNavbar = () => {
     this.setState({ navbarOpen: !this.state.navbarOpen });
   }
 
-  loginEvent = () => {
-    this.setState({ loggedIn: !this.state.loggedIn });
-  }
-
-  render() {
+  render(props) {
 
     return (
       <>
-
-      <div className="App">
-        <Navbar 
-          navbarState={this.state.navbarOpen} 
-          handleNavbar={this.handleNavbar}
-          loggedIn={this.state.loggedIn}
-        />
-        <GlobalStyle />
-
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/Home">
-              <Home />
-            </Route>
-        
-            <Route path="/login">
-              {((this.state.loggedIn != true) ? <Login loginState={this.state.loggedIn} loginHandler={this.loginEvent}/> : <Redirect from='/login' to="/Home" />)}
+        <LoginStatusProvider>
+          <div className="App">
+            <Navbar 
+              navbarState={this.state.navbarOpen} 
+              handleNavbar={this.handleNavbar}
               
-            </Route>
-          </Switch>
-        </BrowserRouter>
-      </div>
-      
+            />
+            <GlobalStyle />
+
+            <Routing />
+          </div>
+        </LoginStatusProvider>
         
      </>
-  )
+    )
   }
 }
 
