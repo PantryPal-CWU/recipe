@@ -1,19 +1,10 @@
 import React from "react";
  
-class Main extends Component {
+
+class About extends React.Component {
   render() {
     return (
-        <div>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <h1>About Us!</h1>
-          
-        </div>
+      <h1>Hello World!</h1>
     );
   }
 }
-
-export default About;
