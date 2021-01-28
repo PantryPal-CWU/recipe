@@ -25,7 +25,7 @@ const CollapseMenu = (props) => {
           <li><a href="../pages/Pantry.js" onClick={props.handleNavbar}>Your Pantry</a></li>
           <li><a href="../Ingredients&Pantry/Ingredients.js" onClick={props.handleNavbar}>Add Ingredients</a></li>
           <li><a href="../About/About.js" onClick={props.handleNavbar}>About / Contact</a></li>
-          <li>{(loginStatus) ? <a href="../login" onClick={props.handleNavbar}>Login</a> 
+          <li>{(loginStatus === undefined) ? <a href="../login" onClick={props.handleNavbar}>Login</a> 
             : <a href="../signout" onClick={props.handleNavbar}>Sign out</a>}</li>
         </NavLinks>
       </CollapseWrapper>

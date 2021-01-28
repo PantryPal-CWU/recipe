@@ -22,9 +22,9 @@ function Login(props) {
         console.log(email);
         var Promise = authenticate.authenticate(email, password).then((result) => {
             if (result) {
-                toggleLoginStatus();
-
-               // window.location.reload(false);
+                toggleLoginStatus(email);
+                window.location.reload(false);
+               
             } else {
                 alert("Username/Password Combination Incorrect");
             }

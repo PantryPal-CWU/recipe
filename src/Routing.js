@@ -25,12 +25,12 @@ export function Routing() {
                 </Route>
             
                 <Route path="/login">
-                    {((loginStatus) ? <Login /> : <Redirect from='/login' to="/Home" />)}
+                    {((loginStatus === undefined) ? <Login /> : <Redirect from='/login' to="/Home" />)}
                     
                 </Route>
 
                 <Route path="/signout">
-                    {((!loginStatus) ? <SignOut /> : <Redirect from='/signout' to="/Home" />)}
+                    {((loginStatus !== undefined) ? <SignOut /> : <Redirect from='/signout' to="/Home" />)}
                     
                 </Route>
                 <Route path="/About/About.js">

@@ -1,15 +1,16 @@
 import { render } from '@testing-library/react';
-import React, { useEffect } from 'react'
-import { useLoginStatus } from '../../LoginContext'
+import React, { useEffect } from 'react';
+import { useLoginStatus } from '../../LoginContext';
 import './Login.css';
+import cookie from 'react-cookies';
 
 export function SignOut() {
-    const { loginStatus, toggleLoginStatus } = useLoginStatus();
+    const { loginStatus, toggleOffLoginStatus } = useLoginStatus();
     const clickHandle = () => {
         
-        toggleLoginStatus();
-        localStorage.setItem("loginStatus", loginStatus);
-        console.log(localStorage.getItem("loginStatus")===true);
+        toggleOffLoginStatus();
+        // localStorage.setItem("loginStatus", loginStatus);
+        // console.log(localStorage.getItem("loginStatus")===true);
         
     }
     return (
