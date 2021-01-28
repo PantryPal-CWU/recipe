@@ -1,18 +1,23 @@
-import { render } from '@testing-library/react';
-import React, { useEffect } from 'react';
+/*
+ File: SignOut.js
+ ?: This page handles logging out
+ */
+import React from 'react';
 import { useLoginStatus } from '../../LoginContext';
 import './Login.css';
-import cookie from 'react-cookies';
+
 
 export function SignOut() {
-    const { loginStatus, toggleOffLoginStatus } = useLoginStatus();
+    //Get the toggleOffLoginStatus method from our LoginContext
+    const { toggleOffLoginStatus } = useLoginStatus();
+
+    //Handles button, logs off
     const clickHandle = () => {
-        
-        toggleOffLoginStatus();
-        // localStorage.setItem("loginStatus", loginStatus);
-        // console.log(localStorage.getItem("loginStatus")===true);
-        
+        toggleOffLoginStatus();    
     }
+
+    //Returns a tiny little ugly thing, I'm going to change this so it just works now that I got the cookies set up.
+    //Hopefully this page will be just a div and a split moment of time! 
     return (
         <>
             <div className="signOut">
