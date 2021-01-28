@@ -12,18 +12,14 @@ export function SignOut() {
     const { toggleOffLoginStatus } = useLoginStatus();
 
     //Handles button, logs off
-    const clickHandle = () => {
+    const logOut = () => {
         toggleOffLoginStatus();    
     }
 
-    //Returns a tiny little ugly thing, I'm going to change this so it just works now that I got the cookies set up.
-    //Hopefully this page will be just a div and a split moment of time! 
+    //Returns logOut()
     return (
         <>
-            <div className="signOut">
-                <p>Have a great day!</p>
-                <button onClick={clickHandle}>Sign Out</button>
-            </div>
+            {logOut()}
         </>
         
     )

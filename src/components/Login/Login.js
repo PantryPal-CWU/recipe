@@ -35,8 +35,10 @@ function Login() {
 
     //Simlpy returns (renders) a LoginForm which is defined in LoginForm.js
     return (
+        <>
+            <LoginForm Login={Login} /> 
+        </>
         
-        <LoginForm Login={Login} /> 
         
     )
 }

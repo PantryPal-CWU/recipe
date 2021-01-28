@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from "./components/Navbar/Navbar";
 import GlobalStyle from './styles/Global';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 import { LoginStatusProvider } from './LoginContext'
 import { Routing } from './Routing';
 
@@ -17,8 +15,7 @@ class App extends Component {
   // read more here: https://daveceddia.com/where-initialize-state-react/
 
   state = {
-    navbarOpen: false,
-    // loggedIn: LoginStatus
+    navbarOpen: false
   }
   // es7 way of handling functions  
   handleNavbar = () => {
@@ -30,7 +27,8 @@ class App extends Component {
   // can't comment well in this
   // navbar is where narbar is store so it is on every page
   // routing allows the routing from ./Routing to work
-  render(props) {
+  // LoginStatusProvider is to allow all children of App's to access the status of the user's login
+  render() {
     return (
       <>
 

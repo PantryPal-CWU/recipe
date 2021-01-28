@@ -25,26 +25,28 @@ function LoginForm({ Login, error }) {
     //Notice our form has a onSubmit attribute to the above handler. Nice!
     //Anytime we change what's in the form, we call a function that passes a ChangeEvent to our setDetails so we can can assign our details!!
     return (
-        
-        <form onSubmit={submitHandler}>
-            
-            <div className="formEntry nobottomborder">
-                <h1>Welcome back!</h1>
+        <>
+            <form onSubmit={submitHandler}>
                 
-                <label htmlFor="email">Email Address:</label>
-                <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value={details.email} />
-            </div>
+                <div className="formEntry nobottomborder">
+                    <h1>Welcome back!</h1>
+                    
+                    <label htmlFor="email">Email Address:</label>
+                    <input type="email" name="email" id="email" onChange={e => setDetails({...details, email: e.target.value})} value={details.email} />
+                </div>
 
-            <div className="formEntry notopborder">
-                <label htmlFor="password">Password:</label>
-                <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password} />
-                <input id="submitButton" type="submit" value="Sign in" />
-            </div>
+                <div className="formEntry notopborder">
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" name="password" id="password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password} />
+                    <input id="submitButton" type="submit" value="Sign in" />
+                </div>
 
-            
-        </form>
-        //I NEED TO ADD FORGOT PASSWORD AND SIGN UP!!! ~Alek
+                
+            </form>
+        </>
     )
 }
+
+//Note to self: Forgot password, Sign up 
 
 export default LoginForm;

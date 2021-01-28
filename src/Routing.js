@@ -1,22 +1,23 @@
+/*
+File: Routing.js
+?: Handles link routing/redirecting 
+*/ 
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Login from "./components/Login/Login";
 import { SignOut } from "./components/Login/SignOut"
 import Home from "./components/pages/Home";
-import { LoginStatusProvider, useLoginStatus, useLoginUpdateStatus } from './LoginContext'
+import { useLoginStatus } from './LoginContext'
 import About from "./components/About/About.js"
 
 
 
 export function Routing() {
+    //To avoid a user accessing the login page while already logged in, we need the status of the login
     var { loginStatus } = useLoginStatus();
 
-    localStorage.setItem("loginStatus", loginStatus);
-
-    const isLogged = () => {
-        return localStorage.getItem("loginStatus")===true;
-    }
-
+    //Returns the BrowserRouter
+    //You can mimick the conditional such as login if you wanted to have a different component show up in a link
     return (
         <BrowserRouter>
             <Switch>
@@ -25,12 +26,12 @@ export function Routing() {
                 </Route>
             
                 <Route path="/login">
-                    {((loginStatus === undefined) ? <Login /> : <Redirect from='/login' to="/Home" />)}
+                    {((loginStatus === undefined) ? <Login /> : <Redirect from='/login' to="/pages/Home.js" />)}
                     
                 </Route>
 
                 <Route path="/signout">
-                    {((loginStatus !== undefined) ? <SignOut /> : <Redirect from='/signout' to="/Home" />)}
+                    {((loginStatus !== undefined) ? <SignOut /> : <Redirect from='/signout' to="/pages/Home.js" />)}
                     
                 </Route>
                 <Route path="/About/About.js">
