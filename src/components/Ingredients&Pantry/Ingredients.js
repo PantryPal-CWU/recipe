@@ -8,7 +8,7 @@ const SearchPage = (props) => {
     const [ingredientListDefault, setIngredientListDefault] = useState();
     const [ingredientList, setIngredientList] = useState();
 
-    //this function will retrieve the data from the search bar
+    //this function will retrieve the data from the food api
     //Note: The problem I have right now is that I don't know if I copied the
     //link correctly because there is a specific way to retrieve data from this link
     const fetchData = async () => {
