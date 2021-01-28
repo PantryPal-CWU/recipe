@@ -1,31 +1,60 @@
+/*
+File: LoginContext.js
+?: LoginContext handles the state of the user and being logged into the website.
+To do this, we use cookie to maintain updated memory. Otherwise, components won't be able to share the same state
+*/ 
 import React, { useContext, useState } from 'react'
+import cookie from 'react-cookies';
 
+//Create context for our login status 
 const LoginContext = React.createContext();
-const LoginUpdateContext = React.createContext();
+
 
 export function useLoginStatus() {
+
     return useContext(LoginContext);
 }
 
-export function useLoginUpdateStatus() {
-    return useContext(LoginUpdateContext);
-}
+//This is going to be wrapping App.js, so think of children as App and its kids!
+export function LoginStatusProvider({ children }) {
 
-export function LoginStatusProvider({ children, status }) {
-    const [loginStatus, setLoginStatus] = useState(false);
+    //cookie.load returns either the value of the cookie via passed key or undefined.
+    //So, we can use that as a boolean! 
+    //That means loginStatus is going to either be the value of cookie (key=email) or undefined
+    const [loginStatus, setLoginStatus] = useState(cookie.load("email"));
 
-    const toggleLoginStatus = React.useCallback( 
+    //This function sets up a cookie to keep track if the user is logged in
+    const toggleLoginStatus = (email) => {
+        //Set expiration to be a month, ~30 days from today
+        var month = new Date();
+        month.setDate(month.getDate()+30);
+
+        //save cookie
+        //if you want to view the cookie:
+        //Go to your browser's developer tools
+        //Access Application (I use Chrome)
+        //Then select cookies for http://localhost:3000
+        cookie.save('email', email, { path: '/', expires: month});
         
-        ()=>setLoginStatus(!loginStatus),
-        [loginStatus]
-    );
-    
+        //Since we are now logged in, we can just set the login status again which will load the cookie's value!
+        setLoginStatus()
+        
+    };
+
+    //Logging off is a lot simpler, just remove the cookie and try to load the cookie (setting login status to undefined)
+    const toggleOffLoginStatus = () => {
+        cookie.remove("email");
+        setLoginStatus();
+        
+    }
+
+    //Outwrapper Login.Context.Provider passes the values of loginStatus, toggleLoginStatus, and toggleOffLoginStatus to children
     return (
         <>
-            <LoginContext.Provider value={{ loginStatus, toggleLoginStatus }}>
-                <LoginUpdateContext.Provider value={toggleLoginStatus}>
-                    {children}
-                </LoginUpdateContext.Provider>
+            <LoginContext.Provider value={{ loginStatus, toggleLoginStatus, toggleOffLoginStatus }}>
+                
+                {children}
+                
             </LoginContext.Provider>
         </>
     )

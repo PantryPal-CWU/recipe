@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import logo from "../images/logo.png";
 
+// es7 way of setting up function 
+
 const Brand = () => {
+    // set up the logo and pantrypal name links
     return (
       <>
         <a href="/pages/Home.js"><Image src={logo} alt="Company Logo" /></a>
@@ -10,9 +13,10 @@ const Brand = () => {
       </>
     )
   }
-  
+  // export it
   export default Brand
   
+  // css for the image and link
   const Image = styled.img`
     padding-top: 2%;
     height: 50px;
@@ -20,7 +24,7 @@ const Brand = () => {
     
   `;
   const Link = styled.a`
-    font-color: black;
+    color: black;
     margin: auto;
     width: 60%;
     text-transform: uppercase;
