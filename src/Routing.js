@@ -11,8 +11,8 @@ import { useLoginStatus } from './LoginContext'
 import About from "./components/About/About.js"
 
 
-//import SearchPage from "./components/Ingredients/Ingredients.js";
-//import Pantry from "./components/Ingredients/Pantry.js";
+import SearchPage from "./components/Ingredients/Ingredients.js";
+import Pantry from "./components/Ingredients/Pantry.js";
 
 
 export function Routing() {
@@ -42,7 +42,7 @@ export function Routing() {
                 </Route>
 
                 <Route path="/Ingredients/Ingredients.js">
-                    <SearchPage />
+                    <SearchPage/>
                 </Route>
                 <Route path="/Ingredients/Pantry.js">
                     <Pantry />
