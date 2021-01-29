@@ -12,7 +12,7 @@ import About from "./components/About/About.js"
 
 
 import SearchPage from "./components/Ingredients/Ingredients.js";
-import Pantry from "./components/Ingredients/Pantry.js";
+import Pantry from "./components/Pantry/Pantry.js";
 
 
 export function Routing() {
@@ -44,7 +44,7 @@ export function Routing() {
                 <Route path="/Ingredients/Ingredients.js">
                     <SearchPage/>
                 </Route>
-                <Route path="/Ingredients/Pantry.js">
+                <Route path="/Pantry/Pantry.js">
                     <Pantry />
                 </Route>
                 
