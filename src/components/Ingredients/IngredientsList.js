@@ -20,4 +20,4 @@ const IngredientList = ({ingredientList=[]}) => {
     );
   }
   
-  export default IngredientList
+  export default IngredientList;
