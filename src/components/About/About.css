@@ -3,26 +3,44 @@ File: About.css
 ?: Styling for components in About. 
 */
 
+/*
 .title{
     font-size: 300%;
-/*
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-*/
     text-align: center;
     color:black;
     margin-top: 75px;
 }
+*/
+
+.title{
+    font-size: 500%;
+    margin: 25px;
+}
+
 .content{
+    margin: 75px;
+    background-color: rgb(252, 242, 229);
+    position: relative;
     text-align: center;
-    color: black;
     border: 2px solid black;
     width: auto;
     height: auto;
-    margin: 25px;
     padding: 5px;
-
+    left: auto;
+    right: auto;
+    border-radius: 25px;
+}
+    .name{
+    padding: 5px;
+    font-size: 200%;
+    border-top: 1px solid rgb(131, 131, 131);
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.text{
+    margin: 10px;
+    font-size: 100%;
+    margin-bottom: 25px;
 }
 
 
