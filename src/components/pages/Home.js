@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
 
 function Home() {
     return (
@@ -8,10 +10,24 @@ function Home() {
               <h1>
                    Welcome to PantryPal
               </h1>
-               <h2>
-                   Store Your Ingredients: Get Recipes
-               </h2>
+              
             </Headers>
+            <CardGroup>            
+                <Card>
+                    <Card.Body>
+                        <Card.Text>
+                            Store Your Ingredients
+                        </Card.Text>
+                    </Card.Body>
+               </Card>
+               <Card> 
+                    <Card.Body>
+                        <Card.Text>
+                            Get Recipe
+                        </Card.Text>
+                    </Card.Body> 
+                </Card>
+            </CardGroup>
         </>
     )
 }
@@ -23,9 +39,5 @@ const Headers = styled.header`
     text-align: center;
     & h1 {
         padding-top: 75px;
-
-    }
-    & h2 {
-        padding-top: 25px;
     }
 `;
