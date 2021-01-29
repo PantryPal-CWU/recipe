@@ -11,6 +11,7 @@ const SearchPage = (props) => {
     //this function will retrieve the data from the food api
     //Note: The problem I have right now is that I don't know if I copied the
     //link correctly because there is a specific way to retrieve data from this link
+    //NG
     const fetchData = async () => {
         return await fetch('https://api.nal.usda.gov/fdc/v1/foods/search?api_key=C3Dr3Own7tM1ZoyfvO5Gc8qCPlGSxS3nzWbFu1PD')
         .then(response => response.json())
@@ -20,7 +21,8 @@ const SearchPage = (props) => {
         });
     }
 
-    //this function set the input into the ingredient list
+    //this component will handle the keyword changes and filter the ingredientList
+    //NG
     const updateInput = async (input) => {
         const filtered = ingredientListDefault.filter(ingredient =>{
             return ingredient.name.toLowerCase().includes(input.toLowerCae())
@@ -35,6 +37,7 @@ const SearchPage = (props) => {
     //Setting up the search bar on the page
     //Very basic structure. Will add more details later
     //once we get the list search working and stuff
+    //NG
     return(
         <>
         <h1>Ingredient List</h1>

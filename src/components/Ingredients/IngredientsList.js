@@ -1,8 +1,8 @@
 import React from 'react';
 
-//this is where the list of ingredients will be held
-//still haven't figured out how to use this yet and
-//how to incorporate the Food API
+//This component shows the list of ingredients
+//its a mapping of the ingredientsList variable
+//NG
 const IngredientList = ({ingredientList=[]}) => {
     return (
       <>
