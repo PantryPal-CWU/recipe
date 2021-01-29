@@ -18,29 +18,47 @@ class About extends React.Component {
         <div className="title" >
           <h1> About Us! </h1>
         </div>
-
+        
         <div className="content">
-            <p1 > Lucas </p1>
+            <h1 > Lucas </h1>
+            <p>Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+            Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+            </p>
         </div>
 
           <div className="content">
-            <p1> Kirsten </p1>
+            <h1> Kirsten </h1>
+            <p>Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+            Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+            </p>
           </div>
 
           <div className="content">
-            <p1 > Nate </p1>
+            <h1 > Nate </h1>
+            <p>Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+            Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+            </p>
           </div>
 
           <div className="content">
-            <p1 > Alek </p1>
+            <h1 > Alek </h1>
+            <p>Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+            Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+            </p>
           </div>
 
           <div className="content">
-            <p1 > Natalia </p1>
+            <h1 > Natalia </h1>
+            <p>Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+            Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+            </p>
           </div>
 
           <div className="content">
-            <p1 > Jordan </p1>
+            <h1 > Jordan </h1>
+            <p>Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+            Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff Stuff
+            </p>
           </div>
 
       </div>

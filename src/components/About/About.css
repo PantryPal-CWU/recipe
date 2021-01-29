@@ -11,35 +11,18 @@ File: About.css
     transform: translate(-50%, -50%);
 */
     text-align: center;
-    color: rgb(97, 0, 0);
+    color:black;
     margin-top: 75px;
 }
 .content{
     text-align: center;
-    top: 50px;
-    color: rgb(53, 24, 24);
+    color: black;
     border: 2px solid black;
-    width: 200px;
-    height: 300px;
+    width: auto;
+    height: auto;
     margin: 25px;
+    padding: 5px;
+
 }
 
-.person{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
-.left{
-    position: absolute;
-    left: auto;
-}
-.right{
-    position: absolute;
-    right: auto;
-}
-.center{
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
