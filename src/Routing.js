@@ -5,11 +5,12 @@ File: Routing.js
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Login from "./components/Login/Login";
-import { SignOut } from "./components/Login/SignOut"
+import { SignOut } from "./components/Login/SignOut";
 import Home from "./components/pages/Home";
-import { useLoginStatus } from './LoginContext'
-import About from "./components/About/About.js"
-
+import { useLoginStatus } from './LoginContext';
+import About from "./components/About/About.js";
+import SearchPage from "./components/Ingredients/Ingredients.js";
+import Pantry from "./components/Ingredients/Pantry.js";
 
 
 export function Routing() {
@@ -37,7 +38,17 @@ export function Routing() {
                 <Route path="/About/About.js">
                     <About />
                 </Route>
+                
             </Switch>
         </BrowserRouter>
     )
 }
+/*
+ADD AFTER INGREDIENTS ERROR IS FIXED
+<Route path="/Ingredients/Ingredients.js">
+                    <SearchPage />
+                </Route>
+                <Route path="/Ingredients/Pantry.js">
+                    <Pantry />
+                </Route>
+*/
