@@ -1,0 +1,28 @@
+/*
+File: About.css
+?: Styling for components in About. 
+*/
+
+.title{
+    font-size: 300%;
+/*
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+*/
+    text-align: center;
+    color:black;
+    margin-top: 75px;
+}
+.content{
+    text-align: center;
+    color: black;
+    border: 2px solid black;
+    width: auto;
+    height: auto;
+    margin: 25px;
+    padding: 5px;
+
+}
+
+
