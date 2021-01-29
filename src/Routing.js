@@ -9,7 +9,6 @@ import { SignOut } from "./components/Login/SignOut";
 import Home from "./components/pages/Home";
 import { useLoginStatus } from './LoginContext'
 import About from "./components/About/About.js"
-import Ingredients from "./components/Ingredients/Ingredients.js";
 
 import { useLoginStatus } from './LoginContext';
 import About from "./components/About/About.js";
@@ -44,19 +43,14 @@ export function Routing() {
                 </Route>
 
                 <Route path="/Ingredients/Ingredients.js">
-                    <Ingredients />
+                    <SearchPage />
+                </Route>
+                <Route path="/Ingredients/Pantry.js">
+                    <Pantry />
                 </Route>
                 
             </Switch>
         </BrowserRouter>
     )
 }
-/*
-ADD AFTER INGREDIENTS ERROR IS FIXED
-<Route path="/Ingredients/Ingredients.js">
-                    <SearchPage />
-                </Route>
-                <Route path="/Ingredients/Pantry.js">
-                    <Pantry />
-                </Route>
-*/
+
