@@ -9,6 +9,7 @@ import { SignOut } from "./components/Login/SignOut"
 import Home from "./components/pages/Home";
 import { useLoginStatus } from './LoginContext'
 import About from "./components/About/About.js"
+import Ingredients from "./components/Ingredients/Ingredients.js";
 
 
 
@@ -36,6 +37,10 @@ export function Routing() {
                 </Route>
                 <Route path="/About/About.js">
                     <About />
+                </Route>
+
+                <Route path="/Ingredients/Ingredients.js">
+                    <Ingredients />
                 </Route>
             </Switch>
         </BrowserRouter>

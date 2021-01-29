@@ -17,7 +17,6 @@ const SearchBar = ({keyword, setKeyword}) => {
         
         <input
         style={BarStyling}
-        key="random1"
         value={keyword}
         placeholder={"Search for an ingredient"}
         //this is intiate the change
