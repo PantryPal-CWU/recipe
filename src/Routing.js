@@ -11,10 +11,9 @@ import { useLoginStatus } from './LoginContext'
 import About from "./components/About/About.js"
 import Ingredients from "./components/Ingredients/Ingredients.js";
 
-import { useLoginStatus } from './LoginContext';
-import About from "./components/About/About.js";
-import SearchPage from "./components/Ingredients/Ingredients.js";
-import Pantry from "./components/Ingredients/Pantry.js";
+
+//import SearchPage from "./components/Ingredients/Ingredients.js";
+//import Pantry from "./components/Ingredients/Pantry.js";
 
 
 export function Routing() {
