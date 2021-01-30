@@ -32,7 +32,6 @@ const SearchPage = (/*props*/) => {
     */
     return(
         <>
-        <h1>Add Your Ingredients Here</h1>
         <SearchBar/>
 
         </>

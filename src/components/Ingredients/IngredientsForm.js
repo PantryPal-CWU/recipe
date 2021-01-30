@@ -10,7 +10,8 @@ return(
     <>
     <form action="/" method="get">
         <label htmlFor="page-search">
-            <span className="visually-hidden"></span>
+            <span className="search_bar"></span>
+            <h1>Add Your Ingredients Here</h1>
         </label>
         <input
             type="text"
