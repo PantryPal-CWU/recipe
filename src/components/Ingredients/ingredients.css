@@ -3,7 +3,11 @@
     clip-path: inset(50%);
     height: 1px;
     overflow: hidden;
-    position: center;
+    position: relative;
+    top: 50px;
+    left: 5px;
+    right: 5px;
+    bottom: 6000px;
     white-space: nowrap;
     width: 1px;
 }
