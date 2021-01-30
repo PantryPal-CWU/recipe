@@ -24,8 +24,6 @@ export function Routing() {
     return (
         <BrowserRouter>
             <Switch>
-                <Redirect from="" to="/pages/Home.js" />
-                <Redirect from="/" to="/pages/Home.js" />
                 <Route exact path="/pages/Home.js">
                     <Home />
                 </Route>
