@@ -3,7 +3,7 @@ import './ingredients.css';
 
 //Search Bar component
 
-const SearchBar = ({keyword, setKeyword}) => {
+const SearchBar = (/*{keyword, setKeyword}*/) => {
 
 return(
 
@@ -14,11 +14,11 @@ return(
         </label>
         <input
             type="text"
-            key="random1"
-            value={keyword}
+            //key="random1"
+            //value={keyword}
             id="page-search"
             placeholder="Add Your Ingredients"
-            onChange={(e) => setKeyword(e.target.value)}
+            //onChange={(e) => setKeyword(e.target.value)}
         />
         <button type="submit">Add</button>        
     </form>

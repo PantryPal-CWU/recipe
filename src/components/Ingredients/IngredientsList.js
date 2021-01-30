@@ -1,9 +1,9 @@
-import React from 'react';
+//import React from 'react';
 
 //This component shows the list of ingredients
 //its a mapping of the ingredientsList variable
 //NG
-const IngredientList = ({ingredientList=[]}) => {
+/*const IngredientList = ({ingredientList=[]}) => {
     return(
       <>
         {ingredientList.map((data,index) => {
@@ -22,3 +22,4 @@ const IngredientList = ({ingredientList=[]}) => {
   }
   
   export default IngredientList;
+  */

@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import SearchBar from './IngredientsForm';
-import IngredientList from './IngredientsList'
+//import IngredientList from './IngredientsList'
 
 
-const SearchPage = (props) => {
-    const [input, setInput] = useState('');
+const SearchPage = (/*props*/) => {
+    /*const [input, setInput] = useState('');
     const [ingredientListDefault, setIngredientListDefault] = useState();
     const [ingredientList, setIngredientList] = useState();
 
@@ -26,14 +26,14 @@ const SearchPage = (props) => {
     }
 
     useEffect(() => {fetchData()}, []);
-
+    <SearchBar input={input}
+        onChange={updateInput} />
+        <IngredientList ingredientList={ingredientList}
+    */
     return(
         <>
         <h1>Add Your Ingredients Here</h1>
-        <SearchBar input={input}
-        onChange={updateInput} />
-        <IngredientList ingredientList={ingredientList}
-        />
+        <SearchBar/>
 
         </>
 
