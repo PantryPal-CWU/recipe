@@ -18,23 +18,20 @@ class About extends React.Component {
           <h1> About Us! </h1>
         </div>
 
+
        <div className="row">
         <Card className="content">
         <Card.Title className="name"> Lucas </Card.Title>
             <Card.Text className="text"> Here is some informatino about me. I am a person. I do
               things for fun. I like places and things.</Card.Text>
+              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
 
         <Card className="content">
         <Card.Title className="name"> Lucas </Card.Title>
             <Card.Text className="text"> Here is some informatino about me. I am a person. I do
               things for fun. I like places and things.</Card.Text>
-        </Card>
-
-        <Card className="content">
-        <Card.Title className="name"> Lucas </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
+              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
         </div>
 
@@ -43,18 +40,30 @@ class About extends React.Component {
         <Card.Title className="name"> Lucas </Card.Title>
             <Card.Text className="text"> Here is some informatino about me. I am a person. I do
               things for fun. I like places and things.</Card.Text>
+              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
 
         <Card className="content">
         <Card.Title className="name"> Lucas </Card.Title>
             <Card.Text className="text"> Here is some informatino about me. I am a person. I do
               things for fun. I like places and things.</Card.Text>
+              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+        </Card>
+        </div>
+
+        <div className="row">
+        <Card className="content">
+        <Card.Title className="name"> Lucas </Card.Title>
+            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
+              things for fun. I like places and things.</Card.Text>
+              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
 
         <Card className="content">
         <Card.Title className="name"> Lucas </Card.Title>
             <Card.Text className="text"> Here is some informatino about me. I am a person. I do
               things for fun. I like places and things.</Card.Text>
+              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
         </div>
 

@@ -5,34 +5,34 @@ File: About.css
 
 
 .title{
-    margin-top: 55px;
+    background: rgb(182, 182, 182);
     font-size: 400%;
     text-align: center;
     color:black;
-    padding: 20px;
+    padding: 15px;
+    padding-top: 55px;
 }
 
 .row{
+    background: rgb(231, 231, 231);
     display: grid;
-    gap: 1rem;
-    grid-auto-flow: column;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 20px;
+    grid-auto-flow:column;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .content{
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: rgb(247, 228, 204);
+    
+    background-color: rgb(255, 255, 255);
     position: relative;
     text-align: center;
     width: auto;
-    height: 200px;
+    min-width: 200px;
+    max-width: 600px;
+    height: auto;
     padding: 5px;
-    left: auto;
-    right: auto;
     border-radius: 25px;
+    margin: 50px;
 }
 .name{
     padding: 5px;
@@ -42,9 +42,18 @@ File: About.css
     margin-right: 50px;
 }
 .text{
-    margin: 10px;
+    margin: 15px;
     font-size: 100%;
-    margin-bottom: 25px;
+    min-height: 80px;
+
+}
+
+.contact{
+    padding: 10px;
+    font-size: 100%;
+    border-top: 1px solid rgb(131, 131, 131);
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 
