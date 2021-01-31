@@ -9,7 +9,6 @@ import './Login.css';
 
 
 function LoginForm({ Login }) {
-    //I dont think I had to do it like this, but it works!
     //Basically declaring three strings but using the state. To my understanding, this gets wiped out after a refresh/change page
     //Name is not needed but this is what it will look like for submissions
     const [details, setDetails] = useState({email: "", password: ""});
