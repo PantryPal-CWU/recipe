@@ -7,6 +7,7 @@ import SignUpForm from "./SignUpForm";
 
 function SignUp() {
 
+    //Requires implementation with SQL/Express
     const SignUp = (name, email, password) => {
         alert(name + " | " + email + " | " + password);
     }

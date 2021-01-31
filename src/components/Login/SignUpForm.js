@@ -1,10 +1,11 @@
 /*
 File: SignUpForm.js
 ?: Form that handles user details for registration 
+The code here is pretty much one to one with LoginForm.js
 */ 
 import React, { useState } from 'react';
 import './Login.css';
-import SignUp from './SignUp';
+
 
 function SignUpForm({ SignUp }) {
 
