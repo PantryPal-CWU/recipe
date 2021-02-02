@@ -18,7 +18,8 @@ class About extends React.Component {
           <h1> About Us! </h1>
         </div>
 
-
+      <div className="break"></div>
+      <div className="page"></div>
        <div className="row">
         <Card className="content">
         <Card.Title className="name"> Lucas </Card.Title>
@@ -65,6 +66,13 @@ class About extends React.Component {
               things for fun. I like places and things.</Card.Text>
               <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
+        </div>
+
+        <div className="row">
+          <Card className="content">
+          <Card.Title className="name"> Mission Statement </Card.Title>
+            <Card.Text className="text"> We believe in food.</Card.Text>
+          </Card>
         </div>
 
 

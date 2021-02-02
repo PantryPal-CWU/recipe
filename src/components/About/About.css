@@ -2,36 +2,51 @@
 File: About.css
 ?: Styling for components in About. 
 */
-
+.break{
+    height: 150px;
+    z-index: 1;
+}
 
 .title{
-    background: rgb(182, 182, 182);
-    font-size: 400%;
+    background: rgb(115, 151, 184);
+    font-size: 250%;
     text-align: center;
+    width: 100%;
     color:black;
     padding: 15px;
-    padding-top: 55px;
+    margin-top: 50px;
+    position: fixed;
+    z-index: 1;
+}
+
+
+.page{
+    top:0%;
+    position: fixed;
+    background: rgb(168, 196, 223);
+    height: 100%;
+    left: 100px;
+    right: 100px;
 }
 
 .row{
-    background: rgb(231, 231, 231);
     display: grid;
     grid-auto-flow:column;
     margin-left: 100px;
     margin-right: 100px;
+    z-index: 1;
 }
 
 .content{
     
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(213, 234, 253);
     position: relative;
     text-align: center;
     width: auto;
     min-width: 200px;
-    max-width: 600px;
     height: auto;
     padding: 5px;
-    border-radius: 25px;
+    border-radius: 15px;
     margin: 50px;
 }
 .name{
