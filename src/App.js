@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import GlobalStyle from './styles/Global';
 import { LoginStatusProvider } from './LoginContext'
 import { Routing } from './Routing';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 // class component of react  
