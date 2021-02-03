@@ -8,6 +8,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import img1 from "../images/cooking-5880136_1920.jpg";
 import img2 from "../images/food-2068217_1920.jpg";
 import img3 from "../images/mediterranean-cuisine-2378758_1920.jpg";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   return (
