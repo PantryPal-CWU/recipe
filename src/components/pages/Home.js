@@ -14,15 +14,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
           Welcome to PantryPal
             </h1>
       </Headers>*/
-export default function App() {
-  return (
-    <>
-      
-      <div className='container-fluid'>
-        <Carousel>
+class Home extends React.Component {
+  render() {
+    return (
+      <div className='container-fluid' >
+        <Carousel >
           <Carousel.Item>
             <img
-              className="d-block w-100"
+              className="d-block w-75 h-75"
               src={img3}
               alt="First slide"
             />
@@ -50,7 +49,6 @@ export default function App() {
               src={img1}
               alt="Third slide"
             />
-
             <Carousel.Caption>
               <h3>Third slide label</h3>
               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -58,17 +56,15 @@ export default function App() {
           </Carousel.Item>
         </Carousel>
       </div>
-    </>
-  );
+
+    );
+  }
 }
 
 
+export default Home;
 
-
-const Headers = styled.header`
-    font-size: 45px;
-    text-align: center;
-    & h1 {
-        padding-top: 75px;
-    }
-`;
+/*Carousel = `
+    width:75%;
+    height:75%;
+`;*/
