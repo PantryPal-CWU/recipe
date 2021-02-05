@@ -7,7 +7,8 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { Login, SignOut, SignUp } from "./components/Login/index";
 import Home from "./components/pages/Home";
 import { useLoginStatus } from './LoginContext'
-import About from "./components/About/About.js"
+import About from "./components/About/About.js";
+import Profile from './components/pages/Home.js';
 
 
 import SearchPage from "./components/Ingredients/Ingredients.js";
@@ -53,6 +54,9 @@ export function Routing() {
 
                 <Route path="/Pantry/Pantry.js">
                     <Pantry />
+                </Route>
+                <Route path="/pages/Profile.js">
+                    <Profile />
                 </Route>
             </Switch>
         </BrowserRouter>
