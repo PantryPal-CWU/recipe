@@ -15,11 +15,23 @@ class About extends React.Component {
       <div>
         
         <div className="title">
-          <h1> About Us! </h1>
+          <h1> About Us </h1>
         </div>
 
       <div className="break"></div>
       <div className="page"></div>
+
+      <div className="row">
+          <Card className="content">
+          <Card.Title className="name"> Mission Statement </Card.Title>
+            <Card.Text className="text"> We believe in food.</Card.Text>
+          </Card>
+      </div>
+
+      <div className="row">
+        <Card className="content"><h1 className ="name">The People Who Made it Possible</h1></Card>
+      </div>
+
        <div className="row">
         <Card className="content">
         <Card.Title className="name"> Lucas </Card.Title>
@@ -68,51 +80,9 @@ class About extends React.Component {
         </Card>
         </div>
 
-        <div className="row">
-          <Card className="content">
-          <Card.Title className="name"> Mission Statement </Card.Title>
-            <Card.Text className="text"> We believe in food.</Card.Text>
-          </Card>
-        </div>
-
-
       </div>
     )
   }
 }
 
 export default About;
-
-/*
-       <Card className="content">
-          <Card.Header className="title"> About Us </Card.Header>
-          <Card.Body>
-
-            <Card.Title className="name"> Lucas </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
-
-              <Card.Title className="name"> Kirsten </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
-
-              <Card.Title className="name"> Natalia </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
-
-              <Card.Title className="name"> Jordan </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
-
-              <Card.Title className="name"> Nate </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
-
-              <Card.Title className="name"> Alek </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
-
-          </Card.Body>
-
-        </Card> 
-*/

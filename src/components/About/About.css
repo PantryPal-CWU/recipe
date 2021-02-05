@@ -8,7 +8,7 @@ File: About.css
 }
 
 .title{
-    background: rgb(115, 151, 184);
+    background: rgb(172, 185, 197);
     font-size: 250%;
     text-align: center;
     width: 100%;
@@ -23,7 +23,7 @@ File: About.css
 .page{
     top:0%;
     position: fixed;
-    background: rgb(168, 196, 223);
+    background: rgb(223, 232, 240);
     height: 100%;
     left: 100px;
     right: 100px;
@@ -38,16 +38,19 @@ File: About.css
 }
 
 .content{
-    
-    background-color: rgb(213, 234, 253);
+    border: 0px solid white;
+    background-color: rgb(244, 249, 255);
     position: relative;
     text-align: center;
     width: auto;
     min-width: 200px;
     height: auto;
     padding: 5px;
-    border-radius: 15px;
-    margin: 50px;
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 .name{
     padding: 5px;

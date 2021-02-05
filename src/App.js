@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import GlobalStyle from './styles/Global';
 import { LoginStatusProvider } from './LoginContext'
 import { Routing } from './Routing';
+import {Footer} from './components/Footer/Footer';
 
 
 
@@ -46,6 +47,7 @@ class App extends Component {
             <Routing />
           </div>
         </LoginStatusProvider>
+        <Footer></Footer>
         
      </>
     )
