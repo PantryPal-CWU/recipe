@@ -16,7 +16,7 @@ class Home extends React.Component {
               className="d-block w-75 h-75"
               src={img3}
               alt="First slide"
-              style=""
+              
             />
             <Carousel.Caption>
               <h1> Welcome to PantryPal</h1>
