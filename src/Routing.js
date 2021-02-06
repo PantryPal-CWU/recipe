@@ -8,7 +8,7 @@ import { Login, SignOut, SignUp } from "./components/Login/index";
 import Home from "./components/pages/Home";
 import { useLoginStatus } from './LoginContext'
 import About from "./components/About/About.js";
-import Profile from './components/pages/Home.js';
+import Profile from './components/Profile/Profile.js';
 
 
 import SearchPage from "./components/Ingredients/Ingredients.js";
