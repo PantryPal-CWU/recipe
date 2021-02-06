@@ -9,12 +9,14 @@ class Home extends React.Component {
   render() {
     return (
       <div className='container-fluid' >
+        
         <Carousel >
           <Carousel.Item>
             <img
               className="d-block w-75 h-75"
               src={img3}
               alt="First slide"
+              style=""
             />
             <Carousel.Caption>
               <h1> Welcome to PantryPal</h1>
