@@ -1,23 +1,23 @@
 
 .footPage{
-    border-top: 1px solid rgb(131, 131, 131);
+    border-top: 1px solid rgb(236, 236, 236);
     margin-top: 55px;
     font-size: 200%;
     text-align: center;
     position: relative;
-    background: rgb(255, 255, 255);
+    background: rgb(236, 236, 236);
     left: 0%;
     right: 0%;
-    height: 100px;
+    height: auto;
     bottom: 0%;
-
+    padding: 10px;
 }
 .footRow{
-
+column-count: 3;
+padding: 10px;
 }
-.footColumn{
-
-}
-.footContent{
-
+.footCont{
+    font-size: 75%;
+    text-align: center;
+    margin: 5px;
 }
