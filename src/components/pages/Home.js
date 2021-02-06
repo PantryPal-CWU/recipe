@@ -1,19 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
 import Carousel from 'react-bootstrap/Carousel';
 import img1 from "../images/cooking-5880136_1920.jpg";
 import img2 from "../images/food-2068217_1920.jpg";
 import img3 from "../images/mediterranean-cuisine-2378758_1920.jpg";
 import 'bootstrap/dist/css/bootstrap.min.css';
-/*<Headers>
-        <h1>
-          Welcome to PantryPal
-            </h1>
-      </Headers>*/
+
 class Home extends React.Component {
   render() {
     return (
@@ -37,7 +28,6 @@ class Home extends React.Component {
               src={img2}
               alt="Third slide"
             />
-
             <Carousel.Caption>
               <h3>Second slide label</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -56,7 +46,6 @@ class Home extends React.Component {
           </Carousel.Item>
         </Carousel>
       </div>
-
     );
   }
 }
@@ -64,7 +53,3 @@ class Home extends React.Component {
 
 export default Home;
 
-/*Carousel = `
-    width:75%;
-    height:75%;
-`;*/

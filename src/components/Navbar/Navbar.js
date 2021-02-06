@@ -34,7 +34,8 @@ const Navbar = (props) => {
             <a href="../pages/Pantry.js" onClick={props.handleNavbar}>Your Pantry</a>
             <a href="../Ingredients/Ingredients.js" onClick={props.handleNavbar}>Add Ingredients</a>
             <a href="../About/About.js" onClick={props.handleNavbar}>About / Contact</a>
-            {(loginStatus === undefined) ? <a href="../login" onClick={props.handleNavbar}>Login</a> 
+            <a href="../Profile/Profile.js" onClick={props.handleNavbar}>Profile</a>
+            {(loginStatus === undefined) ? <a href="../login" onClick={props.handleNavbar}>Login</a>          
             : <a href="../signout" onClick={props.handleNavbar}>Sign Out</a>}
           </NavLinks>
           <BurgerWrapper>

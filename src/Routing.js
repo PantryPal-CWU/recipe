@@ -55,7 +55,7 @@ export function Routing() {
                 <Route path="/Pantry/Pantry.js">
                     <Pantry />
                 </Route>
-                <Route path="/pages/Profile.js">
+                <Route path="/Profile/Profile.js">
                     <Profile />
                 </Route>
             </Switch>
