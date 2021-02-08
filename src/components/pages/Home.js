@@ -4,16 +4,23 @@ import img1 from "../images/cooking-5880136_1920.jpg";
 import img2 from "../images/food-2068217_1920.jpg";
 import img3 from "../images/mediterranean-cuisine-2378758_1920.jpg";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import styled from 'styled-components';
+
+
 
 class Home extends React.Component {
   render() {
     return (
-      <div className='container-fluid' >
-        
+      <Container>
+        <div style={{padding: 25}}>
+         
+        </div>
         <Carousel >
           <Carousel.Item>
             <img
-              className="d-block w-75 h-75"
+              className="d-block w-100"
               src={img3}
               alt="First slide"
               
@@ -47,11 +54,11 @@ class Home extends React.Component {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-      </div>
+      </Container>
     );
   }
 }
 
-
 export default Home;
+
 
