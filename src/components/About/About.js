@@ -78,9 +78,11 @@ class About extends React.Component {
               things for fun. I like places and things.</Card.Text>
               <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
+        
         </div>
-
+        <div style={{padding: 20}}> </div>
       </div>
+             
     )
   }
 }
