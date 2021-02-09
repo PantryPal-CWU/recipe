@@ -4,11 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-class Profile extends React.Component{
-    render(){
-        return(
-            <div className='container-fluid'>
-            <Form>
+class Profile extends React.Component {
+    render() {
+        return (
+            <Main>
+                <Form>
                     <Form.Group controlId="formUser">
                         <Form.Label>Name: </Form.Label>
                     </Form.Group>
@@ -21,29 +21,36 @@ class Profile extends React.Component{
                     <Form.Group>
                         <Form.Label>Dietary Preferences: </Form.Label>
                         <Form.Check type="checkbox"
-                        label="Vegetarian"
-                        name="checkboxes"
-                        id="checkbox1"
+                            label="Vegetarian"
+                            name="checkboxes"
+                            id="checkbox1"
                         />
-                         <Form.Check type="checkbox"
-                        label="Vegan"
-                        name="checkboxes"
-                        id="checkbox2"
+                        <Form.Check type="checkbox"
+                            label="Vegan"
+                            name="checkboxes"
+                            id="checkbox2"
                         />
-                         <Form.Check type="checkbox"
-                        label="Gluten Free"
-                        name="checkboxes"
-                        id="checkbox3"
+                        <Form.Check type="checkbox"
+                            label="Gluten Free"
+                            name="checkboxes"
+                            id="checkbox3"
                         />
                         <Button Type="save" className="mb-2">
                             Save
                         </Button>
                     </Form.Group>
                 </Form>
-              </div>  
-            
+            </Main>
+
         )
     }
 
 }
 export default Profile;
+const Main = styled.div`
+  background-color: #eae0c8;
+  padding-top: 60px;
+  font-size: 30px;
+  display: inline-block;
+  
+`
