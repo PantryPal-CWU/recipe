@@ -13,11 +13,11 @@ import styled from 'styled-components';
 class Home extends React.Component {
   render() {
     return (
-      <Container>
-        <div style={{padding: 25}}>
+      <Container className="flex-box" >
+        <div style={{padding: 50}}>
          
         </div>
-        <Carousel >
+        <Carousel className="d-block w-100px">
           <Carousel.Item>
             <img
               className="d-block w-100"
