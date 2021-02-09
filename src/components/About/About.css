@@ -55,7 +55,7 @@ File: About.css
 .name{
     padding: 5px;
     font-size: 200%;
-    border-bottom: 1px solid rgb(131, 131, 131);
+    border-bottom: 1px solid rgb(202, 202, 202);
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -69,7 +69,7 @@ File: About.css
 .contact{
     padding: 10px;
     font-size: 100%;
-    border-top: 1px solid rgb(131, 131, 131);
+    border-top: 1px solid rgb(202, 202, 202);
     margin-left: 50px;
     margin-right: 50px;
 }

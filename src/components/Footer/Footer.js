@@ -8,15 +8,33 @@ export function Footer() {
 
     return (
         <div className="footPage">
-            <div className="footCont">Hello Everyone (Footer) </div>
+            <div className="footCont"> Some more information: </div>
 
             <div className="footRow">
-                <div className="footCont">One-Link</div>
-                <div className="footCont">Two-Link</div>
-                <div className="footCont">three-Link</div>
+                <div className="footCont">
+                    <> Icon made by </>
+                    <a href="https://www.flaticon.com/authors/flat-icons">Flat Icon</a>
+                    <> from </>
+                    <a href="https://www.flaticon.com/">www.flaticon.com</a>
+                </div>
+                <div className="footCont">
+                    <> Check us out on 
+                    <a href="https://github.com/PantryPal-CWU/recipe"> GitHub.com</a>
+                    </>
+                </div>
             </div>
-            <div className="footCont">Four - Contents</div>
+            <div className="footCont">
+                <> Click </>
+                <a href="../About/About.js"> Here </a>
+                <> to learn more </>
+            </div>
 
         </div>
     )
 }
+
+/**
+ * <Route path="/About/About.js">
+                    <About />
+                </Route>
+ */

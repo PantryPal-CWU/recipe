@@ -13,10 +13,11 @@
     padding: 10px;
 }
 .footRow{
-column-count: 3;
+column-count: 2;
 padding: 10px;
 }
 .footCont{
+    color: grey;
     font-size: 75%;
     text-align: center;
     margin: 5px;
