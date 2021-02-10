@@ -24,17 +24,23 @@ export function Footer() {
                 </div>
             </div>
             <div className="footCont">
+                    <> Phot credit goes to
+                    <a href="https://pixabay.com/users/sontung57-19733131/?tab=popular"> sontung57, </a>
+                    <a href="https://pixabay.com/users/daria-yakovleva-3938704/"> Daria-Yakovleva, </a>
+                    and
+                    <a href="https://pixabay.com/users/lukasbieri-4664461/"> lukasbieri </a>
+                    on 
+                    <a href="https://pixabay.com/"> www.pixabay.com </a>
+                    </>
+                </div>
+            <div className="footer">
+            <div className="footCont">
                 <> Click </>
                 <a href="../About/About.js"> Here </a>
                 <> to learn more </>
+            </div>
             </div>
 
         </div>
     )
 }
-
-/**
- * <Route path="/About/About.js">
-                    <About />
-                </Route>
- */
