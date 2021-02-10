@@ -26,8 +26,8 @@ padding-right: 50px;
     font-size: 120%;
 }
 a {
-    color: grey
+    color: darkgrey
 }
 a:hover{
-    color: darkgrey;
+    color: grey;
 }
