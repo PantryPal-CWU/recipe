@@ -7,12 +7,13 @@ import React from 'react';
 import {Card, Button} from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 
+
 class About extends React.Component {
 
   render() {
 
     return (
-      <div>
+      <div className = "main">
         
         <div className="title">
           <h1> About Us </h1>

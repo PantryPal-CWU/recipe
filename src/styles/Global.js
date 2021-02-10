@@ -26,7 +26,7 @@ const GlobalStyles = createGlobalStyle`
 
   .main {
     background-color: #fefce2;
-    height: 100vh;
+    min-height: 86vh;
   }
 `;
 

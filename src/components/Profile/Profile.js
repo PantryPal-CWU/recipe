@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 class Profile extends React.Component {
     render() {
         return (
+            <div className="main">
             <Main>
                 <Form>
                     <Form.Group controlId="formUser">
@@ -41,7 +42,7 @@ class Profile extends React.Component {
                     </Form.Group>
                 </Form>
             </Main>
-
+        </div>
         )
     }
 

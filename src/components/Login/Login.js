@@ -35,10 +35,11 @@ function Login() {
 
     //Simlpy returns a LoginForm which is defined in LoginForm.js
     return (
+        <div className="main">
         <>
             <LoginForm Login={Login} /> 
         </>
-        
+        </div>
         
     )
 }
