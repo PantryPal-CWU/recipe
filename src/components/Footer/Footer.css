@@ -13,12 +13,14 @@
 }
 .footRow{
 column-count: 2;
+padding-left: 50px;
+padding-right: 50px;
 }
 .footCont{
     color: grey;
-    font-size: 75%;
+    font-size: 15px;
     text-align: center;
-    margin: 10px;
+    margin: 5px;
 }
 .footer{
     margin-top: 15px;

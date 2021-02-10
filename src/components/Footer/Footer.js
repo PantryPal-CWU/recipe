@@ -8,8 +8,13 @@ export function Footer() {
 
     return (
         <div className="footPage">
-            <div className="footCont"> Some more information: </div>
-
+            <div className="footer">
+            <div className="footCont">
+                <> Click </>
+                <a href="../About/About.js"> Here </a>
+                <> to learn more </>
+            </div>
+            </div>
             <div className="footRow">
                 <div className="footCont">
                     <> Icon made by </>
@@ -18,9 +23,9 @@ export function Footer() {
                     <a href="https://www.flaticon.com/">www.flaticon.com</a>
                 </div>
                 <div className="footCont">
-                    <> Check us out on 
+                    <> Check us out on </>
                     <a href="https://github.com/PantryPal-CWU/recipe"> GitHub.com</a>
-                    </>
+                    <>  </>
                 </div>
             </div>
             <div className="footCont">
@@ -33,13 +38,6 @@ export function Footer() {
                     <a href="https://pixabay.com/"> www.pixabay.com </a>
                     </>
                 </div>
-            <div className="footer">
-            <div className="footCont">
-                <> Click </>
-                <a href="../About/About.js"> Here </a>
-                <> to learn more </>
-            </div>
-            </div>
 
         </div>
     )
