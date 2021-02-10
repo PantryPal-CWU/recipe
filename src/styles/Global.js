@@ -23,6 +23,11 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
   }
+
+  .main {
+    background-color: #fefce2;
+    height: 100vh;
+  }
 `;
 
 export default GlobalStyles;
