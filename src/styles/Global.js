@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .main {
-    background-color: #bbc2a2;
+    background-color: #eef0e8;
     min-height: 87vh;
   }
 `;
