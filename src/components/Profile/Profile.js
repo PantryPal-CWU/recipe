@@ -48,8 +48,8 @@ class Profile extends React.Component {
 
 }
 export default Profile;
+
 const Main = styled.div`
-  background-color: #eae0c8;
   padding-top: 60px;
   font-size: 30px;
   display: inline-block;
