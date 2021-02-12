@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 
 class Profile extends React.Component {
     render() {
         return (
             <div className="main">
-            <Main>
+            <Container fluid style={{paddingTop: 60, fontSize: 20}}>
                 <Form>
                     <Form.Group controlId="formUser">
                         <Form.Label>Name: </Form.Label>
@@ -41,7 +42,7 @@ class Profile extends React.Component {
                         </Button>
                     </Form.Group>
                 </Form>
-            </Main>
+            </Container>
         </div>
         )
     }
@@ -49,9 +50,4 @@ class Profile extends React.Component {
 }
 export default Profile;
 
-const Main = styled.div`
-  padding-top: 60px;
-  font-size: 30px;
-  display: inline-block;
-  
-`
+
