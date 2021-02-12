@@ -1,6 +1,6 @@
 
 .footPage{
-    font-size: 200%;
+    font-size: 150%;
     text-align: center;
     position: relative;
     background: #ff741e;
@@ -16,8 +16,8 @@ padding-left: 50px;
 padding-right: 50px;
 }
 .footCont{
-    color: lightgrey;
-    font-size: 15px;
+    color: rgb(48, 48, 48);
+    font-size: 100%;
     text-align: center;
     margin: 5px;
 }
@@ -26,8 +26,8 @@ padding-right: 50px;
     font-size: 120%;
 }
 a {
-    color: darkgrey
+    color: rgb(87, 87, 87)
 }
 a:hover{
-    color: grey;
+    color:  #742c00;
 }

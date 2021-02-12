@@ -8,25 +8,27 @@ File: About.css
 }
 
 .title{
-    background: rgb(172, 185, 197);
+    background: #9ba181;
     font-size: 250%;
     text-align: center;
     width: 100%;
     color:black;
     padding: 15px;
-    margin-top: 50px;
+    margin-top: 0px;
     position: fixed;
     z-index: 1;
+    padding-top: 55px;
 }
 
 
 .page{
     top:0%;
     position: fixed;
-    background: rgb(223, 232, 240);
+    background: #cfd3c2;
     height: 100%;
     left: 100px;
     right: 100px;
+    z-index: 0;
     
 }
 
@@ -35,12 +37,12 @@ File: About.css
     grid-auto-flow:column;
     margin-left: 100px;
     margin-right: 100px;
-    z-index: 1;
+    z-index: 0;
 }
 
 .content{
-    border: 0px solid white;
-    background-color: rgb(244, 249, 255);
+    border: 0px;
+    background-color: #eef0e8;
     position: relative;
     text-align: center;
     width: auto;
@@ -52,6 +54,7 @@ File: About.css
     margin-bottom: 20px;
     margin-left: 40px;
     margin-right: 40px;
+    z-index: 0;
 }
 .name{
     padding: 5px;
