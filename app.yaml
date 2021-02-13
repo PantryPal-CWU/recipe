@@ -3,8 +3,11 @@ runtime: nodejs12
 handlers:
 - url: /.*
   script: auto
+- url: /
   static_files: build/index.html
   upload: build/index.html
+- url: /
+  static_dir: build
 
 # Serve all static files with url ending with a file extension
 #- url: /(.*\..+)$
