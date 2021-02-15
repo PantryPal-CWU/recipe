@@ -29,7 +29,7 @@ export function Footer() {
                 </div>
             </div>
             <div className="footCont">
-                    <> Phot credit goes to
+                    <> Photo credit goes to
                     <a href="https://pixabay.com/users/sontung57-19733131/?tab=popular"> sontung57, </a>
                     <a href="https://pixabay.com/users/daria-yakovleva-3938704/"> Daria-Yakovleva, </a>
                     and

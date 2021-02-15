@@ -31,10 +31,11 @@ const SearchPage = (/*props*/) => {
         <IngredientList ingredientList={ingredientList}
     */
     return(
+        <div className="main">
         <>
         <SearchBar/>
-
         </>
+        </div>
 
     );
 }

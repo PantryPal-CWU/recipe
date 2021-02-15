@@ -30,12 +30,12 @@ var sqlPull = `SELECT * FROM UserTable`
 
 
 
-connection.query(sqlInsert, ['passwordsThatIsAPassword','pantrypal@email.com'], function (err, data) {
-    if (err) {
-        console.log('Something went wrong inputing!')
-    } else {
-        console.log('inputed!')
-    }
+connection.query(sqlInsert, ['passwordsThatIsAPassword', 'pantrypal@email.com'], function (err, data) {
+  if (err) {
+    console.log('Something went wrong inputing!')
+  } else {
+    console.log('inputed!')
+  }
 });
 
 connection.end()

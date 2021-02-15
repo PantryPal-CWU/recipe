@@ -64,7 +64,8 @@ const NavBar = styled(animated.nav)`
   top: 0;
   left: 0;
   background: #848181;
-  z-index: 1;
+  ;
+  z-index: 21;
   font-size: 1.4rem;
 `;
 
@@ -83,7 +84,7 @@ const NavLinks = styled(animated.ul)`
   margin: auto 0;
 
   & a {
-    color: #232121;
+    color: #232121;;
     text-transform: uppercase;
     font-weight: 600;
     border-bottom: 1px solid transparent;
@@ -110,3 +111,11 @@ const BurgerWrapper = styled.div`
     display: none;
   }
 `;
+
+/**
+ * Background:
+ *  background: #848181;
+ * Text:
+ * background:  #232121;
+ * 
+ */

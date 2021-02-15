@@ -13,7 +13,7 @@ import styled from 'styled-components';
 class Home extends React.Component {
   render() {
     return (
-      <Main>
+      <div className="main">
         <Container className="container-fluid" >
           <div style={{ padding: 50 }}></div>
           <Carousel className="d-block w-100px">
@@ -55,14 +55,12 @@ class Home extends React.Component {
           </Carousel>
         </Container>
         <div style={{ padding: 50 }}></div>
-      </Main>
+      </div>
     );
   }
 }
 
 export default Home;
 
-const Main = styled.div`
-  background-color: #eae0c8;
-`
+
 
