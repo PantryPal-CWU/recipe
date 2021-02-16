@@ -2,46 +2,33 @@
 File: Login.js
 ?: This is the login page. It contains a LoginForm to login.
 */ 
-import React from 'react';
+import React, { useState } from 'react';
 import LoginForm from './LoginForm';
-import { useLoginStatus } from '../../LoginContext'
+import Authenticate from './Authenticate';
 import './Login.css';
 
 //Think of something like this as an import
-var authenticate = require('./AccountServices.js');
+// var authenticate = require('./AccountServices.js');
 
 
 function Login() {
-    
-    //Get ability to change loginStatus (from LoginContext) 
-    const { toggleLoginStatus } = useLoginStatus();
+    const [isChecking, setCheckFlag] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-    //Comes email and password with userdatabase (handled in AccountServices.js)
-    const Login = (email, password) => {
-        //For monitoring, should be removed later on
-        console.log(email);
-        
-        //Get authentication results and either change the loginStatus or give an alert for incorrect information
-        var Promise = authenticate.authenticate(email, password).then((result) => {
-            if (result) {
-                toggleLoginStatus(email);
-                window.location.reload(false);
-               
-            } else {
-                alert("Username/Password Combination Incorrect");
-            }
-        });
-    }
 
     //Simlpy returns a LoginForm which is defined in LoginForm.js
     return (
-        <div className="main">
-        <>
-            <LoginForm Login={Login} /> 
-        </>
-        </div>
-        
-    )
+        (!isChecking) ? 
+            <div className="main">
+                <>
+                    <LoginForm setCheckFlag={setCheckFlag} setEmail={setEmail} setPassword={setPassword} /> 
+                </>
+            </div> 
+        :
+        <Authenticate email={email} password={password} setCheck={setCheckFlag} />
+
+    );
 }
 
 export default Login; 

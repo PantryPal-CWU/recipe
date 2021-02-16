@@ -8,7 +8,7 @@ import './Login.css';
 
 
 
-function LoginForm({ Login }) {
+function LoginForm({ setCheckFlag, setEmail, setPassword }) {
     //Basically declaring three strings but using the state. To my understanding, this gets wiped out after a refresh/change page
     //Name is not needed but this is what it will look like for submissions
     const [details, setDetails] = useState({email: "", password: ""});
@@ -18,7 +18,10 @@ function LoginForm({ Login }) {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        Login(details.email, details.password);
+        setCheckFlag(true);
+        setEmail(details.email);
+        setPassword(details.password);
+        // window.location.reload(false);
     }
 
     //Returns a form for giving an email and password. It also has a button! 

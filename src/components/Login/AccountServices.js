@@ -5,8 +5,10 @@ File: AccountServices.js
 
 // import React, { useState, createContext } from 'react';
 // import { useLoginStatus } from '../../LoginContext'
+import { useEffect, useState } from 'react';
 const bcrypt = require('bcryptjs');
-const sql = require("./userDB.js");
+const sql = require("../../userDB.js");
+
 
 
 //Export the functions
@@ -29,41 +31,28 @@ async function register(name, email, password) {
 
 //Determines if params email and password match users in our database.
 //Currently only compares to the test case! 
-async function authenticate(email, password) {
-    if (email === adminUser.email && password === adminUser.password) {
-        console.log("Success! Log in.");
-        return true;
-    } else {
-        console.log("Unsuccessful log in.");
-        return false;
-    }
+// async function authenticate(email, password) {
+//     const [result, setResult] = useState(true);
+//     useEffect(() => {
+//         fetch(`/authenticate?email=${email}&password=${password}`)
+//         .then(res => res.json())
+//         .then(data => {
+//             if(data.status === 400) {
+//                setResult(true);
+//             } else {
+//                 setResult(false);
+//             }
+//         });
+//     }, []);
 
-    // sql.connect();
-
-    // let res;
-    // sql.query('SELECT Email, Password FROM UserBase', (err, data) => {
-    //     if (err) {
-    //       console.error(err);
-    //       return false;
-    //   } else {
-          
-    //       const grabbed = (data.find(ele => ele['Email']===email));
-    //       alert(grabbed['Email']);
-        //   if(!compareHash(password, grabbed['Password'])) {
-        //     alert("WRONG EMAIL/PASSWORD COMBINATION");
-        //     return false;
-        //     } else {
-        //         alert("Welcome!");
-        //         return true;
-        //     }
-        // } 
-    //   });
-
-    //   sql.end();
-
-    
-    
-}
+//     if (result) {
+//         console.log("Success! Log in.");
+//         return true;
+//     } else {
+//         console.log("Unsuccessful log in.");
+//         return false;
+//     }
+// }
 
 //Returns hash of a password. Used to incrypt passwords for safe keeping.
 //Note that if you wanted to compare a bcrypt hash with a string, you can call 
