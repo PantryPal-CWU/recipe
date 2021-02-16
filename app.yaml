@@ -1,5 +1,9 @@
 runtime: nodejs12
 
+automatic scaling:
+  min_num_instances: 1
+  max_num_instances: 4
+  
 handlers:
 - url: /.*
   script: auto
