@@ -1,4 +1,4 @@
-runtime: nodejs12
+runtime: nodejs14
 env: flex
 automatic_scaling:
   min_num_instances: 1
