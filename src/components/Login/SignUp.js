@@ -14,7 +14,12 @@ function SignUp() {
 
     return (
         <>
-            <SignUpForm SignUp={SignUp} />
+            <div className="main">
+            <div className="title"> <h1> Sign Up </h1> </div>
+                <div className="form-format">
+                <SignUpForm SignUp={SignUp} />
+                </div>
+            </div>
         </>
     )
 }

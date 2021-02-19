@@ -3,14 +3,15 @@ File: Login.css
 ?: Styling for components in Login. 
 */
 .formEntry {
+    background: rgb(226, 226, 226);
     margin: auto;
   
     display: block;
-    width: 60%;
-    
+    width: auto;
+    margin-left: 100px;
+    margin-right: 100px;
   
-    border: 2px solid #20201d;
-  
+    border: 1px solid #5e5e5e;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -41,4 +42,11 @@ File: Login.css
     left: 5px;
     right: 5px;
     bottom: 6000px;
+}
+.form-format{
+    padding-top: 100px;
+    background-color: #cfd3c2;
+    height: 90vh;
+    margin-left: 100px;
+    margin-right: 100px;
 }
