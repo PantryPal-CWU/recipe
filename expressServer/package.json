@@ -1,0 +1,15 @@
+{
+  "name": "expressServer",
+  "version": "1.0.0",
+  "description": "User Database",
+  "main": "userDB.js",
+  "scripts": {
+    "start": "node userDB.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
