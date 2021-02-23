@@ -25,6 +25,10 @@ function Login() {
                 <div className="title"> <h1> Log In </h1> </div>
                 <div className="form-format">
                     <LoginForm setEmail={setEmail} setPassword={setPassword} setCheckFlag={setCheckFlag} /> 
+                    <div className="why">
+                        <div className="why-title">Why have an account with Pantry Pal</div>
+                        <div className="why-text">Because it's awesome. That's why.</div>
+                    </div>
                 </div>
             </div>
         :

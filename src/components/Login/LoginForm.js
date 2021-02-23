@@ -41,6 +41,7 @@ function LoginForm({ setCheckFlag, setEmail, setPassword }) {
                         id="email" 
                         onChange={e => setDetails({...details, email: e.target.value})} 
                         value={details.email} 
+                        style={{marginLeft: 30, width: 240}}
                     />
                 </div>
 
@@ -51,7 +52,8 @@ function LoginForm({ setCheckFlag, setEmail, setPassword }) {
                         name="password" 
                         id="password" 
                         onChange={e => setDetails({...details, password: e.target.value})} 
-                        value={details.password} 
+                        value={details.password}
+                        style={{marginLeft: 58, width: 240}}
                     />
                     <input id="submitButton" type="submit" value="Sign in" /><br/>
                     <Link to="/register">New? Sign up!</Link>

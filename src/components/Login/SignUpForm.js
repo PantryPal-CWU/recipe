@@ -37,7 +37,8 @@ function SignUpForm({ setEmail, setPassword, setCheckFlag }) {
                         name="email" 
                         id="email" 
                         onChange={e => setDetails({...details, email: e.target.value})} 
-                        value={details.email} 
+                        value={details.email}
+                        style={{marginLeft: 80, width: 240}}
                     />
                 </div>
                 <div className="formEntry nobottomborder notopborder">
@@ -48,6 +49,7 @@ function SignUpForm({ setEmail, setPassword, setCheckFlag }) {
                         id="email" 
                         onChange={e => setDetails({...details, confirmE: e.target.value})} 
                         value={details.confirmE} 
+                        style={{marginLeft: 30, width: 240}}
                     />
                 </div>
                 <div className="formEntry nobottomborder notopborder">
@@ -58,6 +60,7 @@ function SignUpForm({ setEmail, setPassword, setCheckFlag }) {
                         id="password" 
                         onChange={e => setDetails({...details, password: e.target.value})} 
                         value={details.password} 
+                        style={{marginLeft: 111, width: 240}}
                     />
                 </div>
                 <div className="formEntry notopborder">
@@ -68,6 +71,7 @@ function SignUpForm({ setEmail, setPassword, setCheckFlag }) {
                         id="password" 
                         onChange={e => setDetails({...details, confirmP: e.target.value})} 
                         value={details.confirmP} 
+                        style={{marginLeft: 55, width: 240}}
                     />
                     <input id="submitButton" type="submit" value="Sign Up" />
                 </div>
