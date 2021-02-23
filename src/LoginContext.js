@@ -3,7 +3,7 @@ File: LoginContext.js
 ?: LoginContext handles the state of the user and being logged into the website.
 To do this, we use cookie to maintain updated memory. Otherwise, components won't be able to share the same state
 */ 
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import cookie from 'react-cookies';
 
 //Create context for our login status 
@@ -23,8 +23,17 @@ export function LoginStatusProvider({ children }) {
     //That means loginStatus is going to either be the value of cookie (key=email) or undefined
     const [loginStatus, setLoginStatus] = useState(cookie.load("email"));
 
+    useEffect(() => {
+        const fetchData = async () => {
+            
+        };
+
+        fetchData();
+    }, loginStatus);
+
     //This function sets up a cookie to keep track if the user is logged in
     const toggleLoginStatus = (email) => {
+        cookie.remove("email");
         //Set expiration to be a month, ~30 days from today
         var month = new Date();
         month.setDate(month.getDate()+30);
@@ -37,7 +46,8 @@ export function LoginStatusProvider({ children }) {
         cookie.save('email', email, { path: '/', expires: month});
         
         //Since we are now logged in, we can just set the login status again which will load the cookie's value!
-        setLoginStatus()
+        setLoginStatus();
+        
         
     };
 

@@ -59,7 +59,7 @@ async function register(name, email, password) {
 //              bcrypt.compare(password, hashedPassword);
 //But for our purposes, we can search our database for the username then use this compare! 
 //This would be done in authenticate
-const hashPassword = (password, saltRounds = 10) => {
+const hash = (password, saltRounds = 10) => {
     try {
         // create salt
         const salt = bcrypt.genSaltSync(saltRounds);

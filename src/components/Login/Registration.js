@@ -10,7 +10,7 @@ export default function Registration(props) {
             const res = await fetch(`http://localhost:4001/signup?email=${props.email}&password=${props.password}`);
             const data = await res.json().then(data => {
                 if(!data) {
-                    alert("Registration taken!");
+                    alert("Email taken!");
                     props.setCheck(false);
                     window.location.reload(false);
                 } else {

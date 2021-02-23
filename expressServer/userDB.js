@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 const express = require('express');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 
 const app = express();
@@ -33,7 +33,10 @@ app.get('/', (req, res) => {
 
 app.get('/signup', (req, res) => {
   const { email, password } = req.query;
-  const INSERT_USER = `INSERT INTO UserBase (Password, Email) VALUES('${password}', '${email}')`;
+  
+  const hashedPass = hash(password);
+
+  const INSERT_USER = `INSERT INTO UserBase (Password, Email) VALUES('${hashedPass}', '${email}')`;
   connection.query(INSERT_USER, (err, results) => {
     if(err) {
       return res.send(false);
@@ -56,27 +59,44 @@ app.get('/authenticate', (req, res) => {
       // const grabUser = results.find(ele => compareHash(email, ele['Email']));
       const grabUser = results.find(ele => ele['Email']===email);
       if(grabUser!==undefined) {
-        // if(compareHash(password, grabUser['Password'])) {
-        //   return res.status(400);
-        // }
-        if(password === grabUser['Password']) {
-          return res.status(400).send(true);
+
+        // bcrypt.compareSync(password, grabUser['Password'], (err, isMatched) => {
+        //   if (err) {return res.send(err);} 
+        //   if (isMatched) {return res.send(true);}
+        //   if (!isMatched) {return res.send(false);} 
+        //   alert(isMatched);
+        // });
+
+        let comparison = bcrypt.compareSync(password, grabUser['Password']);
+        if(comparison) {
+          return res.send(true);
         }
+        // if(password === grabUser['Password']) {
+        //   return res.status(400).send(true);
+        // }
       }
-      return res.status(300).send(false);
+      return res.send(false);
       
     }
   });
 });
 
 const compareHash = (cmpMe, hashed) => {
-  bcrypt.compare(cmpMe, hashed, (err, isMatch) => {
-      if(err) {
-          throw err;
-      } else if (!isMatch) {
-          return false;
-      } else {
-          return true;
-      }
-  })
+  let flag = true;
+  return bcrypt.compareSync(cmpMe, hashed);
+  
 };
+
+const hash = (password, saltRounds = 10) => {
+  try {
+      // create salt
+      const salt = bcrypt.genSaltSync(saltRounds);
+
+      // Hash
+      return bcrypt.hashSync(password, salt);
+  } catch (error) {
+      console.log(error);
+  }
+  
+  return null;
+}
