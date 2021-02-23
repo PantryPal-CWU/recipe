@@ -49,7 +49,7 @@ function SignUpForm({ setEmail, setPassword, setCheckFlag }) {
                         value={details.confirmE} 
                     />
                 </div>
-                <div className="formEntry notopborder">
+                <div className="formEntry nobottomborder notopborder">
                     <label htmlFor="password">Password:</label>
                     <input 
                         type="password" 
@@ -58,7 +58,6 @@ function SignUpForm({ setEmail, setPassword, setCheckFlag }) {
                         onChange={e => setDetails({...details, password: e.target.value})} 
                         value={details.password} 
                     />
-                    <input id="submitButton" type="submit" value="Sign Up" />
                 </div>
                 <div className="formEntry notopborder">
                     <label htmlFor="password">Confirm Password:</label>
