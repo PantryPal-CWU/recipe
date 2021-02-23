@@ -39,7 +39,7 @@ app.get('/signup', (req, res) => {
       return res.send(err);
     }
     else {
-      return res.send('Welcome to the team!');
+      return res.send(results);
     }
   });
 });

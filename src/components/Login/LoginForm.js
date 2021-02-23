@@ -61,6 +61,6 @@ function LoginForm({ setCheckFlag, setEmail, setPassword }) {
     )
 }
 
-//Note to self: Forgot password, Sign up 
+//Note to self: Forgot password
 
 export default LoginForm;

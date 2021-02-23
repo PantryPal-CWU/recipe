@@ -9,12 +9,12 @@ import './Login.css';
 
 function SignUpForm({ SignUp }) {
 
-    const [details, setDetails] = useState({name: "", email: "", password: ""});
+    const [details, setDetails] = useState({ email: "", password: "" });
 
     const submitHandler = (e) => {
         e.preventDefault();
 
-        SignUp(details.name, details.email, details.password);
+        SignUp(details.email, details.password);
     }
 
     return (
@@ -22,15 +22,6 @@ function SignUpForm({ SignUp }) {
             <form onSubmit={submitHandler}>
                 <div className="formEntry nobottomborder">
                     <h1>Join PantryPal!</h1>
-
-                    <label htmlFor="name">Name:</label>
-                    <input 
-                        type="name" 
-                        name="name" 
-                        id="name" 
-                        onChange={e => setDetails({...details, name: e.target.value})} 
-                        value={details.name}    
-                    />
                 </div>
                 <div className="formEntry nobottomborder notopborder">
                     <label htmlFor="email">Email Address:</label>

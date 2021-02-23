@@ -24,11 +24,9 @@ function Login() {
             <div className="main">
                 <div className="title"> <h1> Log In </h1> </div>
                 <div className="form-format">
-                    <>
-                    <LoginForm setCheckFlag={setCheckFlag} setEmail={setEmail} setPassword={setPassword} /> 
-                    </>
+                    <LoginForm setEmail={setEmail} setPassword={setPassword} setCheckFlag={setCheckFlag} /> 
                 </div>
-            </div> 
+            </div>
         :
         <Authenticate email={email} password={password} setCheck={setCheckFlag} />
 
