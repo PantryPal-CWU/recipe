@@ -9,6 +9,8 @@ const port = process.env.PORT || 4001;
 app.listen(port, () => console.log(`Express function on port ${port}`));
 
 const SELECT_USERS = 'SELECT Email, Password FROM UserBase';
+const SELECT_LOGIN = 'SELECT Email, LoginStatus FROM UserBase';
+
 
 // app.listen(port, () => res.send("Hi!"));
 
@@ -42,6 +44,7 @@ app.get('/signup', (req, res) => {
       return res.send(false);
     }
     else {
+      connection.query(`UPDATE UserBase SET LoginStatus = 1 WHERE Email = '${email}'`);
       return res.send(true);
     }
   });
@@ -56,24 +59,16 @@ app.get('/authenticate', (req, res) => {
       return res.send(err);
     }
     else {
-      // const grabUser = results.find(ele => compareHash(email, ele['Email']));
+      
       const grabUser = results.find(ele => ele['Email']===email);
       if(grabUser!==undefined) {
 
-        // bcrypt.compareSync(password, grabUser['Password'], (err, isMatched) => {
-        //   if (err) {return res.send(err);} 
-        //   if (isMatched) {return res.send(true);}
-        //   if (!isMatched) {return res.send(false);} 
-        //   alert(isMatched);
-        // });
-
         let comparison = bcrypt.compareSync(password, grabUser['Password']);
         if(comparison) {
+          connection.query(`UPDATE UserBase SET LoginStatus = 1 WHERE Email = '${grabUser['Email']}'`);
           return res.send(true);
         }
-        // if(password === grabUser['Password']) {
-        //   return res.status(400).send(true);
-        // }
+        
       }
       return res.send(false);
       
@@ -81,11 +76,43 @@ app.get('/authenticate', (req, res) => {
   });
 });
 
-const compareHash = (cmpMe, hashed) => {
-  let flag = true;
-  return bcrypt.compareSync(cmpMe, hashed);
+app.get('/loginstatus', (req, res) => {
+  const { email } = req.query;
+
+  connection.query(SELECT_LOGIN, (err, results) => {
+    if(err) {
+      res.send(err);
+    }
+    const grabUser = results.find(ele => ele['Email']===email);
+    if(grabUser !== undefined) {
+      if(grabUser['LoginStatus'] === null) {
+        return res.send(false);
+      }
+      else if(grabUser['LoginStatus']) {
+        return res.send(true);
+      } 
+    } else {
+      res.send(false);
+    }
+  });
+  // return res.send(false);
+});
+
+app.get('/signout', (req, res) => {
+  const { email } = req.query;
+
+  connection.query(SELECT_USERS, (err, results) => {
+    if(err) {
+      return res.send(err);
+    } else {
+      // const grabUser = results.find(ele => ele['Email']===email);
+      connection.query(`UPDATE UserBase SET LoginStatus = 0 WHERE Email = '${email}'`);
+      return res.send(email);
+    }
+  });
+  // return res.send("GOODBYE!");
   
-};
+});
 
 const hash = (password, saltRounds = 10) => {
   try {

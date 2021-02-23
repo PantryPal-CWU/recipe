@@ -23,21 +23,32 @@ export function LoginStatusProvider({ children }) {
     //That means loginStatus is going to either be the value of cookie (key=email) or undefined
     const [loginStatus, setLoginStatus] = useState(cookie.load("email"));
 
+    //Set expiration to be a month, ~30 days from today
+    let month = new Date();
+    month.setDate(month.getDate()+30);
+
+
     useEffect(() => {
         const fetchData = async () => {
-            
+            const res = await fetch(`http://localhost:4001/loginstatus?email=${cookie.load("email")}`);
+            const award = await res.json().then(data => {
+                if(!data && cookie.load("email") !== undefined) {
+                    
+                    cookie.remove("email", { path: '/', expires: month});
+                    
+                    setLoginStatus();
+                    window.location.reload(false);
+                }
+            });
         };
-
         fetchData();
-    }, loginStatus);
-
+       
+    }, []);
+    
     //This function sets up a cookie to keep track if the user is logged in
     const toggleLoginStatus = (email) => {
         cookie.remove("email");
-        //Set expiration to be a month, ~30 days from today
-        var month = new Date();
-        month.setDate(month.getDate()+30);
-
+        
         //save cookie
         //if you want to view the cookie:
         //Go to your browser's developer tools
