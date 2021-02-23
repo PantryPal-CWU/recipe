@@ -9,22 +9,19 @@ import Registration from "./Registration";
 function SignUp() {
     
     const [isChecking, setCheckFlag] = useState(false);
-
-    //Requires implementation with SQL/Express
-    const SignUp = (email, password) => {
-        alert(email + " | " + password);
-    }
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     return (
         (!isChecking) ?
             <div className="main">
             <div className="title"> <h1> Sign Up </h1> </div>
                 <div className="form-format">
-                    <SignUpForm SignUp={SignUp} />
+                    <SignUpForm setEmail={setEmail} setPassword={setPassword} setCheckFlag={setCheckFlag} />
                 </div>
             </div>
         :
-        <Registration />
+        <Registration email={email} password={password} setCheckFlag={setCheckFlag} />
     )
 }
 

@@ -36,10 +36,10 @@ app.get('/signup', (req, res) => {
   const INSERT_USER = `INSERT INTO UserBase (Password, Email) VALUES('${password}', '${email}')`;
   connection.query(INSERT_USER, (err, results) => {
     if(err) {
-      return res.send(err);
+      return res.send(false);
     }
     else {
-      return res.send(results);
+      return res.send(true);
     }
   });
 });
