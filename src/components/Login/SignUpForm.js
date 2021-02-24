@@ -6,8 +6,6 @@ The code here is pretty much one to one with LoginForm.js
 import React, { useState } from 'react';
 import './Login.css';
 
-
-
 function SignUpForm({ setEmail, setPassword, setCheckFlag }) {
 
     const [details, setDetails] = useState({ email: "", password: "", confirmE: "", confirmP: "" });

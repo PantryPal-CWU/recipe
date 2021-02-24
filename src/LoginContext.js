@@ -27,10 +27,15 @@ export function LoginStatusProvider({ children }) {
     let month = new Date();
     month.setDate(month.getDate()+30);
 
-
+    //useEffect acts like a React class' ComponentDidMount()
+    //Basically, on refresh, useEffect will be called
+    //In this useEffect, we are checking if the user is actually logged in
+    //If we find out that there's a "email" cookie telling us the user is logged in
+    //AND our userDB says the user is NOT logged in, then we remove the cookie and refresh
+    //This runs whenever loginStatus is changed
     useEffect(() => {
         const fetchData = async () => {
-            const res = await fetch(`http://localhost:4001/loginstatus?email=${cookie.load("email")}`);
+            const res = await fetch(`http://localhost:4003/loginstatus?email=${cookie.load("email")}`);
             const award = await res.json().then(data => {
                 if(!data && cookie.load("email") !== undefined) {
                     
@@ -43,7 +48,7 @@ export function LoginStatusProvider({ children }) {
         };
         fetchData();
        
-    }, []);
+    }, [loginStatus]);
     
     //This function sets up a cookie to keep track if the user is logged in
     const toggleLoginStatus = (email) => {
