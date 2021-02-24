@@ -5,11 +5,11 @@ handlers:
 - url: /.*
   script: npm run startServer #originally auto
   secure: always #originally not present
-- url: /
-  static_files: build/index.html
-  upload: build/index.html
-- url: /
-  static_dir: build
+# - url: /
+#   static_files: build/index.html
+#   upload: build/index.html
+# - url: /
+#   static_dir: build
 
 # Serve all static files with url ending with a file extension
 #- url: /(.*\..+)$
