@@ -1,5 +1,5 @@
 import React from 'react';
-import './ingredients.css';
+import './search-styling.css';
 
 //Search Bar component
 
