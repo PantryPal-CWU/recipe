@@ -5,7 +5,8 @@ const bcrypt = require('bcryptjs');
 
 
 const app = express();
-const port = process.env.PORT || 4001;
+// const port = process.env.PORT || 4001;
+const port = 4001;
 app.listen(port, () => console.log(`Express function on port ${port}`));
 
 const SELECT_USERS = 'SELECT Email, Password FROM UserBase';
