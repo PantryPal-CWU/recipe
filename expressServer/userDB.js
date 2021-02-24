@@ -5,8 +5,16 @@ const bcrypt = require('bcryptjs');
 
 
 const app = express();
-const port = process.env.PORT || 4001;
-app.listen(port, () => console.log(`Express function on port ${port}`));
+// const port = process.env.PORT || 4001;
+// app.listen(port, () => console.log(`Express function on port ${port}`));
+
+const server = app.listen(4001, () => {
+  const host = server.address().address;
+  const port = server.address().port;
+
+  console.log(`Express listening to host ${host} @ port ${port}`)
+});
+
 
 const SELECT_USERS = 'SELECT Email, Password FROM UserBase';
 const SELECT_LOGIN = 'SELECT Email, LoginStatus FROM UserBase';
