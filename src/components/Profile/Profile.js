@@ -40,8 +40,11 @@ class Profile extends React.Component {
         return (
             <>
                 <div className="main">
-                    <Container fluid style={{ paddingTop: 60, fontSize: 20 }}>
+                    <Container fluid style={{ paddingTop: 60, display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: 20 }}>
+
                         <Form>
+                            <h1>Your Profile</h1>
+                            <br />
                             <Form.Group controlId="formUser">
                                 <Form.Label>Name: </Form.Label>
                             </Form.Group>
@@ -74,19 +77,20 @@ class Profile extends React.Component {
                             </Form.Group>
                         </Form>
                     </Container>
-                    <Modal show={this.state.show} onHide={this.handleClose}>
-                        <Modal.Header closeButton>
+                    <Modal show={this.state.show} onHide={this.handleClose} >
+                        <Modal.Header closeButton >
                             <Modal.Title>Edit Profile</Modal.Title>
                         </Modal.Header>
-                        <Form.Group>
-                            <Form.Label>Name: </Form.Label> 
-                            <Form.Control type="text" placeholder="First Name Last Name" />
-                            <Form.Label>Email: </Form.Label>
-                            <Form.Control type="text" placeholder="name@example.com"/>
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password"/>
-                            <Form.Label>Dietary Preferences</Form.Label>
-                            <Form.Check type="checkbox"
+                        <Modal.Body>
+                            <Form.Group>
+                                <Form.Label>Name: </Form.Label>
+                                <Form.Control type="text" placeholder="First Name Last Name" />
+                                <Form.Label>Email: </Form.Label>
+                                <Form.Control type="text" placeholder="name@example.com" />
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password" />
+                                <Form.Label>Dietary Preferences</Form.Label>
+                                <Form.Check type="checkbox"
                                     label="Vegetarian"
                                     name="checkboxes"
                                     id="checkbox1"
@@ -101,7 +105,8 @@ class Profile extends React.Component {
                                     name="checkboxes"
                                     id="checkbox3"
                                 />
-                        </Form.Group>
+                            </Form.Group>
+                        </Modal.Body>
                         <Modal.Footer>
                             <Button variant="secondary" onClick={this.handleClose}>
                                 Close
@@ -112,7 +117,6 @@ class Profile extends React.Component {
                         </Modal.Footer>
                     </Modal>
                 </div>
-
             </>
         )
     }
