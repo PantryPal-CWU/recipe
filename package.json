@@ -6,9 +6,18 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
+    "aws-sdk": "^2.849.0",
+    "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.6.0",
+<<<<<<< HEAD
     "puppeteer": "^7.0.4",
+=======
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+>>>>>>> eada75221760fd3ef13013f75726523b89f3a107
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-cookies": "^0.1.1",
@@ -20,7 +29,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "startReact": "react-scripts start",
+    "startServer": "cd expressServer && npm run startExpress",
+    "start": "concurrently --kill-others \"npm run startReact\" \"npm run startServer\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -42,5 +53,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "proxy": "http://localhost:4001"
 }

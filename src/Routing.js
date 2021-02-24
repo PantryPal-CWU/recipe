@@ -36,7 +36,7 @@ export function Routing() {
                 </Route>
 
                 <Route path="/register">
-                    <SignUp />
+                    {((loginStatus === undefined) ? <SignUp /> : <Redirect from='/login' to="/pages/Home.js" />)}
                 </Route>
 
                 <Route path="/signout">

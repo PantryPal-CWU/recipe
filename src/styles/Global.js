@@ -23,6 +23,12 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
   }
+
+  .main {
+    background-color: #eef0e8;
+    min-height: 87vh;
+    z-index: -20;
+  }
 `;
 
 export default GlobalStyles;

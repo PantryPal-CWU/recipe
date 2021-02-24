@@ -30,10 +30,9 @@ const Navbar = (props) => {
         <FlexContainer>
           <Brand />
           <NavLinks style={linkAnimation}>
-            <a href="../pages/Home.js" onClick={props.handleNavbar}>Home</a>
-            <a href="../pages/Pantry.js" onClick={props.handleNavbar}>Your Pantry</a>
-            <a href="../Ingredients/Ingredients.js" onClick={props.handleNavbar}>Add Ingredients</a>
-            <a href="../About/About.js" onClick={props.handleNavbar}>About / Contact</a>
+            <a href="../pages/Home.js" onClick={props.handleNavbar}>Home</a>          
+            <a href="../Ingredients/Ingredients.js" onClick={props.handleNavbar}>Search</a>
+            <a href="../About/About.js" onClick={props.handleNavbar}>Contact</a>
             <a href="../Profile/Profile.js" onClick={props.handleNavbar}>Profile</a>
             {(loginStatus === undefined) ? <a href="../login" onClick={props.handleNavbar}>Login</a>          
             : <a href="../signout" onClick={props.handleNavbar}>Sign Out</a>}
@@ -64,7 +63,8 @@ const NavBar = styled(animated.nav)`
   top: 0;
   left: 0;
   background: #848181;
-  z-index: 1;
+  ;
+  z-index: 21;
   font-size: 1.4rem;
 `;
 
@@ -83,7 +83,7 @@ const NavLinks = styled(animated.ul)`
   margin: auto 0;
 
   & a {
-    color: #232121;
+    color: #232121;;
     text-transform: uppercase;
     font-weight: 600;
     border-bottom: 1px solid transparent;
@@ -110,3 +110,11 @@ const BurgerWrapper = styled.div`
     display: none;
   }
 `;
+
+/**
+ * Background:
+ *  background: #848181;
+ * Text:
+ * background:  #232121;
+ * 
+ */

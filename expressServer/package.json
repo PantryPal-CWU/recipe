@@ -1,0 +1,17 @@
+{
+  "name": "expressServer",
+  "version": "1.0.0",
+  "description": "User Database",
+  "main": "userDB.js",
+  "scripts": {
+    "startExpress": "node userDB.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}

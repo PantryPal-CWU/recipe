@@ -1,12 +1,12 @@
 # cloudbuild.yaml
 
 steps:
-- name: node:10.15.1
+- name: node:14.15.4
   entrypoint: npm
   args: ["install"]
-- name: node:10.15.1
+- name: node:14.15.4
   entrypoint: npm
-  args: ["run", "build"]
+  args: ["run", "startServer"] #TEST originally build
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
 timeout: "1600s"
