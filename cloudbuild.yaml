@@ -6,10 +6,7 @@ steps:
   args: ["install"]
 - name: node:14.15.4
   entrypoint: npm
-  args: ["run", "build"]
-  name: node:14.15.4 #TEST
-  entrypoint: npm #TEST
-  args: ["start"] #TEST
+  args: ["run", "startServer"] #TEST originally build
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
 timeout: "1600s"
