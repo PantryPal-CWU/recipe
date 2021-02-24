@@ -30,7 +30,6 @@
     "startReact": "react-scripts start",
     "startServer": "cd expressServer && npm run startExpress",
     "start": "concurrently --kill-others \"npm run startReact\" \"npm run startServer\"",
-    "start": "node.userDB.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
