@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.6.2",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.6.0",
+    "puppeteer": "^7.0.4",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-cookies": "^0.1.1",
