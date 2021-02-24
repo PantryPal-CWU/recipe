@@ -26,8 +26,8 @@ class Home extends React.Component {
               />
               <Carousel.Caption>
                 <h1 style={{ fontSize: 70 }}> Welcome to PantryPal</h1>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <h3>Just add ingredients and we will match you with recipes!</h3>
+                
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -37,8 +37,8 @@ class Home extends React.Component {
                 alt="Third slide"
               />
               <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h1 style={{ fontSize: 70 }}> Create a profile</h1>
+                <h3>Save Recipes and your Preferences</h3>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -48,8 +48,8 @@ class Home extends React.Component {
                 alt="Third slide"
               />
               <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <h1 style={{ fontSize: 70, color: 'black' }}> Need Help? </h1>
+                <h3 style={{ color: 'black' }}> Contact us </h3>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
