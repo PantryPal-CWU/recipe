@@ -78,7 +78,30 @@ class Profile extends React.Component {
                         <Modal.Header closeButton>
                             <Modal.Title>Edit Profile</Modal.Title>
                         </Modal.Header>
-                        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                        <Form.Group>
+                            <Form.Label>Name: </Form.Label> 
+                            <Form.Control type="text" placeholder="First Name Last Name" />
+                            <Form.Label>Email: </Form.Label>
+                            <Form.Control type="text" placeholder="name@example.com"/>
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" placeholder="Password"/>
+                            <Form.Label>Dietary Preferences</Form.Label>
+                            <Form.Check type="checkbox"
+                                    label="Vegetarian"
+                                    name="checkboxes"
+                                    id="checkbox1"
+                                />
+                                <Form.Check type="checkbox"
+                                    label="Vegan"
+                                    name="checkboxes"
+                                    id="checkbox2"
+                                />
+                                <Form.Check type="checkbox"
+                                    label="Gluten Free"
+                                    name="checkboxes"
+                                    id="checkbox3"
+                                />
+                        </Form.Group>
                         <Modal.Footer>
                             <Button variant="secondary" onClick={this.handleClose}>
                                 Close
