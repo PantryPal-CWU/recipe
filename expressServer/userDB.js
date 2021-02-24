@@ -36,6 +36,9 @@ connection.connect(err => {
 
 app.use(cors());
 
+//Serve files through express
+app.use(express.static(__dirname + '/public/build'));
+
 //app.json can be used to get an api for ingredients on here, for now it says this
 app.get('/', (req, res) => {
   res.send('What are you doing here!');

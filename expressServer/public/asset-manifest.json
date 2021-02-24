@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e2b8b6df.chunk.css",
+    "main.js": "/static/js/main.36877dde.chunk.js",
+    "main.js.map": "/static/js/main.36877dde.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f463ca81.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f463ca81.js.map",
+    "static/css/2.150d169a.chunk.css": "/static/css/2.150d169a.chunk.css",
+    "static/js/2.97a64829.chunk.js": "/static/js/2.97a64829.chunk.js",
+    "static/js/2.97a64829.chunk.js.map": "/static/js/2.97a64829.chunk.js.map",
+    "static/js/3.bf878c08.chunk.js": "/static/js/3.bf878c08.chunk.js",
+    "static/js/3.bf878c08.chunk.js.map": "/static/js/3.bf878c08.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.e2b8b6df.chunk.css.map": "/static/css/main.e2b8b6df.chunk.css.map",
+    "static/js/2.97a64829.chunk.js.LICENSE.txt": "/static/js/2.97a64829.chunk.js.LICENSE.txt",
+    "static/media/cooking-5880136_1920.414e3f8f.jpg": "/static/media/cooking-5880136_1920.414e3f8f.jpg",
+    "static/media/food-2068217_1920.c8e0efcc.jpg": "/static/media/food-2068217_1920.c8e0efcc.jpg",
+    "static/media/logo.5d3cea31.png": "/static/media/logo.5d3cea31.png",
+    "static/media/mediterranean-cuisine-2378758_1920.5eee147b.jpg": "/static/media/mediterranean-cuisine-2378758_1920.5eee147b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f463ca81.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.97a64829.chunk.js",
+    "static/css/main.e2b8b6df.chunk.css",
+    "static/js/main.36877dde.chunk.js"
+  ]
+}
