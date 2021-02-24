@@ -8,6 +8,8 @@ handlers:
 - url: /
   static_files: build/index.html
   upload: build/index.html
+  script: App.js #originally auto
+  secure: always #originally not present
 - url: /
   static_dir: build
 
