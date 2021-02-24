@@ -1,33 +1,33 @@
-/*
-File: AccountServices.js
-?: This is where our user registration, login authentication, and hashing passwords occur. 
-*/
+// /*
+// File: AccountServices.js
+// ?: This is where our user registration, login authentication, and hashing passwords occur. 
+// */
 
-// import React, { useState, createContext } from 'react';
-// import { useLoginStatus } from '../../LoginContext'
-import { useEffect, useState } from 'react';
-const bcrypt = require('bcryptjs');
-const sql = require("../../userDB.js");
+// // import React, { useState, createContext } from 'react';
+// // import { useLoginStatus } from '../../LoginContext'
+// import { useEffect, useState } from 'react';
+// const bcrypt = require('bcryptjs');
+// const sql = require("../../userDB.js");
 
 
 
-//Export the functions
-export {
-    authenticate,
-    register
-};
+// //Export the functions
+// export {
+//     authenticate,
+//     register
+// };
 
-//Test user
-const adminUser = {
-    name: "Alek",
-    email: "test@test.test",
-    password: "12345"
-}
+// //Test user
+// const adminUser = {
+//     name: "Alek",
+//     email: "test@test.test",
+//     password: "12345"
+// }
 
-//Currently empty, but this is where registering users will occur. Need backend
-async function register(name, email, password) {
+// //Currently empty, but this is where registering users will occur. Need backend
+// async function register(name, email, password) {
     
-}
+// }
 
 //Determines if params email and password match users in our database.
 //Currently only compares to the test case! 
@@ -59,28 +59,28 @@ async function register(name, email, password) {
 //              bcrypt.compare(password, hashedPassword);
 //But for our purposes, we can search our database for the username then use this compare! 
 //This would be done in authenticate
-const hash = (password, saltRounds = 10) => {
-    try {
-        // create salt
-        const salt = bcrypt.genSaltSync(saltRounds);
+// const hash = (password, saltRounds = 10) => {
+//     try {
+//         // create salt
+//         const salt = bcrypt.genSaltSync(saltRounds);
 
-        // Hash
-        return bcrypt.hashSync(password, salt);
-    } catch (error) {
-        console.log(error);
-    }
+//         // Hash
+//         return bcrypt.hashSync(password, salt);
+//     } catch (error) {
+//         console.log(error);
+//     }
     
-    return null;
-}
+//     return null;
+// }
 
-const compareHash = (cmpMe, hashed) => {
-    bcrypt.compare(cmpMe, hashed, (err, isMatch) => {
-        if(err) {
-            throw err;
-        } else if (!isMatch) {
-            return false;
-        } else {
-            return true;
-        }
-    })
-};
+// const compareHash = (cmpMe, hashed) => {
+//     bcrypt.compare(cmpMe, hashed, (err, isMatch) => {
+//         if(err) {
+//             throw err;
+//         } else if (!isMatch) {
+//             return false;
+//         } else {
+//             return true;
+//         }
+//     })
+// };
