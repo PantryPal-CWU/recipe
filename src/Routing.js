@@ -11,8 +11,8 @@ import About from "./components/About/About.js";
 import Profile from './components/Profile/Profile.js';
 
 
-import SearchPage from "./components/Ingredients/Ingredients.js";
-import Pantry from "./components/Pantry/Pantry.js";
+import SearchPage from "./components/Search/Search.js";
+
 
 
 export function Routing() {
@@ -48,13 +48,10 @@ export function Routing() {
                     <About />
                 </Route>
 
-                <Route path="/Ingredients/Ingredients.js">
+                <Route path="/Search/Search.js">
                     <SearchPage />
                 </Route>
 
-                <Route path="/Pantry/Pantry.js">
-                    <Pantry />
-                </Route>
                 <Route path="/Profile/Profile.js">
                     <Profile />
                 </Route>
