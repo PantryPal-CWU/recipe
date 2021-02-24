@@ -22,9 +22,9 @@ const CollapseMenu = (props) => {
       >
         <NavLinks>
           <li><a href="../pages/Home.js" onClick={props.handleNavbar}>Home</a></li>
-          <li><a href="../pages/Pantry.js" onClick={props.handleNavbar}>Your Pantry</a></li>
-          <li><a href="../Ingredients/Ingredients.js" onClick={props.handleNavbar}>Add Ingredients</a></li>
-          <li><a href="../About/About.js" onClick={props.handleNavbar}>About / Contact</a></li>
+          
+          <li><a href="../Ingredients/Ingredients.js" onClick={props.handleNavbar}>Search</a></li>
+          <li><a href="../About/About.js" onClick={props.handleNavbar}>Contact</a></li>
           <li><a href="../Profile/Profile.js" onClick={props.handleNavbar}>Profile</a></li>
           <li>{(loginStatus === undefined) ? <a href="../login" onClick={props.handleNavbar}>Login</a> 
             : <a href="../signout" onClick={props.handleNavbar}>Sign out</a>}</li>
