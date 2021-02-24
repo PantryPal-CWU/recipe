@@ -1,0 +1,33 @@
+
+.footPage{
+    font-size: 150%;
+    text-align: center;
+    position: relative;
+    background: #BE5000;
+    left: 0%;
+    right: 0%;
+    height: auto;
+    bottom: 0%;
+    padding: 10px;
+}
+.footRow{
+column-count: 2;
+padding-left: 50px;
+padding-right: 50px;
+}
+.footCont{
+    color: rgb(48, 48, 48);
+    font-size: 100%;
+    text-align: center;
+    margin: 5px;
+}
+.footer{
+    margin-top: 15px;
+    font-size: 120%;
+}
+a {
+    color: rgb(19, 14, 14)
+}
+a:hover{
+    color:  #742c00;
+}

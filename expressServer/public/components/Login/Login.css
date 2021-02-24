@@ -1,0 +1,74 @@
+/*
+File: Login.css
+?: Styling for components in Login. 
+*/
+.formEntry {
+    background: rgb(226, 226, 226);
+    margin: auto;
+    font-size: 14px;
+    display: block;
+    width: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    border: 1px solid #5e5e5e;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    top: 50px;
+    left: 5px;
+    right: 5px;
+    bottom: 6000px;
+    min-width: 600px;
+}
+.formEntry h1 {
+    text-align: center;
+
+}
+.nobottomborder { 
+    border-bottom: none;
+}
+.notopborder {
+    border-top: none;
+}
+#submitButton { 
+    margin: 2%;
+    padding: 5px;
+}
+.signOut {
+    padding: 20px;
+    position: relative;
+    top: 50px;
+    left: 5px;
+    right: 5px;
+    bottom: 6000px;
+}
+.form-format{
+    padding-top: 100px;
+    background-color: #cfd3c2;
+    height: 90vh;
+    margin-left: 100px;
+    margin-right: 100px;
+    min-width: 800px;
+}
+.why{
+    border: none;
+    background: #cfd3c2;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+.why-title{
+    font-size: 250%;
+    border-bottom: 1px solid rgb(155, 155, 155);
+    background: #cfd3c2;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.why-text{
+    font-size: 150%;
+    margin-top: 10px;
+    background: #cfd3c2;
+    height: 40px;
+}

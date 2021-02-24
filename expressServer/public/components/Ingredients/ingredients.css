@@ -1,0 +1,12 @@
+.search_bar{
+    margin: auto;
+  
+    display: block;
+    width: 60%;
+    padding: 20px;
+    position: relative;
+    top: 50px;
+    left: 5px;
+    right: 5px;
+    bottom: 6000px;
+}

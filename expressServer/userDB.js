@@ -2,6 +2,7 @@ const mysql = require('mysql');
 const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
+const path = require('path');
 
 
 const app = express();
@@ -37,12 +38,13 @@ connection.connect(err => {
 app.use(cors());
 
 //Serve files through express
-app.use(express.static(__dirname + '/public/build'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //app.json can be used to get an api for ingredients on here, for now it says this
-app.get('/', (req, res) => {
-  res.send('What are you doing here!');
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
+
 
 app.get('/signup', (req, res) => {
   const { email, password } = req.query;
