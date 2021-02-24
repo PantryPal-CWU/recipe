@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import SearchBar from './IngredientsForm';
+import SearchBar from './SearchForm';
 //import IngredientList from './IngredientsList'
 
 
