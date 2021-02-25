@@ -3,6 +3,7 @@ instance_class: F2
 
 handlers:
 - url: /.*
+  script: auto
   script: npm run startServer #originally auto
   secure: always #originally not present
 # - url: /
