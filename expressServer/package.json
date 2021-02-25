@@ -2,7 +2,7 @@
   "name": "expressServer",
   "version": "1.0.0",
   "description": "User Database",
-  "main": "userDB.js",
+  "main": "index.js",
   "scripts": {
     "startExpress": "node index.js"
   },
