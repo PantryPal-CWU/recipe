@@ -166,8 +166,5 @@ const hash = (password, saltRounds = 10) => {
   return null;
 }
 
-<<<<<<< HEAD
 export default app1;
-=======
-exports.users=app1
->>>>>>> 2e6e40ba614896b0b5f96297a88725f0698eab94
+
