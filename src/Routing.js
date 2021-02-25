@@ -48,7 +48,11 @@ export function Routing() {
                     <About />
                 </Route>
 
-                <Route path="/Search/Search.js">
+                {/* <Route path="/Search/Search.js">
+                    <SearchPage />
+                </Route> */}
+
+                <Route path="/Ingredients/Ingredients.js">
                     <SearchPage />
                 </Route>
 
