@@ -15,12 +15,10 @@ class About extends React.Component {
     return (
       <div className = "main">
         
-        <div className="title">
-          <h1> About Us </h1>
-        </div>
-
-      <div className="break"></div>
       <div className="page">
+        <div className="title">
+          About Us
+        </div>
 
       <div className="row">
           <Card className="content">

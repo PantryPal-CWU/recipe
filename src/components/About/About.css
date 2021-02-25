@@ -8,27 +8,26 @@ File: About.css
 }
 
 .title{
-    background: #9ba181;
-    font-size: 400%;
+    font-size: 40px;
     text-align: center;
-    width: 100%;
     color:black;
-    padding: 15px;
-    margin-top: 0px;
-    position: fixed;
     z-index: 1;
-    padding-top: 65px;
+    
+    color: rgb(0, 0, 0);
+    font-style: oblique;
+    font-family: 'Times New Roman', Times, serif
 }
 
 
 .page{
-    top:0%;
-    background: #cfd3c2;
+    padding-top: 60px;
+    background: #dbdfcd;
     height: auto;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 0 auto;
+    width: 70%;
     z-index: 0;
     min-width: 550px;
+    max-width: 1400px;
     
 }
 

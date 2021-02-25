@@ -22,8 +22,8 @@ function Login() {
     return (
         (!isChecking) ? 
             <div className="main">
-                <div className="title"> <h1> Log In </h1> </div>
                 <div className="form-format">
+                <div className="title">Log In</div>
                     <LoginForm setEmail={setEmail} setPassword={setPassword} setCheckFlag={setCheckFlag} /> 
                     <div className="why">
                         <div className="why-title">Why have an account with Pantry Pal</div>

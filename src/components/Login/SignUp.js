@@ -16,8 +16,8 @@ function SignUp() {
     return (
         (!isChecking) ?
             <div className="main">
-            <div className="title"> <h1> Sign Up </h1> </div>
                 <div className="form-format">
+                <div className="title"> Sign Up </div>
                     <SignUpForm setEmail={setEmail} setPassword={setPassword} setCheckFlag={setCheckFlag} />
                 </div>
             </div>

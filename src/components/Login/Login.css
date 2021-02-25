@@ -14,11 +14,11 @@ File: Login.css
     justify-content: center;
     padding: 20px;
     position: relative;
-    top: 50px;
+    top: 30px;
     left: 5px;
     right: 5px;
     bottom: 6000px;
-    min-width: 600px;
+    min-width: 500px;
 }
 .formEntry h1 {
     text-align: center;
@@ -43,16 +43,16 @@ File: Login.css
     bottom: 6000px;
 }
 .form-format{
-    padding-top: 100px;
-    background-color: #cfd3c2;
+    padding-top: 60px;
+    background: #dbdfcd;
     height: 90vh;
-    margin-left: 100px;
-    margin-right: 100px;
-    min-width: 800px;
+    min-width: 700px;
+    max-width: 1400px;
+    width: 70%;
+    margin: 0 auto;
 }
 .why{
     border: none;
-    background: #cfd3c2;
     margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 20px;
@@ -62,13 +62,11 @@ File: Login.css
 .why-title{
     font-size: 250%;
     border-bottom: 1px solid rgb(155, 155, 155);
-    background: #cfd3c2;
     margin-left: 50px;
     margin-right: 50px;
 }
 .why-text{
     font-size: 150%;
     margin-top: 10px;
-    background: #cfd3c2;
     height: 40px;
 }
