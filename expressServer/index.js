@@ -1,5 +1,5 @@
 /*
-File: UserDB.js
+File: index.js
 ?: This contains express js code that allows access to UserBase and serves react files
 Utilizes ports:
 4001: Front End React

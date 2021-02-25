@@ -5,19 +5,17 @@ import SearchBar from './SearchForm';
 
 
 const SearchPage = () => {
-  state = {
-      searchTerm = ''
-  }
+  const [searchTerm, setSearchTerm] = useState("");
 
-  editSearchTerm = (e) =>{
-      this.state({searchTerm: e.target.value});
-  }
+//   const editSearchTerm = (e) => {
+      
+//   }
 
   return(
-      <div style={{textAlign: 'center', paddingBottom: '40px'}}>
-          <input type='text' value={this.state.searchTerm} onChange={this.editSearchTerm} placeholder = 'Search for recipe'/>
+      <div style={{textAlign: 'center', paddingBottom: '40px', marginTop: '60px'}}>
+          <input type='text' value={searchTerm} onChange={e => setSearchTerm(e.target.value)} placeholder = 'Search for recipe' />
           <br></br>
-          <h3>Search Results: </h3>
+          <h3>Search Results: {searchTerm} </h3>
       </div>
   );
 }
