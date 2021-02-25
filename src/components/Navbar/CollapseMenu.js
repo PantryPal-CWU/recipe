@@ -7,22 +7,22 @@ import { useLoginStatus } from '../../LoginContext'
 
 const CollapseMenu = (props) => {
 
-  const { open } = useSpring({ open: props.navbarState ? 0 : 1 });
+  //const { open } = useSpring({ open: props.navbarState ? 0 : 1 });
 
   const { loginStatus } = useLoginStatus();
 
   if (props.navbarState === true) {
     return (
-      <CollapseWrapper style={{
+      <CollapseWrapper /*style={{
         transform: open.interpolate({
           range: [0, 0.2, 0.3, 1],
           output: [0, -20, 0, -200],
         }).interpolate(openValue => `translate3d(0, ${openValue}px, 0`),
-      }}
+      }}*/
       >
         <NavLinks>
           <li><a href="../pages/Home.js" onClick={props.handleNavbar}>Home</a></li>
-          <li><a href="../Ingredients/Ingredients.js" onClick={props.handleNavbar}>Search</a></li>
+          <li><a href="../Search/Search.js" onClick={props.handleNavbar}>Search</a></li>
           <li><a href="../About/About.js" onClick={props.handleNavbar}>Contact</a></li>
           <li><a href="../Profile/Profile.js" onClick={props.handleNavbar}>Profile</a></li>
           <li>{(loginStatus === undefined) ? <a href="../login" onClick={props.handleNavbar}>Login</a> 

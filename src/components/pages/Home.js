@@ -16,20 +16,25 @@ class Home extends React.Component {
       <div className="main">
         <Container className="container-fluid" >
           <div style={{ padding: 50 }}></div>
-          <Carousel className="d-block w-100px">
+          <Carousel className="d-block w-100px" onClick={search}>
+            
             <Carousel.Item>
+              
               <img
                 className="d-block w-100"
                 src={img3}
                 alt="First slide"
-
+                href="../Search/Search.js"
               />
+              
               <Carousel.Caption>
                 <h1 style={{ fontSize: 70 }}> Welcome to PantryPal</h1>
                 <h3>Just add ingredients and we will match you with recipes!</h3>
                 
               </Carousel.Caption>
+              
             </Carousel.Item>
+            
             <Carousel.Item>
               <img
                 className="d-block w-100"
@@ -59,7 +64,9 @@ class Home extends React.Component {
     );
   }
 }
-
+function search() {
+  
+}
 export default Home;
 
 
