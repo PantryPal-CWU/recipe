@@ -31,7 +31,7 @@ const Navbar = (props) => {
           <Brand />
           <NavLinks style={linkAnimation}>
             <a href="../pages/Home.js" onClick={props.handleNavbar}>Home</a>          
-            <a href="../Ingredients/Ingredients.js" onClick={props.handleNavbar}>Search</a>
+            <a href="../Search/Search.js" onClick={props.handleNavbar}>Search</a>
             <a href="../About/About.js" onClick={props.handleNavbar}>Contact</a>
             <a href="../Profile/Profile.js" onClick={props.handleNavbar}>Profile</a>
             {(loginStatus === undefined) ? <a href="../login" onClick={props.handleNavbar}>Login</a>          

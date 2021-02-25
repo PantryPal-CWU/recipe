@@ -73,7 +73,7 @@ class Profile extends React.Component {
                                 />
                                 <Button variant="primary" onClick={this.handleShow}  >
                                     Edit
-                        </Button>
+                                </Button>
                             </Form.Group>
                         </Form>
                     </Container>
