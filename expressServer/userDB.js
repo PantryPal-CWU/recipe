@@ -166,4 +166,4 @@ const hash = (password, saltRounds = 10) => {
   return null;
 }
 
-connection.end()
+exports.users=app1
