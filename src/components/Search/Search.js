@@ -5,7 +5,7 @@ import React, {useState, useEffect} from 'react';
 class SearchPage extends Component{
 
     state = {
-        searchTerm = ''
+        searchTerm: ''
     }
 
     editSearchTerm = (e) =>{
