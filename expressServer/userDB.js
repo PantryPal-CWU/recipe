@@ -165,3 +165,5 @@ const hash = (password, saltRounds = 10) => {
   
   return null;
 }
+
+export default app1;
