@@ -37,12 +37,7 @@ const Navbar = (props) => {
             {(loginStatus === undefined) ? <a href="../login" onClick={props.handleNavbar}>Login</a>          
             : <a href="../signout" onClick={props.handleNavbar}>Sign Out</a>}
           </NavLinks>
-          <BurgerWrapper>
-            <BurgerMenu
-              navbarState={props.navbarState} 
-              handleNavbar={props.handleNavbar}
-            />
-          </BurgerWrapper>
+          
         </FlexContainer>
       </NavBar>
       <CollapseMenu 
@@ -118,3 +113,13 @@ const BurgerWrapper = styled.div`
  * background:  #232121;
  * 
  */
+/* 
+Burger menu wrapper if we add it back
+
+<BurgerWrapper>
+            <BurgerMenu
+              navbarState={props.navbarState} 
+              handleNavbar={props.handleNavbar}
+            />
+          </BurgerWrapper>
+          */
