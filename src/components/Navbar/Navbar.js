@@ -40,11 +40,7 @@ const Navbar = (props) => {
           
         </FlexContainer>
       </NavBar>
-      <CollapseMenu 
-        navbarState={props.navbarState} 
-        handleNavbar={props.handleNavbar}
-        loggedIn={props.loggedIn}
-      />
+      
    </>
    
   )
@@ -122,4 +118,10 @@ Burger menu wrapper if we add it back
               handleNavbar={props.handleNavbar}
             />
           </BurgerWrapper>
-          */
+          
+<CollapseMenu 
+        navbarState={props.navbarState} 
+        handleNavbar={props.handleNavbar}
+        loggedIn={props.loggedIn}
+      />          
+*/
