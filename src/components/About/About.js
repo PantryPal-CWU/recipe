@@ -61,8 +61,10 @@ class About extends React.Component {
 
         <Card className="content">
         <Card.Title className="name"> Kirsten </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
+            <Card.Text className="text"> I am a Senior at CWU  and was responsible for React, 
+            Bootstrap, and styling of the site. I have a major in CS and my minor in Maths. I am 
+            graduating winter 2022. I have really enjoyed learning React for this project and seeing 
+            how different it is to Angular2.0.</Card.Text>
             <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
         </div>
