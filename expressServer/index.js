@@ -151,6 +151,7 @@ app2.get('/signout', (req, res) => {
   
 });
 
+
 //Hash password using bcrypt 
 const hash = (password, saltRounds = 10) => {
   try {
