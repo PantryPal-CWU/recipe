@@ -29,6 +29,16 @@ const GlobalStyles = createGlobalStyle`
     min-height: 87vh;
     z-index: -20;
   }
+  .mainInside {
+    background: #dbdfcd;
+    height: auto;
+    min-height: 87vh;
+    margin: 0 auto;
+    width: 80%;
+    z-index: 0;
+    min-width: 550px;
+    max-width: 1400px;
+  }
 `;
 
 export default GlobalStyles;
