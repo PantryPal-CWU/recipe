@@ -15,7 +15,6 @@ class Home extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    // const loginStatus = this.context;
     this.state = {
       loginStatus: this.context
     }
@@ -54,7 +53,7 @@ class Home extends React.Component {
                 alt="Third slide"
               />
               <Carousel.Caption>
-                {(this.state.loginStatus !== undefined) ? 
+                {(this.state.loginStatus === undefined) ? 
                 <>
                 <h1 style={{ fontSize: 70 }}> Check Out Your Profile </h1>
                 <h3><a href="/Profile/Profile.js" style={{color: 'white'}}>Save Recipes and your Preferences</a></h3>
