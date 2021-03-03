@@ -5,8 +5,7 @@ import img2 from "../images/food-2068217_1920.jpg";
 import img3 from "../images/mediterranean-cuisine-2378758_1920.jpg";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import styled from 'styled-components';
+
 
 
 
@@ -29,7 +28,7 @@ class Home extends React.Component {
               
               <Carousel.Caption>
                 <h1 style={{ fontSize: 70 }}> Welcome to PantryPal</h1>
-                <h3>Just add ingredients and we will match you with recipes!</h3>
+                <h3><a href="../Search/Search.js" style={{color: 'white'}} >Just add ingredients and we will match you with recipes! </a></h3>
                 
               </Carousel.Caption>
               
@@ -42,8 +41,9 @@ class Home extends React.Component {
                 alt="Third slide"
               />
               <Carousel.Caption>
+                
                 <h1 style={{ fontSize: 70 }}> Create a profile</h1>
-                <h3>Save Recipes and your Preferences</h3>
+                <h3><a href="" style={{color: 'white'}}>Save Recipes and your Preferences</a></h3>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -53,8 +53,8 @@ class Home extends React.Component {
                 alt="Third slide"
               />
               <Carousel.Caption>
-                <h1 style={{ fontSize: 70, color: 'black' }}> Need Help? </h1>
-                <h3 style={{ color: 'black' }}> Contact us </h3>
+                <h1 style={{ fontSize: 70, color: 'black' }}>Need Help?  </h1>
+                <h3 style={{ color: 'black' }}>  <a href="../About/About.js">Contact us</a> </h3>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
