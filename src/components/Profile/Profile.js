@@ -15,6 +15,7 @@ import ModalTitle from "react-bootstrap/ModalTitle";
 
 
 
+
 class Profile extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -40,6 +41,7 @@ class Profile extends React.Component {
         return (
             <>
                 <Main>
+                    <MainInside>
                     <FloatChild1>
                         <Container fluid style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: 20 }}>
 
@@ -92,6 +94,7 @@ class Profile extends React.Component {
                         </Button>
                         </Modal.Footer>
                     </Modal>
+                    </MainInside>
                 </Main>
             </>
         )
@@ -100,8 +103,9 @@ class Profile extends React.Component {
 export default Profile;
 
 const Main = styled.div `
+    background-color: #eef0e8;
     min-height: 87vh;
-    padding-top: 60px;
+    z-index: -20;
 `;
 
 const FloatChild1 = styled.div `
@@ -116,7 +120,17 @@ const FloatChild2 = styled.div `
     padding-left: 10%;
     
 `;
-
+const MainInside = styled.div `
+    padding-top 70px;
+    background: #dbdfcd;
+    height: auto;
+    min-height: 87vh;
+    margin: 0 auto;
+    width: 80%;
+    z-index: 0;
+    min-width: 550px;
+    max-width: 1400px;
+`;
 
 /*
 <Form.Label>Dietary Preferences</Form.Label>
