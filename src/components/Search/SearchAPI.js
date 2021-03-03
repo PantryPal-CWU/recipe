@@ -18,7 +18,7 @@ export default function SearchAPI({ searchTerm, setResults, setSearching }) {
                 .then(res => {
                     let found = [];
                     for(let i in res["data"]["results"]) {
-                        found = [...found, res["data"]["results"][i]]
+                        found = [...found, res["data"]["results"][i]];
                     }
                     // console.log(found);
                     setResults(found);

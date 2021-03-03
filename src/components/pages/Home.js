@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginContext from '../../LoginContext';
 import Carousel from 'react-bootstrap/Carousel';
 import img1 from "../images/cooking-5880136_1920.jpg";
 import img2 from "../images/food-2068217_1920.jpg";
@@ -7,9 +8,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 
 
-
-
 class Home extends React.Component {
+
+  static contextType = LoginContext;
+
+  constructor(props, context) {
+    super(props, context);
+
+    // const loginStatus = this.context;
+    this.state = {
+      loginStatus: this.context
+    }
+
+    console.log(this.state.loginStatus);
+  }
+
   render() {
     return (
       <div className="main">
@@ -41,9 +54,16 @@ class Home extends React.Component {
                 alt="Third slide"
               />
               <Carousel.Caption>
-                
-                <h1 style={{ fontSize: 70 }}> Create a profile</h1>
-                <h3><a href="" style={{color: 'white'}}>Save Recipes and your Preferences</a></h3>
+                {(this.state.loginStatus !== undefined) ? 
+                <>
+                <h1 style={{ fontSize: 70 }}> Check Out Your Profile </h1>
+                <h3><a href="/Profile/Profile.js" style={{color: 'white'}}>Save Recipes and your Preferences</a></h3>
+                </> 
+                : 
+                <>
+                <h1 style={{ fontSize: 70 }}> Create a profile </h1>
+                <h3><a href="/login" style={{color: 'white'}}>Sign Up Here Today!</a></h3>
+                </>}
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>

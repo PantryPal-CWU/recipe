@@ -39,7 +39,7 @@ export function LoginStatusProvider({ children }) {
             const award = await res.json().then(data => {
                 if(!data && cookie.load("email") !== undefined) {
                     
-                    cookie.remove("email", { path: '/', expires: month});
+                    cookie.remove("email", { path: '/', expires: month });
                     
                     setLoginStatus();
                     window.location.reload(false);
@@ -86,3 +86,5 @@ export function LoginStatusProvider({ children }) {
     )
 
 }
+
+export default LoginContext;
