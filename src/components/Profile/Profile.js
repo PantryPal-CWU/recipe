@@ -110,7 +110,7 @@ class Profile extends React.Component {
                         <Modal.Footer>
                             <Button variant="secondary" onClick={this.handleClose}>
                                 Close
-                        </Button>
+                            </Button>
                             <Button variant="primary" onClick={this.handleClose}>
                                 Save Changes
                         </Button>
