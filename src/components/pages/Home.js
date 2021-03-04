@@ -25,7 +25,6 @@ class Home extends React.Component {
   render() {
     return (
       <div className="main">
-        <div className="mainInside">
         <Container className="container-fluid" >
           <div style={{ padding: 50 }}></div>
           <Carousel className="d-block w-100px" onClick={search}>
@@ -54,7 +53,7 @@ class Home extends React.Component {
                 alt="Third slide"
               />
               <Carousel.Caption>
-                {(this.state.loginStatus === undefined) ? 
+                {(this.state.loginStatus["loginStatus"] !== undefined) ? 
                 <>
                 <h1 style={{ fontSize: 70 }}> Check Out Your Profile </h1>
                 <h3><a href="/Profile/Profile.js" style={{color: 'white'}}>Save Recipes and your Preferences</a></h3>
@@ -80,7 +79,6 @@ class Home extends React.Component {
           </Carousel>
         </Container>
         <div style={{ padding: 50 }}></div>
-        </div>
       </div>
     );
   }

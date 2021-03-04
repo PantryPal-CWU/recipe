@@ -202,7 +202,7 @@ app2.get('/getPref', (req, res) => {
 });
 
 app2.get('/removePref', (req, res) => {
-  const { email, title } = req.query;
+  const { email, href } = req.query;
 
   connection.query(SELECT_PREF, (err, results) => {
     if(err) {
@@ -213,13 +213,12 @@ app2.get('/removePref', (req, res) => {
 
       let userPref = JSON.parse(grabUser["UserPreferences"]); 
 
-      userPref = userPref.filter(ele => ele["title"] !== title);
+      userPref = userPref.filter(ele => ele["href"] !== href);
 
       const UPDATE_PREF = `UPDATE UserBase SET UserPreferences = '${JSON.stringify(userPref)}' WHERE Email = '${email}'`;
-
       connection.query(UPDATE_PREF);
-      res.send("Success");
 
+      res.send("Success");
     }
   });
 });
