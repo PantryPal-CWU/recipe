@@ -47,7 +47,7 @@ class App extends Component {
             <Routing />
           </div>
         </LoginStatusProvider>
-        <Footer></Footer>
+        <Footer />
         
      </>
     )

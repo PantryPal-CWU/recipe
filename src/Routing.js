@@ -6,7 +6,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { Login, SignOut, SignUp } from "./components/Login/index";
 import Home from "./components/pages/Home";
-import { useLoginStatus } from './LoginContext'
+import { useLoginStatus } from './LoginContext';
 import About from "./components/About/About.js";
 import Profile from './components/Profile/Profile.js';
 
@@ -17,7 +17,7 @@ import SearchPage from "./components/Search/Search.js";
 
 export function Routing() {
     //To avoid a user accessing the login page while already logged in, we need the status of the login
-    var { loginStatus } = useLoginStatus();
+    let { loginStatus } = useLoginStatus();
 
     //Returns the BrowserRouter
     //You can mimick the conditional such as login if you wanted to have a different component show up in a link

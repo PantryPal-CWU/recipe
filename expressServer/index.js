@@ -35,6 +35,7 @@ const backend = app2.listen(4003, () => {
 //SQL Commands
 const SELECT_USERS = 'SELECT Email, Password FROM UserBase';
 const SELECT_LOGIN = 'SELECT Email, LoginStatus FROM UserBase';
+const SELECT_PREF = 'SELECT Email, UserPreferences FROM UserBase';
 
 //Using mySQL to connect to UserBase
 const connection = mysql.createConnection({
@@ -151,6 +152,77 @@ app2.get('/signout', (req, res) => {
   
 });
 
+//Save, Delete, Retrieve
+
+app2.get('/savePref', (req, res) => {
+  //query recipe title and href
+  const { email, title, href } = req.query;
+
+  const jsonPref = { title: title, href: href };
+
+  connection.query(SELECT_PREF, (err, results) => {
+    if(err) {
+      return res.send(err);
+    } else {
+      const grabUser = results.find(ele => ele['Email']===email);
+
+      let userPref = JSON.parse(grabUser["UserPreferences"]);
+      if(userPref === null || userPref === undefined) {
+        userPref = [];
+        connection.query(`UPDATE UserBase SET UserPreferences = '[]' WHERE Email = '${email}'`);
+      }
+      userPref.push(jsonPref);
+
+      // const INSERT_PREF = `INSERT INTO UserBase (UserPreferences) VALUES('${JSON.stringify(userPref)}')`;
+      const UPDATE_PREF = `UPDATE UserBase SET UserPreferences = '${JSON.stringify(userPref)}' WHERE Email = '${email}'`;
+      connection.query(UPDATE_PREF);
+      // connection.query(INSERT_PREF);
+      return res.send("Success");
+    }
+  });
+
+});
+
+app2.get('/getPref', (req, res) => {
+  //query recipe title and href
+  const { email } = req.query;
+
+  connection.query(SELECT_PREF, (err, results) => {
+    if(err) {
+      return res.send(err);
+    } else {
+      const grabUser = results.find(ele => ele['Email']===email);
+
+      const userPref = JSON.parse(grabUser["UserPreferences"]);
+  
+      return res.send(userPref);
+    }
+  });
+
+});
+
+app2.get('/removePref', (req, res) => {
+  const { email, title } = req.query;
+
+  connection.query(SELECT_PREF, (err, results) => {
+    if(err) {
+      return res.send(err);
+    } else {
+      const grabUser = results.find(ele => ele['Email'] === email);
+      if(grabUser === null || grabUser === undefined) return res.send("Failure to find UserPref");
+
+      let userPref = JSON.parse(grabUser["UserPreferences"]); 
+
+      userPref = userPref.filter(ele => ele["title"] !== title);
+
+      const UPDATE_PREF = `UPDATE UserBase SET UserPreferences = '${JSON.stringify(userPref)}' WHERE Email = '${email}'`;
+
+      connection.query(UPDATE_PREF);
+      res.send("Success");
+
+    }
+  });
+});
 
 //Hash password using bcrypt 
 const hash = (password, saltRounds = 10) => {
@@ -166,5 +238,3 @@ const hash = (password, saltRounds = 10) => {
   
   return null;
 }
-
-

@@ -15,6 +15,7 @@ import ModalTitle from "react-bootstrap/ModalTitle";
 
 
 
+
 class Profile extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -39,57 +40,100 @@ class Profile extends React.Component {
 
         return (
             <>
-                <div className="main">
-                    <Container fluid style={{ paddingTop: 60, display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: 20 }}>
+                <Main>
+                    <MainInside>
+                    <FloatChild1>
+                        <Container fluid style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: 20 }}>
 
-                        <Form>
-                            <h1>Your Profile</h1>
-                            <br />
-                            <Form.Group controlId="formUser">
-                                <Form.Label>Name: </Form.Label>
-                            </Form.Group>
-                            <Form.Group controlId="formEmail">
-                                <Form.Label>Email: </Form.Label>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Password: </Form.Label>
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Dietary Preferences: </Form.Label>
-                                <Form.Check type="checkbox"
-                                    label="Vegetarian"
-                                    name="checkboxes"
-                                    id="checkbox1"
-                                />
-                                <Form.Check type="checkbox"
-                                    label="Vegan"
-                                    name="checkboxes"
-                                    id="checkbox2"
-                                />
-                                <Form.Check type="checkbox"
-                                    label="Gluten Free"
-                                    name="checkboxes"
-                                    id="checkbox3"
-                                />
+                            <Form>
+                                <h1>Your Profile</h1>
+                                <br />
+                                <Form.Group controlId="formUser">
+                                    <Form.Label>Name: </Form.Label>
+                                </Form.Group>
+                                <Form.Group controlId="formEmail">
+                                    <Form.Label>Email: </Form.Label>
+                                </Form.Group>
+                                <Form.Group>
+                                    <Form.Label>Password: </Form.Label>
+                                </Form.Group>
                                 <Button variant="primary" onClick={this.handleShow}  >
-                                    Edit
-                                </Button>
-                            </Form.Group>
-                        </Form>
-                    </Container>
-                    <Modal show={this.state.show} onHide={this.handleClose} >
+                                        Edit
+                                </Button>                              
+                            </Form>
+                        </Container>
+                    </FloatChild1>
+                    <FloatChild2> 
+                        <h1>Your Saved Recipes</h1>
+
+                    </FloatChild2>
+                    <Modal show={this.state.show} onHide={this.handleClose} style={{ fontSize: 20 }}>
                         <Modal.Header closeButton >
                             <Modal.Title>Edit Profile</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
                             <Form.Group>
                                 <Form.Label>Name: </Form.Label>
-                                <Form.Control type="text" placeholder="First Name Last Name" />
+                                <Form.Control type="text" placeholder="First Name Last Name" size="lg" />
+                                <br />
                                 <Form.Label>Email: </Form.Label>
-                                <Form.Control type="text" placeholder="name@example.com" />
+                                <Form.Control type="text" placeholder="name@example.com" size="lg"/>
+                                <br />
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Password" />
-                                <Form.Label>Dietary Preferences</Form.Label>
+                                <Form.Control type="password" placeholder="Password" size="lg"/>
+                                <br />
+                                
+                            </Form.Group>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={this.handleClose}>
+                                Close
+                            </Button>
+                            <Button variant="primary" onClick={this.handleClose}>
+                                Save Changes
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+                    </MainInside>
+                </Main>
+            </>
+        )
+    }
+}
+export default Profile;
+
+const Main = styled.div `
+    background-color: #eef0e8;
+    min-height: 87vh;
+    z-index: -20;
+`;
+
+const FloatChild1 = styled.div `
+    width: 40%;
+    float: left;
+    padding-left: 10%;
+`;
+
+const FloatChild2 = styled.div `
+    width: 40%;
+    float: left;
+    padding-left: 10%;
+    
+`;
+const MainInside = styled.div `
+    padding-top 70px;
+    background: #dbdfcd;
+    height: auto;
+    min-height: 87vh;
+    margin: 0 auto;
+    width: 80%;
+    z-index: 0;
+    min-width: 550px;
+    max-width: 1400px;
+`;
+
+/*
+<Form.Label>Dietary Preferences</Form.Label>
                                 <Form.Check type="checkbox"
                                     label="Vegetarian"
                                     name="checkboxes"
@@ -105,23 +149,52 @@ class Profile extends React.Component {
                                     name="checkboxes"
                                     id="checkbox3"
                                 />
-                            </Form.Group>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button variant="secondary" onClick={this.handleClose}>
-                                Close
-                        </Button>
-                            <Button variant="primary" onClick={this.handleClose}>
-                                Save Changes
-                        </Button>
-                        </Modal.Footer>
-                    </Modal>
-                </div>
-            </>
-        )
-    }
+                                <Form.Check type="checkbox"
+                                    label="Nut Free"
+                                    name="checkboxes"
+                                    id="checkbox4"
+                                    
+                                />
+                                <Form.Check type="checkbox"
+                                    label="Dairy Free"
+                                    name="checkboxes"
+                                    id="checkbox4"
+                                    
+                                /> *//*
 
-}
-export default Profile;
-
-
+                                <Form.Group>
+                                    <Form.Label>Dietary Preferences: </Form.Label>
+                                    <Form.Check type="checkbox"
+                                        label="Vegetarian"
+                                        name="checkboxes"
+                                        id="checkbox1"
+                                        disabled
+                                    />
+                                    <Form.Check type="checkbox"
+                                        label="Vegan"
+                                        name="checkboxes"
+                                        id="checkbox2"
+                                        disabled
+                                    />
+                                    <Form.Check type="checkbox"
+                                        label="Gluten Free"
+                                        name="checkboxes"
+                                        id="checkbox3"
+                                        disabled
+                                    />
+                                    <Form.Check type="checkbox"
+                                        label="Nut Free"
+                                        name="checkboxes"
+                                        id="checkbox4"
+                                        disabled
+                                    />
+                                    <Form.Check type="checkbox"
+                                        label="Dairy Free"
+                                        name="checkboxes"
+                                        id="checkbox4"
+                                        disabled
+                                    />
+                                    <Button variant="primary" onClick={this.handleShow}  >
+                                        Edit
+                                </Button>
+                                </Form.Group>*/
