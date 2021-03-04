@@ -22,7 +22,8 @@ export function LoginStatusProvider({ children }) {
     //So, we can use that as a boolean! 
     //That means loginStatus is going to either be the value of cookie (key=email) or undefined
     const [loginStatus, setLoginStatus] = useState(cookie.load("email"));
-
+    const [userPreferences, setUserPreferences] = useState(cookie.load("UserPreferences"));
+    const [userPreferencesChanged, setUserPreferencesChange] = useState(true);
     //Set expiration to be a month, ~30 days from today
     let month = new Date();
     month.setDate(month.getDate()+30);
@@ -46,9 +47,26 @@ export function LoginStatusProvider({ children }) {
                 }
             });
         };
+
+        const fetchPref = async () => {
+            if(cookie.load("email") === undefined) {
+                if(cookie.load("UserPreferences") !== undefined) {
+                    cookie.remove("UserPreferences", { path: '/', expires: month });
+                }
+                return;
+            }  
+
+            const res = await fetch(`http://localhost:4003/getPref?email=${cookie.load("email")}`);
+            const award = await res.json().then(data => {
+                cookie.save("UserPreferences", data, { path: '/', expires: month });
+            });
+            setUserPreferences();
+        };
+
+
         fetchData();
-       
-    }, [loginStatus]);
+        fetchPref();
+    }, [loginStatus, userPreferencesChanged]);
     
     //This function sets up a cookie to keep track if the user is logged in
     const toggleLoginStatus = (email) => {
@@ -59,7 +77,7 @@ export function LoginStatusProvider({ children }) {
         //Go to your browser's developer tools
         //Access Application (I use Chrome)
         //Then select cookies for http://localhost:3000
-        cookie.save('email', email, { path: '/', expires: month});
+        cookie.save('email', email, { path: '/', expires: month });
         
         //Since we are now logged in, we can just set the login status again which will load the cookie's value!
         setLoginStatus();
@@ -74,10 +92,14 @@ export function LoginStatusProvider({ children }) {
         
     }
 
+    const alertPrefChange = () => {
+        setUserPreferencesChange(!userPreferencesChanged);
+    }
+
     //Outwrapper Login.Context.Provider passes the values of loginStatus, toggleLoginStatus, and toggleOffLoginStatus to children
     return (
         <>
-            <LoginContext.Provider value={{ loginStatus, toggleLoginStatus, toggleOffLoginStatus }}>
+            <LoginContext.Provider value={{ loginStatus, toggleLoginStatus, toggleOffLoginStatus, userPreferences, alertPrefChange }}>
                 
                 {children}
                 
