@@ -44,9 +44,7 @@ class About extends React.Component {
         <Card className="content">
         <Card.Title className="name"> Natalia </Card.Title>
             <Card.Text className="text">I'm a senior at Central Washington University. I am majoring in 
-            Computer Science and minoring in Math. My role as a developer was 
-            creating the web scraper that retrieved data from recipe websites and stored 
-             it in a database to be searched from.</Card.Text>
+            Computer Science and minoring in Math.</Card.Text>
             <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
         </div>
