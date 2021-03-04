@@ -25,7 +25,6 @@ class Home extends React.Component {
   render() {
     return (
       <div className="main">
-        <div className="mainInside">
         <Container className="container-fluid" >
           <div style={{ padding: 50 }}></div>
           <Carousel className="d-block w-100px" onClick={search}>
@@ -80,7 +79,6 @@ class Home extends React.Component {
           </Carousel>
         </Container>
         <div style={{ padding: 50 }}></div>
-        </div>
       </div>
     );
   }
