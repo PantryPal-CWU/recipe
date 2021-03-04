@@ -92,8 +92,9 @@ export function LoginStatusProvider({ children }) {
         
     }
 
-    const alertPrefChange = () => {
-        setUserPreferencesChange(!userPreferencesChanged);
+    const alertPrefChange = (val) => {
+        setUserPreferencesChange(val);
+        console.log("Added Recipe");
     }
 
     //Outwrapper Login.Context.Provider passes the values of loginStatus, toggleLoginStatus, and toggleOffLoginStatus to children

@@ -1,4 +1,5 @@
 import React from 'react';
+import cookie from 'react-cookies';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
@@ -25,15 +26,24 @@ class Profile extends React.Component {
 
         this.state = {
             show: false,
+            preferences: []
         };
     }
 
+    componentDidMount() {
+        if(cookie.load("UserPreferences") === undefined) {
+            this.setState({ show: this.state.show, preferences: [] });
+        } else {
+            this.setState({ show: this.state.show, preferences: cookie.load("UserPreferences") });
+        }
+    }
+
     handleClose() {
-        this.setState({ show: false });
+        this.setState({ show: false, preferences: this.state.preferences });
     }
 
     handleShow() {
-        this.setState({ show: true });
+        this.setState({ show: true, preferences: this.state.preferences });
     }
 
     render() {
@@ -65,7 +75,14 @@ class Profile extends React.Component {
                     </FloatChild1>
                     <FloatChild2> 
                         <h1>Your Saved Recipes</h1>
-
+                        {this.state.preferences.map(ele => {
+                            return (
+                                <>
+                                    <a className="RecipeTitle" href={ele["href"]}>{ele["title"]}</a>
+                                    <br/>
+                                </>
+                            );
+                        })}
                     </FloatChild2>
                     <Modal show={this.state.show} onHide={this.handleClose} style={{ fontSize: 20 }}>
                         <Modal.Header closeButton >
