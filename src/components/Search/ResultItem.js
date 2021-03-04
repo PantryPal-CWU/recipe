@@ -29,7 +29,6 @@ export default function ResultItem({ item, hrefLink }) {
                 <a className="resultItemsLink" href={hrefLink}>
                     <span className="resultItem">{item}</span>
                 </a>
-                <br/>
                 {(cookie.load("email") !== undefined) ? 
                 ((!JSON.stringify(cookie.load("UserPreferences")).includes(item)) ? <button className="saveButton" onClick={saveRecipe}>Save</button> 
                 :

@@ -52,20 +52,30 @@ const SearchPage = () => {
               onChange={e => setSearchTerm(e.target.value)} 
               placeholder = 'Search for recipe' 
             />
-            <button id="submitButtonSearch" onClick={submitHandler}>Submit</button>
+            <button id="submitButtonSearch" onClick={submitHandler}>Search</button>
           </div>
           <div className="results" >
-            Search Results: {results.map(ele => <ResultItem key={ele["href"]} item={ele["title"]} hrefLink={ele["href"]} />)}
-          </div>
+            {(searchedTerm.length !== 0) ? 
+            <div className="nextWrap">
+              {(curPage !== 1) ? 
+                <button onClick={prevPage} className="next">Previous</button>
+              : <></>}
+              <button onClick={nextPage} className="next" >Next</button>
+            </div>
+            :
+            <></>}
+            <div className="resultLabel">Search Results:</div> {results.map(ele => <ResultItem key={ele["href"]} item={ele["title"]} hrefLink={ele["href"]} />)}
+          
           {(searchedTerm.length !== 0) ? 
-          <>
+          <div className="nextWrap">
             {(curPage !== 1) ? 
-              <button onClick={prevPage}>Previous</button>
+              <button onClick={prevPage} className="next">Previous</button>
             : <></>}
-            <button onClick={nextPage}>Next</button>
-          </>
+            <button onClick={nextPage} className="next" >Next</button>
+          </div>
           :
           <></>}
+          </div>
         </div>
       </div>
     </>
