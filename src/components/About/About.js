@@ -36,8 +36,9 @@ class About extends React.Component {
        <div className="row">
         <Card className="content">
         <Card.Title className="name"> Lucas </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
+            <Card.Text className="text"> I am a computer science undergrad and a Junior as Central Washington University. 
+            My main role with this project was page design and styling across the whole site. I really enjoyed working with 
+            the team on this project and I look forward to the furture of my career.</Card.Text>
             <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
 
@@ -45,7 +46,7 @@ class About extends React.Component {
         <Card.Title className="name"> Natalia </Card.Title>
             <Card.Text className="text">I'm a senior at Central Washington University. I am majoring in 
             Computer Science and minoring in Math.</Card.Text>
-            <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+            <Card.Title className="contact"> Contact: Natalia.Gonzalez@cwu.edu </Card.Title>
         </Card>
         </div>
 
@@ -54,7 +55,7 @@ class About extends React.Component {
         <Card.Title className="name"> Jordan </Card.Title>
             <Card.Text className="text"> Here is some informatino about me. I am a person. I do
               things for fun. I like places and things.</Card.Text>
-            <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+            <Card.Title className="contact"> Contact: Jordan.Courvoisier@cwu.edu </Card.Title>
         </Card>
 
         <Card className="content">
@@ -63,7 +64,7 @@ class About extends React.Component {
             Bootstrap, and styling of the site. I have a major in CS and my minor in Maths. I am 
             graduating winter 2022. I have really enjoyed learning React for this project and seeing 
             how different it is to Angular2.0.</Card.Text>
-            <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+            <Card.Title className="contact"> Contact: Kirsten.Boyles@cwu.edu </Card.Title>
         </Card>
         </div>
 
@@ -80,11 +81,10 @@ class About extends React.Component {
         <Card.Title className="name"> Nate </Card.Title>
             <Card.Text className="text"> Here is some informatino about me. I am a person. I do
               things for fun. I like places and things.</Card.Text>
-            <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+            <Card.Title className="contact"> Contact: Nathaniel.Goodman@cwu.edu </Card.Title>
         </Card>
         
         </div>
-        <div style={{padding: 20}}> </div>
         </div>
       </div>
              
