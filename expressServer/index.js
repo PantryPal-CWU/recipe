@@ -218,7 +218,7 @@ app2.get('/removePref', (req, res) => {
       const UPDATE_PREF = `UPDATE UserBase SET UserPreferences = '${JSON.stringify(userPref)}' WHERE Email = '${email}'`;
       connection.query(UPDATE_PREF);
 
-      res.send("Success");
+      res.send(userPref);
     }
   });
 });

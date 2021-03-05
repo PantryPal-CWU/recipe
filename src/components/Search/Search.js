@@ -4,6 +4,7 @@ File: Search.js
 Shows the title of the recipe and a link to go to the recipe.
 */
 import React, { useState, useEffect } from 'react';
+import cookie from 'react-cookies';
 import SearchAPI from './SearchAPI';
 import ResultItem from './ResultItem';
 
