@@ -103,7 +103,7 @@ class Profile extends React.Component {
                             return (
                                 <>
                                     <a className="RecipeTitle" href={ele["href"]} target="_blank" rel="noopener noreferrer">{ele["title"]}</a>
-                                    <a className="removeX" href="javascript:void(0);" onClick={() => this.setState({ selectedRemove: ele["href"] })} target="_blank" rel="noopener noreferrer">X</a>
+                                    <a className="removeX" href="javascript:void(0);" onClick={() => this.setState({ selectedRemove: ele["href"] })}>X</a>
                                     <br/>
                                 </>
                             );
