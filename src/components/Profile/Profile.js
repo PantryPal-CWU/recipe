@@ -23,14 +23,24 @@ class Profile extends React.Component {
 
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.removeItem = this.removeItem.bind(this);
 
         this.state = {
             show: false,
-            preferences: []
+            preferences: [],
+            selectedRemove: null
         };
     }
 
+    componentDidUpdate() {
+        if(this.state.selectedRemove !== null) {
+            this.removeItem(this.state.selectedRemove);
+            this.setState({ selectedRemove: null });
+        }
+    }
+
     componentDidMount() {
+        this.forceUpdate();
         if(cookie.load("UserPreferences") === undefined) {
             this.setState({ show: this.state.show, preferences: [] });
         } else {
@@ -44,6 +54,19 @@ class Profile extends React.Component {
 
     handleShow() {
         this.setState({ show: true, preferences: this.state.preferences });
+    }
+
+    removeItem(href) {
+        
+        const removal = fetch(`http://localhost:4003/removePref?email=${cookie.load("email")}&href=${href}`);
+        let newPref = [];
+        newPref = this.state.preferences.filter(ele => ele["href"] !== href);
+        
+        const month = new Date();
+        month.setDate(month.getDate()+30);
+        cookie.remove("UserPreferences", { path: '/', expires: month });
+        cookie.save("UserPreferences", newPref, { path: '/', expires: month });
+        this.setState({ preferences: cookie.load("UserPreferences") });
     }
 
     render() {
@@ -76,9 +99,11 @@ class Profile extends React.Component {
                     <FloatChild2> 
                         <h1>Your Saved Recipes</h1>
                         {this.state.preferences.map(ele => {
+                            
                             return (
                                 <>
-                                    <a className="RecipeTitle" href={ele["href"]}>{ele["title"]}</a>
+                                    <a className="RecipeTitle" href={ele["href"]} target="_blank" rel="noopener noreferrer">{ele["title"]}</a>
+                                    <a className="removeX" href="javascript:void(0);" onClick={() => this.setState({ selectedRemove: ele["href"] })}>X</a>
                                     <br/>
                                 </>
                             );

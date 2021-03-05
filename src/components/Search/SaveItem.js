@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useLoginStatus } from '../../LoginContext';
 import cookie from 'react-cookies';
 
-export default function SaveItem({ setSaving, item, href }) {
+export default function SaveItem({ setSaving, setChange, change, setText, item, href }) {
 
     const { alertPrefChange } = useLoginStatus();
 
@@ -13,7 +13,7 @@ export default function SaveItem({ setSaving, item, href }) {
                 return;
             }
 
-            if(JSON.stringify(cookie.load("UserPreferences")).includes('"' + item.trim() + '"')) {
+            if(JSON.stringify(cookie.load("UserPreferences")).includes(href) || change) {
                 
                 alert("Item already saved");
                 return;
@@ -24,11 +24,14 @@ export default function SaveItem({ setSaving, item, href }) {
             const data = fetch(`http://localhost:4003/savePref?email=${cookie.load("email")}&title=${item}&href=${href}`);
             //Trigger cookie change
             alertPrefChange((Math.random*92364092740));
+            setChange(true);
+            setText("Saved");
         };
 
 
         saveItem();
         setSaving(false);
+        
     }, []);
 
     return <></>;

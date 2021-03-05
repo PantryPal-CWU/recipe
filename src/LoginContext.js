@@ -28,6 +28,24 @@ export function LoginStatusProvider({ children }) {
     let month = new Date();
     month.setDate(month.getDate()+30);
 
+    useEffect(() => {
+        const fetchPref = async () => {
+            if(cookie.load("email") === undefined) {
+                if(cookie.load("UserPreferences") !== undefined) {
+                    cookie.remove("UserPreferences", { path: '/', expires: month });
+                }
+                return;
+            }  
+
+            const res = await fetch(`http://localhost:4003/getPref?email=${cookie.load("email")}`);
+            const award = await res.json().then(data => {
+                cookie.save("UserPreferences", data, { path: '/', expires: month });
+            });
+            setUserPreferences();
+        };
+        fetchPref();
+    })
+
     //useEffect acts like a React class' ComponentDidMount()
     //Basically, on refresh, useEffect will be called
     //In this useEffect, we are checking if the user is actually logged in
@@ -48,25 +66,10 @@ export function LoginStatusProvider({ children }) {
             });
         };
 
-        const fetchPref = async () => {
-            if(cookie.load("email") === undefined) {
-                if(cookie.load("UserPreferences") !== undefined) {
-                    cookie.remove("UserPreferences", { path: '/', expires: month });
-                }
-                return;
-            }  
-
-            const res = await fetch(`http://localhost:4003/getPref?email=${cookie.load("email")}`);
-            const award = await res.json().then(data => {
-                cookie.save("UserPreferences", data, { path: '/', expires: month });
-            });
-            setUserPreferences();
-        };
-
 
         fetchData();
-        fetchPref();
-    }, [loginStatus, userPreferencesChanged]);
+        
+    }, [loginStatus]);
     
     //This function sets up a cookie to keep track if the user is logged in
     const toggleLoginStatus = (email) => {
