@@ -44,11 +44,7 @@ const connection = mysql.createConnection({
   password: 'password',
   database: 'Recipe'
 });
-connection.connect(err => {
-  if(err) {
-    return err;
-  }
-});
+
 
 //Use cors
 app1.use(cors());
@@ -128,7 +124,7 @@ app2.get('/loginstatus', (req, res) => {
         return res.send(true);
       } 
     } else {
-      res.send(false);
+      return res.send(false);
     }
   });
   // return res.send(false);
@@ -192,10 +188,12 @@ app2.get('/getPref', (req, res) => {
       return res.send(err);
     } else {
       const grabUser = results.find(ele => ele['Email']===email);
-
-      const userPref = JSON.parse(grabUser["UserPreferences"]);
-  
-      return res.send(userPref);
+      
+      if(grabUser === undefined || grabUser === null) {
+        return res.send([]); 
+      }
+      
+      return res.send(grabUser["UserPreferences"]);
     }
   });
 
@@ -218,9 +216,10 @@ app2.get('/removePref', (req, res) => {
       const UPDATE_PREF = `UPDATE UserBase SET UserPreferences = '${JSON.stringify(userPref)}' WHERE Email = '${email}'`;
       connection.query(UPDATE_PREF);
 
-      res.send(userPref);
+      return res.send("Success!");
     }
   });
+
 });
 
 //Hash password using bcrypt 
@@ -237,3 +236,10 @@ const hash = (password, saltRounds = 10) => {
   
   return null;
 }
+
+
+connection.connect(err => {
+  if(err) {
+    return err;
+  }
+});
