@@ -74,8 +74,7 @@ const SearchPage = () => {
             : <></>}
             <button onClick={nextPage} className="next" >Next</button>
           </div>
-          :
-          <></>}
+          : <></>}
           </div>
         </div>
       </div>
