@@ -18,7 +18,12 @@ export default function SearchAPI({ searchTerm, curPage, setResults, setSearchin
                 .then(res => {
                     let found = [];
                     for(let i in res["data"]["results"]) {
-                        found = [...found, res["data"]["results"][i]];
+                        if(!res["data"]["results"][i]["title"].includes('"') 
+                        && !res["data"]["results"][i]["title"].includes("'") 
+                        && !res["data"]["results"][i]["title"].includes('&')) {
+                            found = [...found, res["data"]["results"][i]];
+                        }
+                        
                     }
                     // console.log(found);
                     setResults(found);

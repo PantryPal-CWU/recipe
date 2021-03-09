@@ -212,7 +212,7 @@ app2.get('/removePref', (req, res) => {
       let userPref = JSON.parse(grabUser["UserPreferences"]); 
 
       userPref = userPref.filter(ele => ele["href"] !== href);
-
+    
       const UPDATE_PREF = `UPDATE UserBase SET UserPreferences = '${JSON.stringify(userPref)}' WHERE Email = '${email}'`;
       connection.query(UPDATE_PREF);
 
