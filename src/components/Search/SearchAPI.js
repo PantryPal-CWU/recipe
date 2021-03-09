@@ -14,7 +14,7 @@ export default function SearchAPI({ searchTerm, curPage, setResults, setSearchin
             // console.log(formattedSearch);
             
             
-            axios.get('/api/?i=' + formattedSearch + '&p=' + curPage)
+            axios.get('/api/?i=' + formattedSearch + '&p=' + curPage, { "Access-Control-Allow-Origin": "*" })
                 .then(res => {
                     let found = [];
                     for(let i in res["data"]["results"]) {

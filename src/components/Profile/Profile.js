@@ -45,6 +45,10 @@ class Profile extends React.Component {
             this.setState({ show: this.state.show, preferences: [] });
         } else {
             this.setState({ show: this.state.show, preferences: cookie.load("UserPreferences") });
+            // console.log(this.state.preferences + "HI");
+            // console.log(cookie.load("UserPreferences"))
+            // console.log(typeof cookie.load("UserPreferences"));
+            // console.log(typeof this.state.preferences);
         }
     }
 
