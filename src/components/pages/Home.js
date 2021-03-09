@@ -27,7 +27,8 @@ class Home extends React.Component {
       <div className="main">
         <Container className="container-fluid" >
           <div style={{ padding: 50 }}></div>
-          <Carousel className="d-block w-100px" onClick={search}>    
+          <Carousel className="d-block w-100px" onClick={search}>
+            
             <Carousel.Item>
               
               <img
