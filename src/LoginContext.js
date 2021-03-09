@@ -40,7 +40,8 @@ export function LoginStatusProvider({ children }) {
             const res = await fetch(`http://localhost:4003/getPref?email=${cookie.load("email")}`);
             const award = await res.json().then(data => {
                 cookie.save("UserPreferences", data, { path: '/', expires: month });
-            });
+                
+            }).catch(ele => cookie.save("UserPreferences", [], { path: '/', expires: month }));
             setUserPreferences();
         };
         fetchPref();

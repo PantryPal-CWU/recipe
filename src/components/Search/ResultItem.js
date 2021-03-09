@@ -33,7 +33,6 @@ export default function ResultItem({ item, hrefLink }) {
     }
 
     const checkChange = () => { 
-        console.log(change);
         return (!JSON.stringify(cookie.load("UserPreferences")).includes('"' + hrefLink.trim() + '"') || change);
     }
 
