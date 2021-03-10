@@ -5,6 +5,8 @@ File: About.js
 import './About.css';
 import React from 'react';
 import {Card, Button} from 'react-bootstrap';
+import ReactDOM from 'react-dom';
+
 
 class About extends React.Component {
 
@@ -13,10 +15,12 @@ class About extends React.Component {
     return (
       <div className = "main">
         
-      <div className="page">
         <div className="title">
-          About Us
+          <h1> About Us </h1>
         </div>
+
+      <div className="break"></div>
+      <div className="page">
 
       <div className="row">
           <Card className="content">
@@ -38,14 +42,16 @@ class About extends React.Component {
         <Card.Title className="name"> Lucas </Card.Title>
             <Card.Text className="text"> Here is some informatino about me. I am a person. I do
               things for fun. I like places and things.</Card.Text>
-            <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
 
         <Card className="content">
         <Card.Title className="name"> Natalia </Card.Title>
             <Card.Text className="text">I'm a senior at Central Washington University. I am majoring in 
-            Computer Science and minoring in Math.</Card.Text>
-            <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+            Computer Science and minoring in Math. My role as a developer was 
+            creating the web scraper that retrieved data from recipe websites and stored 
+             it in a database to be searched from.</Card.Text>
+              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
         </div>
 
@@ -54,33 +60,30 @@ class About extends React.Component {
         <Card.Title className="name"> Jordan </Card.Title>
             <Card.Text className="text"> Here is some informatino about me. I am a person. I do
               things for fun. I like places and things.</Card.Text>
-            <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
 
         <Card className="content">
         <Card.Title className="name"> Kirsten </Card.Title>
-            <Card.Text className="text"> I am a Senior at CWU  and was responsible for React, 
-            Bootstrap, and styling of the site. I have a major in CS and my minor in Maths. I am 
-            graduating winter 2022. I have really enjoyed learning React for this project and seeing 
-            how different it is to Angular2.0.</Card.Text>
-            <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
+              things for fun. I like places and things.</Card.Text>
+              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
         </div>
 
         <div className="row">
         <Card className="content">
         <Card.Title className="name"> Alek </Card.Title>
-            <Card.Text className="text"> Yow! I'm a junior majoring Computer Science and I have completed my minor in Math. 
-            I love solving problems. It comes with many mistakes which makes your craft better.
-            (Also... I'm a tetris professional.)</Card.Text>
-            <Card.Title className="contact"> Contact: Alek.Michael@cwu.edu </Card.Title>
+            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
+              things for fun. I like places and things.</Card.Text>
+              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
 
         <Card className="content">
         <Card.Title className="name"> Nate </Card.Title>
             <Card.Text className="text"> Here is some informatino about me. I am a person. I do
               things for fun. I like places and things.</Card.Text>
-            <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
         
         </div>
