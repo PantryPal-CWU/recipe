@@ -47,7 +47,7 @@ export default function ResultItem({ item, hrefLink }) {
                 ((checkChange()) ?
                 <button className="saveButton" onClick={saveRecipe}>{text}</button>
                 :
-                <button ckassName="deleteButton" onClick={removeRecipe}>Remove</button>
+                <button className="deleteButton" onClick={removeRecipe}>Remove</button>
                 )
                 : <></>}
             </div>
