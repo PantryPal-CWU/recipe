@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Modal from 'react-bootstrap/Modal';
+
 import ReactDOM from "react-dom";
 import ModalBody from "react-bootstrap/ModalBody";
 import ModalHeader from "react-bootstrap/ModalHeader";
@@ -111,6 +112,7 @@ class Profile extends React.Component {
                         {this.state.preferences.map(ele => {
                             
                             return (
+<<<<<<< HEAD
                                 <>
                                     {/* <div style={{ 
                                     fontSize: 12, 
@@ -147,6 +149,16 @@ class Profile extends React.Component {
                                     </div>
                                     
                                 </>
+=======
+                                <Recipe>
+                                    <a className="RecipeTitle" href={ele["href"]} target="_blank" rel="noopener noreferrer">{ele["title"]}</a>
+                                    <>
+                                    <button placeholder = 'Search for recipe' className="removeX"  href="javascript:void(0);" onClick={() => this.setState({ selectedRemove: ele["href"] })}>
+                                       <> X </>
+                                    </button>
+                                    </>
+                                </Recipe>
+>>>>>>> 487b59c55631ed49aa1cfa5a7f472dda7c2edae5
                             );
                         })}
                     </FloatChild2>
@@ -212,6 +224,9 @@ const FloatChild2 = styled.div `
     padding-left: 20px;
 `;
 const MainInside = styled.div `
+    grid-gap: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
     padding-top 70px;
     background: #dbdfcd;
     height: auto;
@@ -221,6 +236,21 @@ const MainInside = styled.div `
     z-index: 0;
     min-width: 550px;
     max-width: 1400px;
+`;
+const Recipe = styled.div`
+    grid-gap: 10px;
+    display: grid;
+    grid-template-columns: auto 30px ;
+    height: auto;
+    width: 90%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
+    text-align: left;
+    margin: 15px auto;
+    background-color: rgb(233, 233, 233);
+    padding: 12px;
+    border-radius: 10px;
+    border: .5px solid grey;
+    font-size: 18px;
 `;
 
 /*
