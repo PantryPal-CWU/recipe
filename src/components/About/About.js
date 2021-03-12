@@ -81,13 +81,16 @@ class About extends React.Component {
 
         <Card className="content">
         <Card.Title className="name"> Nate </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
-              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+            <Card.Text className="text"> I'm a junior at Central Washington University pursuing
+            my Bachelor's Degree in Computer Science. I was responsible for the deployment of our
+            application to Google Cloud servers along with any maintenance and upkeep required.
+            I enjoyed stepping out of my comfort zone for this project to gain a better understanding
+            of general web-based architecture.</Card.Text>
+              <Card.Title className="contact"> Contact: goodmann@cwu.edu </Card.Title>
         </Card>
         
         </div>
-        <div style={{padding: 20}}> </div>
+        <div style={{ padding: 20 }}> </div>
         </div>
       </div>
              

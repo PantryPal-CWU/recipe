@@ -13,10 +13,6 @@ import ModalFooter from "react-bootstrap/ModalFooter";
 import ModalTitle from "react-bootstrap/ModalTitle";
 
 
-
-
-
-
 class Profile extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -31,7 +27,8 @@ class Profile extends React.Component {
             selectedRemove: null
         };
     }
-
+    
+    //Transition selected item to be removed
     componentDidUpdate() {
         if(this.state.selectedRemove !== null) {
             this.removeItem(this.state.selectedRemove);
@@ -39,27 +36,26 @@ class Profile extends React.Component {
         }
     }
 
+    //get user preferences
     componentDidMount() {
         this.forceUpdate();
         if(cookie.load("UserPreferences") === undefined) {
             this.setState({ show: this.state.show, preferences: [] });
         } else {
             this.setState({ show: this.state.show, preferences: cookie.load("UserPreferences") });
-            // console.log(this.state.preferences + "HI");
-            // console.log(cookie.load("UserPreferences"))
-            // console.log(typeof cookie.load("UserPreferences"));
-            // console.log(typeof this.state.preferences);
+            console.log(cookie.load("UserPreferences"));
         }
     }
 
     handleClose() {
-        this.setState({ show: false, preferences: this.state.preferences });
+        this.setState({ show: false });
     }
 
     handleShow() {
-        this.setState({ show: true, preferences: this.state.preferences });
+        this.setState({ show: true });
     }
 
+    //Remove selected link 
     removeItem(href) {
         
         const removal = fetch(`http://localhost:4003/removePref?email=${cookie.load("email")}&href=${href}`);
@@ -101,14 +97,55 @@ class Profile extends React.Component {
                         </Container>
                     </FloatChild1>
                     <FloatChild2> 
-                        <h1>Your Saved Recipes</h1>
+                        <h1 style={{ 
+                            borderStyle: 'solid', 
+                            borderRadius: '10px', 
+                            borderWidth: '5px', 
+                            borderBottomStyle: 'double', 
+                            margin: 'auto', 
+                            textAlign: 'center' 
+                            }}>
+                            Your Saved Recipes
+                        </h1>
+
                         {this.state.preferences.map(ele => {
                             
                             return (
                                 <>
-                                    <a className="RecipeTitle" href={ele["href"]} target="_blank" rel="noopener noreferrer">{ele["title"]}</a>
-                                    <a className="removeX" href="javascript:void(0);" onClick={() => this.setState({ selectedRemove: ele["href"] })}>X</a>
-                                    <br/>
+                                    {/* <div style={{ 
+                                    fontSize: 12, 
+                                    borderStyle: 'solid',
+                                    border: 50, 
+                                    bottomBorderWidth: '10px' }}> */
+                                    }
+                                    <div style={{
+                                        borderStyle: 'groove',
+                                        borderTop: 0, 
+                                        fontSize: 12,
+                                        borderBottomStyle: 'groove', 
+                                        }}>
+                                        <span style={{ float: 'left' }}>
+                                            <a className="RecipeTitle" 
+                                            href={ele["href"]} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            style={{ marginRight: '10px' }}
+                                            >
+                                                {ele["title"]}
+                                            </a>
+                                            <span style={{ textAlign: 'center' }}>|</span>
+                                        </span>
+                                        
+                                        <span style={{ fontWeight: 'bolder' }}>
+                                            <a className="removeX" 
+                                            href="javascript:void(0);" 
+                                            onClick={() => this.setState({ selectedRemove: ele["href"] })}
+                                            style={{ marginLeft: '15px' }}>
+                                                Remove
+                                            </a>
+                                        </span>
+                                    </div>
+                                    
                                 </>
                             );
                         })}
@@ -155,16 +192,24 @@ const Main = styled.div `
 `;
 
 const FloatChild1 = styled.div `
-    width: 40%;
+    width: 30%;
     float: left;
     padding-left: 10%;
+    border-style: solid;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 1;
+    border-width: 5px;
+    padding-right: 50px;    
+    margin: auto;
+    
 `;
 
 const FloatChild2 = styled.div `
-    width: 40%;
+    width: 70%;
     float: left;
-    padding-left: 10%;
-    
+    padding-left: 20px;
 `;
 const MainInside = styled.div `
     padding-top 70px;

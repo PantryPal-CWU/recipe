@@ -11,13 +11,14 @@ export default function SearchAPI({ searchTerm, curPage, setResults, setSearchin
     useEffect(() => {
         const fetchResults = () => {
             const formattedSearch = searchTerm.replace(" ", ",");
-            // console.log(formattedSearch);
             
             
             axios.get('/api/?i=' + formattedSearch + '&p=' + curPage, { "Access-Control-Allow-Origin": "*" })
                 .then(res => {
                     let found = [];
                     for(let i in res["data"]["results"]) {
+                        //Titles with quotes break JSON in the SQL, so just ignore them
+                        //Some titles in recipepuppy had weird text like &amp and such, so just ignore anything with & as well
                         if(!res["data"]["results"][i]["title"].includes('"') 
                         && !res["data"]["results"][i]["title"].includes("'") 
                         && !res["data"]["results"][i]["title"].includes('&')) {
@@ -25,7 +26,7 @@ export default function SearchAPI({ searchTerm, curPage, setResults, setSearchin
                         }
                         
                     }
-                    // console.log(found);
+            
                     setResults(found);
                     
                 });

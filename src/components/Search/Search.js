@@ -17,6 +17,11 @@ const SearchPage = () => {
   const [results, setResults] = useState([]);
   const [curPage, setCurPage] = useState();
 
+  //Check if user presses enter in search bar to search
+  const checkEnter = (e) => {
+    if(e["code"] == "Enter") submitHandler();
+  }
+
   //onSubmit we search the API
   const submitHandler = () => {
     if(searchTerm.length === 0) return;
@@ -26,6 +31,7 @@ const SearchPage = () => {
     setSearching(true);
   }
 
+  //Change pages and call search
   const prevPage = () => {
     setCurPage(curPage - 1);
     setSearching(true);
@@ -52,6 +58,7 @@ const SearchPage = () => {
               value={searchTerm} 
               onChange={e => setSearchTerm(e.target.value)} 
               placeholder = 'Search for recipe' 
+              onKeyDown={checkEnter}
             />
             <button id="submitButtonSearch" onClick={submitHandler}>Search</button>
           </div>
