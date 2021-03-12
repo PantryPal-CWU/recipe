@@ -77,10 +77,10 @@ class Profile extends React.Component {
                 <Main>
                     <MainInside>
                     <FloatChild1>
-                        <Container fluid style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: 20 }}>
+                        <Container  style={{  fontSize: 20, width: 300}}>
 
                             <Form>
-                                <h1>Your Profile</h1>
+                                <h1>Your Profile </h1>
                                 <br />
                                 <Form.Group controlId="formUser">
                                     <Form.Label>Name: </Form.Label>
@@ -89,7 +89,7 @@ class Profile extends React.Component {
                                     <Form.Label>Email: </Form.Label>
                                 </Form.Group>
                                 <Form.Group>
-                                    <Form.Label>Password: </Form.Label>
+                                    <Form.Label>Password:   ***********</Form.Label>
                                 </Form.Group>
                                 <Button variant="primary" onClick={this.handleShow}  >
                                         Edit
@@ -176,7 +176,8 @@ class Profile extends React.Component {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password" size="lg"/>
                                 <br />
-                                
+                                <Form.Control type="password" placeholder="Confirm Password" size="lg"/>
+                                <br />
                             </Form.Group>
                         </Modal.Body>
                         <Modal.Footer>
@@ -205,15 +206,9 @@ const Main = styled.div `
 const FloatChild1 = styled.div `
     width: 30%;
     float: left;
-    padding-left: 10%;
-    border-style: solid;
-    border-left: 0;
-    border-top: 0;
-    border-bottom: 0;
-    border-right: 1;
-    border-width: 5px;
-    padding-right: 50px;    
-    margin: auto;
+    padding-left: 35%;
+    padding-top: 2%;   
+    
     
 `;
 
