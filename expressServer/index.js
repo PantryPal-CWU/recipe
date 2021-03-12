@@ -10,6 +10,7 @@ const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const path = require('path');
+const { connect } = require('http2');
 
 //Initialize express apps
 //app1 serves front end, app2 serves results from UserBase
@@ -227,7 +228,7 @@ app2.get('/setName', (req, res) => {
     const { email, name } = req.query;
 
     const UPDATE_EMAIL = `UPDATE UserBase SET Name = '${name}' WHERE Email = '${email}'`;
-    
+
     connection.query(UPDATE_EMAIL, (err, results) => {
         if (err) {
             return res.send(false);
@@ -254,17 +255,33 @@ app2.get('/setEmail', (req, res) => {
 
 //setPassword
 app2.get('/setPassword', (req, res) => {
-    const { email, password } = req.query;
+    const { email, oldPassword, newPassword } = req.query;
 
-    const hashed = hash(password);
+    const hashedNew = hash(newPassword);
+    // const hashedOld = hash(oldPassword);
 
-    const UPDATE_PASSWORD = `UPDATE UserBase SET Password = '${password}' WHERE Email = '${email}'`;
+    const GET_PASSWORD = '';
+    const UPDATE_PASSWORD = `UPDATE UserBase SET Password = '${hashedNew}' WHERE Email = '${email}'`;
 
-    connection.query(UPDATE_PASSWORD, (err, results) => {
+    connection.query(SELECT_USERS, (err, results) => {
         if (err) {
-            return res.send(false);
+            return res.send(err);
         }
-        return res.send(true);
+
+        const grabUser = results.find(ele => ele['Email']===email);
+
+        if (grabUser !== undefined) {
+            const comparison = bcrypt.compareSync(oldPassword, grabUser['Password']);
+            //true
+            if (comparison) {
+                connection.query(UPDATE_PASSWORD);
+                return res.send(true);
+            }
+
+        }
+
+
+        return res.send(false);
     });
 
 });
