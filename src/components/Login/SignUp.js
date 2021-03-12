@@ -12,12 +12,15 @@ function SignUp() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+
+
+
     //If we're not registering, show the form. Else, run Registration
     return (
         (!isChecking) ?
-            <div className="main">
+            <div>
                 <div className="form-format">
-                <div className="title"> Sign Up </div>
+                <div className="loginTitle"> Sign Up </div>
                     <SignUpForm setEmail={setEmail} setPassword={setPassword} setCheckFlag={setCheckFlag} />
                 </div>
             </div>

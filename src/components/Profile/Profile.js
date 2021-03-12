@@ -104,7 +104,8 @@ class Profile extends React.Component {
                             borderWidth: '5px', 
                             borderBottomStyle: 'double', 
                             margin: 'auto', 
-                            textAlign: 'center' 
+                            textAlign: 'center',
+                            backgroundColor: 'rgb(233, 233, 233)'
                             }}>
                             Your Saved Recipes
                         </h1>
@@ -112,44 +113,43 @@ class Profile extends React.Component {
                         {this.state.preferences.map(ele => {
                             
                             return (
-<<<<<<< HEAD
-                                <>
-                                    {/* <div style={{ 
-                                    fontSize: 12, 
-                                    borderStyle: 'solid',
-                                    border: 50, 
-                                    bottomBorderWidth: '10px' }}> */
-                                    }
-                                    <div style={{
-                                        borderStyle: 'groove',
-                                        borderTop: 0, 
-                                        fontSize: 12,
-                                        borderBottomStyle: 'groove', 
-                                        }}>
-                                        <span style={{ float: 'left' }}>
-                                            <a className="RecipeTitle" 
-                                            href={ele["href"]} 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            style={{ marginRight: '10px' }}
-                                            >
-                                                {ele["title"]}
-                                            </a>
-                                            <span style={{ textAlign: 'center' }}>|</span>
-                                        </span>
+                                // Lol why did write all this -- Alek
+                                // <>
+                                //     {/* <div style={{ 
+                                //     fontSize: 12, 
+                                //     borderStyle: 'solid',
+                                //     border: 50, 
+                                //     bottomBorderWidth: '10px' }}> */
+                                //     }
+                                //     <div style={{
+                                //         borderStyle: 'groove',
+                                //         borderTop: 0, 
+                                //         fontSize: 12,
+                                //         borderBottomStyle: 'groove', 
+                                //         }}>
+                                //         <span style={{ float: 'left' }}>
+                                //             <a className="RecipeTitle" 
+                                //             href={ele["href"]} 
+                                //             target="_blank" 
+                                //             rel="noopener noreferrer"
+                                //             style={{ marginRight: '10px' }}
+                                //             >
+                                //                 {ele["title"]}
+                                //             </a>
+                                //             <span style={{ textAlign: 'center' }}>|</span>
+                                //         </span>
                                         
-                                        <span style={{ fontWeight: 'bolder' }}>
-                                            <a className="removeX" 
-                                            href="javascript:void(0);" 
-                                            onClick={() => this.setState({ selectedRemove: ele["href"] })}
-                                            style={{ marginLeft: '15px' }}>
-                                                Remove
-                                            </a>
-                                        </span>
-                                    </div>
+                                //         <span style={{ fontWeight: 'bolder' }}>
+                                //             <a className="removeX" 
+                                //             href="javascript:void(0);" 
+                                //             onClick={() => this.setState({ selectedRemove: ele["href"] })}
+                                //             style={{ marginLeft: '15px' }}>
+                                //                 Remove
+                                //             </a>
+                                //         </span>
+                                //     </div>
                                     
-                                </>
-=======
+                                // </>
                                 <Recipe>
                                     <a className="RecipeTitle" href={ele["href"]} target="_blank" rel="noopener noreferrer">{ele["title"]}</a>
                                     <>
@@ -158,7 +158,6 @@ class Profile extends React.Component {
                                     </button>
                                     </>
                                 </Recipe>
->>>>>>> 487b59c55631ed49aa1cfa5a7f472dda7c2edae5
                             );
                         })}
                     </FloatChild2>
@@ -242,15 +241,15 @@ const Recipe = styled.div`
     display: grid;
     grid-template-columns: auto 30px ;
     height: auto;
-    width: 90%;
+    width: 95%;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
     text-align: left;
     margin: 15px auto;
     background-color: rgb(233, 233, 233);
-    padding: 12px;
+    padding: 4px;
     border-radius: 10px;
     border: .5px solid grey;
-    font-size: 18px;
+    font-size: 14px;
 `;
 
 /*
