@@ -51,6 +51,13 @@ File: Login.css
     width: 70%;
     margin: 0 auto;
 }
+.loginTitle {
+    font-size: 40px;
+    text-align: center;
+    color: black;
+    z-index: 1;
+    color: rgb(0, 0, 0);
+}
 .why{
     border: none;
     margin-left: 100px;

@@ -6,15 +6,12 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Modal from 'react-bootstrap/Modal';
+
 import ReactDOM from "react-dom";
 import ModalBody from "react-bootstrap/ModalBody";
 import ModalHeader from "react-bootstrap/ModalHeader";
 import ModalFooter from "react-bootstrap/ModalFooter";
 import ModalTitle from "react-bootstrap/ModalTitle";
-
-
-
-
 
 
 class Profile extends React.Component {
@@ -31,7 +28,8 @@ class Profile extends React.Component {
             selectedRemove: null
         };
     }
-
+    
+    //Transition selected item to be removed
     componentDidUpdate() {
         if(this.state.selectedRemove !== null) {
             this.removeItem(this.state.selectedRemove);
@@ -39,27 +37,26 @@ class Profile extends React.Component {
         }
     }
 
+    //get user preferences
     componentDidMount() {
         this.forceUpdate();
         if(cookie.load("UserPreferences") === undefined) {
             this.setState({ show: this.state.show, preferences: [] });
         } else {
             this.setState({ show: this.state.show, preferences: cookie.load("UserPreferences") });
-            // console.log(this.state.preferences + "HI");
-            // console.log(cookie.load("UserPreferences"))
-            // console.log(typeof cookie.load("UserPreferences"));
-            // console.log(typeof this.state.preferences);
+            console.log(cookie.load("UserPreferences"));
         }
     }
 
     handleClose() {
-        this.setState({ show: false, preferences: this.state.preferences });
+        this.setState({ show: false });
     }
 
     handleShow() {
-        this.setState({ show: true, preferences: this.state.preferences });
+        this.setState({ show: true });
     }
 
+    //Remove selected link 
     removeItem(href) {
         
         const removal = fetch(`http://localhost:4003/removePref?email=${cookie.load("email")}&href=${href}`);
@@ -80,10 +77,10 @@ class Profile extends React.Component {
                 <Main>
                     <MainInside>
                     <FloatChild1>
-                        <Container fluid style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: 20 }}>
+                        <Container  style={{  fontSize: 20, width: 300}}>
 
                             <Form>
-                                <h1>Your Profile</h1>
+                                <h1>Your Profile </h1>
                                 <br />
                                 <Form.Group controlId="formUser">
                                     <Form.Label>Name: </Form.Label>
@@ -92,7 +89,7 @@ class Profile extends React.Component {
                                     <Form.Label>Email: </Form.Label>
                                 </Form.Group>
                                 <Form.Group>
-                                    <Form.Label>Password: </Form.Label>
+                                    <Form.Label>Password:   ***********</Form.Label>
                                 </Form.Group>
                                 <Button variant="primary" onClick={this.handleShow}  >
                                         Edit
@@ -101,15 +98,66 @@ class Profile extends React.Component {
                         </Container>
                     </FloatChild1>
                     <FloatChild2> 
-                        <h1>Your Saved Recipes</h1>
+                        <h1 style={{ 
+                            borderStyle: 'solid', 
+                            borderRadius: '10px', 
+                            borderWidth: '5px', 
+                            borderBottomStyle: 'double', 
+                            margin: 'auto', 
+                            textAlign: 'center',
+                            backgroundColor: 'rgb(233, 233, 233)'
+                            }}>
+                            Your Saved Recipes
+                        </h1>
+
                         {this.state.preferences.map(ele => {
                             
                             return (
-                                <>
+                                // Lol why did write all this -- Alek
+                                // <>
+                                //     {/* <div style={{ 
+                                //     fontSize: 12, 
+                                //     borderStyle: 'solid',
+                                //     border: 50, 
+                                //     bottomBorderWidth: '10px' }}> */
+                                //     }
+                                //     <div style={{
+                                //         borderStyle: 'groove',
+                                //         borderTop: 0, 
+                                //         fontSize: 12,
+                                //         borderBottomStyle: 'groove', 
+                                //         }}>
+                                //         <span style={{ float: 'left' }}>
+                                //             <a className="RecipeTitle" 
+                                //             href={ele["href"]} 
+                                //             target="_blank" 
+                                //             rel="noopener noreferrer"
+                                //             style={{ marginRight: '10px' }}
+                                //             >
+                                //                 {ele["title"]}
+                                //             </a>
+                                //             <span style={{ textAlign: 'center' }}>|</span>
+                                //         </span>
+                                        
+                                //         <span style={{ fontWeight: 'bolder' }}>
+                                //             <a className="removeX" 
+                                //             href="javascript:void(0);" 
+                                //             onClick={() => this.setState({ selectedRemove: ele["href"] })}
+                                //             style={{ marginLeft: '15px' }}>
+                                //                 Remove
+                                //             </a>
+                                //         </span>
+                                //     </div>
+                                    
+                                // </>
+                                <Recipe>
                                     <a className="RecipeTitle" href={ele["href"]} target="_blank" rel="noopener noreferrer">{ele["title"]}</a>
-                                    <a className="removeX" href="javascript:void(0);" onClick={() => this.setState({ selectedRemove: ele["href"] })}>X</a>
-                                    <br/>
-                                </>
+                                    <>
+                                    <button placeholder = 'Search for recipe' className="removeX"  href="javascript:void(0);" onClick={() => this.setState({ selectedRemove: ele["href"] })}>
+                                       <> X </>
+                                    </button>
+                                    </>
+                                </Recipe>
                             );
                         })}
                     </FloatChild2>
@@ -128,7 +176,8 @@ class Profile extends React.Component {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password" size="lg"/>
                                 <br />
-                                
+                                <Form.Control type="password" placeholder="Confirm Password" size="lg"/>
+                                <br />
                             </Form.Group>
                         </Modal.Body>
                         <Modal.Footer>
@@ -155,18 +204,23 @@ const Main = styled.div `
 `;
 
 const FloatChild1 = styled.div `
-    width: 40%;
+    width: 30%;
     float: left;
-    padding-left: 10%;
+    padding-left: 35%;
+    padding-top: 2%;   
+    
+    
 `;
 
 const FloatChild2 = styled.div `
-    width: 40%;
+    width: 70%;
     float: left;
-    padding-left: 10%;
-    
+    padding-left: 20px;
 `;
 const MainInside = styled.div `
+    grid-gap: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
     padding-top 70px;
     background: #dbdfcd;
     height: auto;
@@ -176,6 +230,21 @@ const MainInside = styled.div `
     z-index: 0;
     min-width: 550px;
     max-width: 1400px;
+`;
+const Recipe = styled.div`
+    grid-gap: 10px;
+    display: grid;
+    grid-template-columns: auto 30px ;
+    height: auto;
+    width: 95%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
+    text-align: left;
+    margin: 15px auto;
+    background-color: rgb(233, 233, 233);
+    padding: 4px;
+    border-radius: 10px;
+    border: .5px solid grey;
+    font-size: 14px;
 `;
 
 /*

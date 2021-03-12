@@ -3,7 +3,7 @@ File: Login.js
 ?: This is the login page. It contains a LoginForm to login.
 */ 
 import React, { useState } from 'react';
-import {Card, Button} from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import LoginForm from './LoginForm';
 import Authenticate from './Authenticate';
 import './Login.css';
@@ -23,7 +23,7 @@ function Login() {
         (!isChecking) ? 
             <div className="main">
                 <div className="form-format">
-                <div className="title">Log In</div>
+                <div className="loginTitle">Log In</div>
                     <LoginForm setEmail={setEmail} setPassword={setPassword} setCheckFlag={setCheckFlag} /> 
                     <div className="why">
                         <div className="why-title">Why have an account with Pantry Pal</div>

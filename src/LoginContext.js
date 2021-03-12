@@ -45,7 +45,8 @@ export function LoginStatusProvider({ children }) {
             setUserPreferences();
         };
         fetchPref();
-    })
+        console.log("Effect from LoginContext");
+    }, [userPreferencesChanged])
 
     //useEffect acts like a React class' ComponentDidMount()
     //Basically, on refresh, useEffect will be called
@@ -97,8 +98,7 @@ export function LoginStatusProvider({ children }) {
     }
 
     const alertPrefChange = (val) => {
-        setUserPreferencesChange(val);
-        console.log("Added Recipe");
+        setUserPreferencesChange(!userPreferencesChanged);
     }
 
     //Outwrapper Login.Context.Provider passes the values of loginStatus, toggleLoginStatus, and toggleOffLoginStatus to children

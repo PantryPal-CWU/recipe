@@ -17,7 +17,7 @@ export default function ResultItem({ item, hrefLink }) {
     const [text, setText] = useState("Save");
     
 
-    // const [changed, setChanged] = useState(true);
+    const [changed, setChanged] = useState(true);
 
     // useEffect(() => {
     //     console.log(hrefLink+(!JSON.stringify(cookie.load("UserPreferences")).includes(hrefLink)));
@@ -33,7 +33,9 @@ export default function ResultItem({ item, hrefLink }) {
     }
 
     const checkChange = () => { 
-        return (!JSON.stringify(cookie.load("UserPreferences")).includes('"' + hrefLink.trim() + '"') || change);
+        setChanged(JSON.stringify(cookie.load("UserPreferences")).includes('"' + hrefLink.trim() + '"') || change);
+        console.log({changed: changed , includesHref: JSON.stringify(cookie.load("UserPreferences")).includes('"' + hrefLink.trim() + '"')});
+    
     }
 
     return (
@@ -44,19 +46,21 @@ export default function ResultItem({ item, hrefLink }) {
                     <span className="resultItem">{item}</span>
                 </a>
                 {(cookie.load("email") !== undefined) ? 
-                ((checkChange()) ?
-                <button className="saveButton" onClick={saveRecipe}>{text}</button>
-                :
-                <button ckassName="deleteButton" onClick={removeRecipe}>Remove</button>
-                )
+                    ((changed) ?
+                        <button className="saveButton" onClick={saveRecipe}>Save</button>
+                        :
+                        <button className="saveButton" onClick={removeRecipe}>Remove</button>
+                    )
                 : <></>}
             </div>
             
         </>
         :
         ((isSaving) ? 
-        <SaveItem setSaving={setSaving} setChange={setChange} change={change} setText={setText} item={item} href={hrefLink} />
-        : <DeleteItem setRemoving={setRemoving} setChange={setChange} href={hrefLink} />)
+            <SaveItem setSaving={setSaving} setChange={setChange} change={change} checkChange={checkChange} setText={setText} item={item} href={hrefLink} />
+            : 
+            <DeleteItem setRemoving={setRemoving} setChange={setChange} checkChange={checkChange} href={hrefLink} />
+        )
         
     )
 }
