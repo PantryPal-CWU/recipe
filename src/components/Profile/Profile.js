@@ -168,6 +168,7 @@ class Profile extends React.Component {
             .then(data => {
                 this.setState({ currName: data['data'] })
             });
+        
     }
 
     render() {
