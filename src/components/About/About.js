@@ -14,13 +14,10 @@ class About extends React.Component {
 
     return (
       <div className = "main">
-        
-        <div className="title">
-          <h1> About Us </h1>
-        </div>
-
-      <div className="break"></div>
-      <div className="page">
+        <div className="page">
+          <div className="title">
+            About Us
+          </div>
 
       <div className="row">
           <Card className="content">
@@ -40,8 +37,10 @@ class About extends React.Component {
        <div className="row">
         <Card className="content">
         <Card.Title className="name"> Lucas </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
+            <Card.Text className="text"> I am a Senior at Central Washington University. My 
+            main role in this project was front end styling and layout. I worked on designs for 
+            the footer, contact, sign-in and register, search, and profile pages. I enjoyed learning 
+            Java Script, React, and all the other tools we used. </Card.Text>
               <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
         </Card>
 
@@ -51,7 +50,7 @@ class About extends React.Component {
             Computer Science and minoring in Math. My role as a developer was 
             creating the web scraper that retrieved data from recipe websites and stored 
              it in a database to be searched from.</Card.Text>
-              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+              <Card.Title className="contact"> Contact: Natalia.Gonzalez@cwu.edu </Card.Title>
         </Card>
         </div>
 
@@ -60,23 +59,26 @@ class About extends React.Component {
         <Card.Title className="name"> Jordan </Card.Title>
             <Card.Text className="text"> Here is some informatino about me. I am a person. I do
               things for fun. I like places and things.</Card.Text>
-              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+              <Card.Title className="contact"> Contact: Jordan.Courvoisier@cwu.edu </Card.Title>
         </Card>
 
         <Card className="content">
         <Card.Title className="name"> Kirsten </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
-              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+            <Card.Text className="text"> I am a Senior at CWU and was responsible for React, 
+            Bootstrap, and styling of the site. I have a major in CS and my minor in Maths. 
+            I am graduating winter 2022. I have really enjoyed learning React for this project 
+            and seeing how different it is to Angular2.0.</Card.Text>
+              <Card.Title className="contact"> Contact: kirsten.Boyles@cwu.edu </Card.Title>
         </Card>
         </div>
 
         <div className="row">
         <Card className="content">
         <Card.Title className="name"> Alek </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
-              <Card.Title className="contact"> Contact: Lucas.Keizur@cwu.edu </Card.Title>
+            <Card.Text className="text"> Yow! I'm a junior majoring Computer Science and I 
+            have completed my minor in Math. I love solving problems. It comes with many 
+            mistakes which makes your craft better. (Also... I'm a tetris professional.).</Card.Text>
+              <Card.Title className="contact"> Contact: Alek.Michael@cwu.edu </Card.Title>
         </Card>
 
         <Card className="content">
@@ -88,11 +90,10 @@ class About extends React.Component {
             of general web-based architecture.</Card.Text>
               <Card.Title className="contact"> Contact: goodmann@cwu.edu </Card.Title>
         </Card>
-        
         </div>
         <div style={{ padding: 20 }}> </div>
-        </div>
       </div>
+    </div>
              
     )
   }

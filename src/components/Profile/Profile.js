@@ -202,8 +202,8 @@ class Profile extends React.Component {
                         <h1 style={{ 
                             borderStyle: 'solid', 
                             borderRadius: '10px', 
-                            borderWidth: '5px', 
-                            borderBottomStyle: 'double', 
+                            borderWidth: '1px', 
+                            borderBottomStyle: 'single', 
                             margin: 'auto', 
                             textAlign: 'center',
                             backgroundColor: 'rgb(233, 233, 233)'
