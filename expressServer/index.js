@@ -37,6 +37,7 @@ const backend = app2.listen(4003, () => {
 const SELECT_USERS = 'SELECT Email, Password FROM UserBase';
 const SELECT_LOGIN = 'SELECT Email, LoginStatus FROM UserBase';
 const SELECT_PREF = 'SELECT Email, UserPreferences FROM UserBase';
+const SELECT_NAMES = 'SELECT Email, Name FROM UserBase';
 
 //Using mySQL to connect to UserBase
 const connection = mysql.createConnection({
@@ -200,6 +201,25 @@ app2.get('/getPref', (req, res) => {
 
 });
 
+app2.get('/getName', (req, res) => {
+    const { email } = req.query;
+
+    connection.query(SELECT_NAMES, (err, results) => {
+        
+        if (err) {
+            return res.send(err);
+        }
+
+        const grabUser = results.find(ele => ele['Email']===email);
+
+        if (grabUser === undefined || grabUser === null) {
+            return res.send("FAILED");
+        }
+
+        return res.send(grabUser["Name"]);
+    });
+});
+
 app2.get('/removePref', (req, res) => {
   const { email, href } = req.query;
 
@@ -279,7 +299,6 @@ app2.get('/setPassword', (req, res) => {
             }
 
         }
-
 
         return res.send(false);
     });
