@@ -9,11 +9,11 @@ export default function SearchAPI({ searchTerm, curPage, setResults, setSearchin
     //On mount, search the API for the recipe and the set searching to false. 
     //Uses axios (basically fetch but easy to set up CORS)
     useEffect(() => {
-        const fetchResults = () => {
+        const fetchResults = async () => {
             const formattedSearch = searchTerm.replace(" ", ",");
             
             
-            axios.get('/api/?i=' + formattedSearch + '&p=' + curPage, { "Access-Control-Allow-Origin": "*" })
+            await axios.get('/api/?i=' + formattedSearch + '&p=' + curPage, { "Access-Control-Allow-Origin": "*" })
                 .then(res => {
                     let found = [];
                     for(let i in res["data"]["results"]) {

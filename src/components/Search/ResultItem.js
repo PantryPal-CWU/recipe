@@ -3,6 +3,7 @@ File: ResultItem.js
 ?: These hold the link and recipe title. Listed in Search.js
 */
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import cookie from 'react-cookies';
 import SaveItem from './SaveItem';
 import DeleteItem from './DeleteItem';
@@ -19,10 +20,25 @@ export default function ResultItem({ item, hrefLink }) {
 
     const [changed, setChanged] = useState(true);
 
-    // useEffect(() => {
-    //     console.log(hrefLink+(!JSON.stringify(cookie.load("UserPreferences")).includes(hrefLink)));
-    //     console.log(cookie.load("UserPreferences"));
-    // },[]);
+    useEffect(() => {
+        
+        const showSave = async () => {
+            let showSaveRes = true;
+            // if(change) return true;
+            const pref = await axios.get(`http://localhost:4003/getPref?email=${cookie.load("email")}`)
+                        .then(data => data['data'])
+
+            const prefArray = Object.keys(pref);
+            for(let i in prefArray) {
+                if (pref[i]['href'] === hrefLink) showSaveRes = false;
+            }
+            setChanged(showSaveRes);
+        }
+        showSave();
+        // const showSaveRes = await showSave();
+        // console.log(showsaveRes)
+        // setChanged(showSaveRes);
+    }, []);
 
     const saveRecipe = () => {
         setSaving(true);

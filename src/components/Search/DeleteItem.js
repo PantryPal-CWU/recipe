@@ -10,14 +10,14 @@ export default function DeleteItem({ setRemoving, href, setChange, checkChange }
 
         let prevPref = cookie.load("UserPreferences");
 
-        const removeItem = () => {
+        const removeItem = async () => {
             //This shouldn't ever appear unless I messed up bad
             if(cookie.load("email") === undefined) {
                 alert("Must be logged in to delete.");
                 return;
             }
 
-            const data = fetch(`http://localhost:4003/removePref?email=${cookie.load("email")}&href=${href}`);
+            const data = await fetch(`http://localhost:4003/removePref?email=${cookie.load("email")}&href=${href}`);
             alertPrefChange(Math.random*92364092740);
         }
         

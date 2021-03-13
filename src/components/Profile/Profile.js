@@ -59,8 +59,7 @@ class Profile extends React.Component {
             console.log(cookie.load("UserPreferences"));
         }
 
-        this.setState({ currName: this.getName() });
-        // alert(this.state.currName);
+        this.getName();
         
     }
 
@@ -72,10 +71,8 @@ class Profile extends React.Component {
         this.setState({ show: true });
     }
 
-    handleEdit() {
-        // this.setState({ showEdit: !this.state.showEdit });
-        // axios.get('/')
-        // console.log(this.state);
+    async handleEdit() {
+        //Check if user entered in inputs
         let newPass = '', oldPass = '', newEmail = '', newName = '', refreshPage = false, logOut = false;
 
         if (this.state.oldPassword1 !== this.state.oldPassword2 || this.state.newPassword1 !== this.state.newPassword1) {
@@ -93,15 +90,13 @@ class Profile extends React.Component {
             newName = this.state.name;
         }
 
-        console.log({ newPass, oldPass, newEmail, newName });
-
-        //-----Set-----
+        //-----Set what was given-----
 
         if (newName !== '') {
-            axios.get(`http://localhost:4003/setName?email=${cookie.load("email")}&name=${newName}`)
+            await axios.get(`http://localhost:4003/setName?email=${cookie.load("email")}&name=${newName}`)
                 .then(data => {
-                    if (!data) {
-                        alert("Something went wrong setting your name.");
+                    if (!data['data']) {
+                        alert("Something went wrong setting your name. Name not changed.");
                     }
                     console.log(data)
                 });
@@ -110,35 +105,40 @@ class Profile extends React.Component {
         }
 
         if (newPass !== '') {
-            axios.get(`http://localhost:4003/setPassword?email=${cookie.load("email")}&oldPassword=${oldPass}&newPassword=${newPass}`)
+            await axios.get(`http://localhost:4003/setPassword?email=${cookie.load("email")}&oldPassword=${oldPass}&newPassword=${newPass}`)
                 .then(data => {
-                    if (!data) {
-                        alert("Incorrect old password.");
+                    if (!data['data']) {
+                        alert("Error: Incorrect old password. Password not changed.")
+                        return false;
                     } else {
-                        alert("Password Successfully Changed");
+                        return true;
                     }
-                });
-                refreshPage = true;
-                logOut = true;
+                }).then(prev => {if (prev) logOut = true});
         }
 
         if (newEmail !== '') {
-            axios.get(`http://localhost:4003/setEmail?email=${newEmail}&prevEmail=${cookie.load("email")}`)
+            logOut = await axios.get(`http://localhost:4003/setEmail?email=${newEmail}&prevEmail=${cookie.load("email")}`)
                 .then(data => {
-                    if (!data) {
-                        alert("Something went wrong setting your email.");
+                    if (!data['data']) {
+                        alert(`The email: ${newEmail} is already registered. Email not changed.`);
+                        return false;
+                    } else {
+                        return true;
                     }
                 });
-                refreshPage = true;
-                logOut = true;
+                
         }
 
         if (logOut) { 
             if (newEmail === '') {
-                axios.get(`http://localhost:4003/signout?email=${cookie.load("email")}`);
+                const res1 = await axios.get(`http://localhost:4003/signout?email=${cookie.load("email")}`);
             } else {
-                axios.get(`http://localhost:4003/signout?email=${newEmail}`);
+                const res2 = await axios.get(`http://localhost:4003/signout?email=${newEmail}`);
             }
+            const month = new Date();
+            month.setDate(month.getDate()+30);
+            cookie.remove("email", { path: '/', expires: month});
+            window.location.reload();   
             return;
             
         }
@@ -163,10 +163,11 @@ class Profile extends React.Component {
         this.setState({ preferences: cookie.load("UserPreferences") });
     }
 
-    getName() {
-        axios.get(`http://localhost:4003/getName?email=${cookie.load("email")}`)
+    async getName() {
+        await axios.get(`http://localhost:4003/getName?email=${cookie.load("email")}`)
             .then(data => {
-                this.setState({ currName: data['data'] })
+                if (data['data'] === 'FAILED') this.setState({ currName: 'None' });
+                else this.setState({ currName: data['data'] });
             });
         
     }

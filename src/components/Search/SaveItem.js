@@ -10,7 +10,7 @@ export default function SaveItem({ setSaving, setChange, change, checkChange, se
 
         let prevPref = cookie.load("UserPreferences");
 
-        const saveItem = () => {
+        const saveItem = async () => {
             //Shouldnt see
             if(cookie.load("email") === undefined) {
                 alert("Must be logged in to save.");
@@ -21,8 +21,15 @@ export default function SaveItem({ setSaving, setChange, change, checkChange, se
                 alert("Item already saved");
                 return;
             }
+            if(Object.keys(prevPref).length > 15) {
+                alert("Too many saved items, please remove some. Check profile");
+                return;
+            }
+            // const pref = cookie.load('UserPreferences');
+            // alert(Object.keys(pref).length);
+            // alert(typeof cookie.load("UserPreferences"))
             
-            const data = fetch(`http://localhost:4003/savePref?email=${cookie.load("email")}&title=${item}&href=${href}`);
+            const data = await fetch(`http://localhost:4003/savePref?email=${cookie.load("email")}&title=${item}&href=${href}`);
             //alert prefrence change
             alertPrefChange(Math.random*92364092740);
 

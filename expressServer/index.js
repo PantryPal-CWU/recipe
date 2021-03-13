@@ -122,7 +122,7 @@ app2.get('/loginstatus', (req, res) => {
       if(grabUser['LoginStatus'] === null) {
         return res.send(false);
       }
-      else if(grabUser['LoginStatus']) {
+      else if(grabUser['LoginStatus'] === true) {
         return res.send(true);
       } 
     } else {
@@ -264,10 +264,16 @@ app2.get('/setEmail', (req, res) => {
 
     const UPDATE_EMAIL = `UPDATE UserBase SET Email = '${email}' WHERE Email = '${prevEmail}'`;
 
-    connection.query(UPDATE_EMAIL, (err, results) => {
-        if (err) {
+    connection.query(SELECT_USERS, (err, results) => {
+        
+        const grabUser = results.find(ele => ele['Email']===email);
+
+        if (err || grabUser !== undefined) {
             return res.send(false);
         }
+
+        connection.query(UPDATE_EMAIL);
+
         return res.send(true);
     });
 

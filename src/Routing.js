@@ -53,7 +53,7 @@ export function Routing() {
                 </Route>
 
                 <Route path="/Profile/Profile.js">
-                    <Profile />
+                    {((loginStatus !== undefined) ? <Profile /> : <Redirect from='/Profile/Profile.js' to='/login' />)}
                 </Route>
             </Switch>
         </BrowserRouter>

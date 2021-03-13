@@ -54,28 +54,26 @@ export function LoginStatusProvider({ children }) {
     //If we find out that there's a "email" cookie telling us the user is logged in
     //AND our userDB says the user is NOT logged in, then we remove the cookie and refresh
     //This runs whenever loginStatus is changed
-    useEffect(() => {
+    useEffect(async () => {
         const fetchData = async () => {
             const res = await fetch(`http://localhost:4003/loginstatus?email=${cookie.load("email")}`);
             const award = await res.json().then(data => {
-                if(!data && cookie.load("email") !== undefined) {
+                if(!data && cookie.load("email") !== undefined || !res) {
                     
                     cookie.remove("email", { path: '/', expires: month });
-                    
                     setLoginStatus();
                     window.location.reload(false);
                 }
             });
         };
-
-
+        
         fetchData();
         
-    }, [loginStatus]);
+    }, []);
     
     //This function sets up a cookie to keep track if the user is logged in
     const toggleLoginStatus = (email) => {
-        cookie.remove("email");
+        cookie.remove("email", { path: '/', expires: month });
         
         //save cookie
         //if you want to view the cookie:
