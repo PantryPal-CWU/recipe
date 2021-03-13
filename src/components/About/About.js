@@ -57,8 +57,10 @@ class About extends React.Component {
         <div className="row">
         <Card className="content">
         <Card.Title className="name"> Jordan </Card.Title>
-            <Card.Text className="text"> Here is some informatino about me. I am a person. I do
-              things for fun. I like places and things.</Card.Text>
+            <Card.Text className="text">  I'm a junior at Central Washington University pursuing a bachelor's 
+            degree in computer science with a minor in mathematics. I worked on the data base creation and hosting 
+            for this project as well as research assistance. I love writing algorithms to solving problems with 
+            computer science and enjoy working in groups.</Card.Text>
               <Card.Title className="contact"> Contact: Jordan.Courvoisier@cwu.edu </Card.Title>
         </Card>
 
@@ -68,7 +70,7 @@ class About extends React.Component {
             Bootstrap, and styling of the site. I have a major in CS and my minor in Maths. 
             I am graduating winter 2022. I have really enjoyed learning React for this project 
             and seeing how different it is to Angular2.0.</Card.Text>
-              <Card.Title className="contact"> Contact: kirsten.Boyles@cwu.edu </Card.Title>
+              <Card.Title className="contact"> Contact: Kirsten.Boyles@cwu.edu </Card.Title>
         </Card>
         </div>
 
