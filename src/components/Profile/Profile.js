@@ -12,7 +12,9 @@ import ModalBody from "react-bootstrap/ModalBody";
 import ModalHeader from "react-bootstrap/ModalHeader";
 import ModalFooter from "react-bootstrap/ModalFooter";
 import ModalTitle from "react-bootstrap/ModalTitle";
+import { Alert } from 'bootstrap';
 
+const axios = require('axios').default;
 
 class Profile extends React.Component {
     constructor(props, context) {
@@ -21,11 +23,21 @@ class Profile extends React.Component {
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.removeItem = this.removeItem.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
+        this.getName = this.getName.bind(this);
 
         this.state = {
             show: false,
             preferences: [],
-            selectedRemove: null
+            selectedRemove: null,
+            showEdit: true,
+            name: '',
+            email: '',
+            oldPassword1: '',
+            oldPassword2: '',
+            newPassword1: '',
+            newPassword2: '',
+            currName: ''
         };
     }
     
@@ -46,6 +58,10 @@ class Profile extends React.Component {
             this.setState({ show: this.state.show, preferences: cookie.load("UserPreferences") });
             console.log(cookie.load("UserPreferences"));
         }
+
+        this.setState({ currName: this.getName() });
+        // alert(this.state.currName);
+        
     }
 
     handleClose() {
@@ -54,6 +70,83 @@ class Profile extends React.Component {
 
     handleShow() {
         this.setState({ show: true });
+    }
+
+    handleEdit() {
+        // this.setState({ showEdit: !this.state.showEdit });
+        // axios.get('/')
+        // console.log(this.state);
+        let newPass = '', oldPass = '', newEmail = '', newName = '', refreshPage = false, logOut = false;
+
+        if (this.state.oldPassword1 !== this.state.oldPassword2 || this.state.newPassword1 !== this.state.newPassword1) {
+            alert("ERROR: Password does not match");
+        } else if (this.state.newPassword1 !== '') {
+            newPass = this.state.newPassword1;
+            oldPass = this.state.oldPassword1;
+        }
+
+        if (this.state.email !== '') {
+            newEmail = this.state.email;
+        }
+
+        if (this.state.name !== '') {
+            newName = this.state.name;
+        }
+
+        console.log({ newPass, oldPass, newEmail, newName });
+
+        //-----Set-----
+
+        if (newName !== '') {
+            axios.get(`http://localhost:4003/setName?email=${cookie.load("email")}&name=${newName}`)
+                .then(data => {
+                    if (!data) {
+                        alert("Something went wrong setting your name.");
+                    }
+                    console.log(data)
+                });
+            
+            refreshPage = true;
+        }
+
+        if (newPass !== '') {
+            axios.get(`http://localhost:4003/setPassword?email=${cookie.load("email")}&oldPassword=${oldPass}&newPassword=${newPass}`)
+                .then(data => {
+                    if (!data) {
+                        alert("Incorrect old password.");
+                    } else {
+                        alert("Password Successfully Changed");
+                    }
+                });
+                refreshPage = true;
+                logOut = true;
+        }
+
+        if (newEmail !== '') {
+            axios.get(`http://localhost:4003/setEmail?email=${newEmail}&prevEmail=${cookie.load("email")}`)
+                .then(data => {
+                    if (!data) {
+                        alert("Something went wrong setting your email.");
+                    }
+                });
+                refreshPage = true;
+                logOut = true;
+        }
+
+        if (logOut) { 
+            if (newEmail === '') {
+                axios.get(`http://localhost:4003/signout?email=${cookie.load("email")}`);
+            } else {
+                axios.get(`http://localhost:4003/signout?email=${newEmail}`);
+            }
+            return;
+            
+        }
+
+        if (refreshPage) {
+            window.location.reload();
+        }
+
     }
 
     //Remove selected link 
@@ -70,6 +163,13 @@ class Profile extends React.Component {
         this.setState({ preferences: cookie.load("UserPreferences") });
     }
 
+    getName() {
+        axios.get(`http://localhost:4003/getName?email=${cookie.load("email")}`)
+            .then(data => {
+                this.setState({ currName: data['data'] })
+            });
+    }
+
     render() {
 
         return (
@@ -83,10 +183,10 @@ class Profile extends React.Component {
                                 <h1>Your Profile </h1>
                                 <br />
                                 <Form.Group controlId="formUser">
-                                    <Form.Label>Name: </Form.Label>
+                                    <Form.Label>Name: {this.state.currName}</Form.Label>
                                 </Form.Group>
                                 <Form.Group controlId="formEmail">
-                                    <Form.Label>Email: </Form.Label>
+                                    <Form.Label>Email: {cookie.load("email")}</Form.Label>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label>Password:   ***********</Form.Label>
@@ -162,32 +262,40 @@ class Profile extends React.Component {
                         })}
                     </FloatChild2>
                     <Modal show={this.state.show} onHide={this.handleClose} style={{ fontSize: 20 }}>
-                        <Modal.Header closeButton >
-                            <Modal.Title>Edit Profile</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <Form.Group>
-                                <Form.Label>Name: </Form.Label>
-                                <Form.Control type="text" placeholder="First Name Last Name" size="lg" />
-                                <br />
-                                <Form.Label>Email: </Form.Label>
-                                <Form.Control type="text" placeholder="name@example.com" size="lg"/>
-                                <br />
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Password" size="lg"/>
-                                <br />
-                                <Form.Control type="password" placeholder="Confirm Password" size="lg"/>
-                                <br />
-                            </Form.Group>
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button variant="secondary" onClick={this.handleClose}>
-                                Close
-                            </Button>
-                            <Button variant="primary" onClick={this.handleClose}>
-                                Save Changes
-                            </Button>
-                        </Modal.Footer>
+                        <>
+                            <Modal.Header closeButton >
+                                <Modal.Title>Edit Profile</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <Form.Group>
+                                    <Form.Label>Name: </Form.Label>
+                                    <Form.Control type="text" placeholder="First Name Last Name" size="lg" onChange={(e) => this.setState({ name: e.target.value })} />
+                                    <br />
+                                    <Form.Label>Set New Email: </Form.Label>
+                                    <Form.Control type="email" placeholder="name@example.com" size="lg" onChange={(e) => this.setState({ email: e.target.value })} />
+                                    <br />
+                                    
+                                    <Form.Label>New Password</Form.Label>
+                                    <Form.Control type="password" placeholder="Password" size="lg" onChange={(e) => this.setState({ newPassword1: e.target.value })} />
+                                    <br />
+                                    <Form.Control type="password" placeholder="Confirm Password" size="lg" onChange={(e) => this.setState({ newPassword2: e.target.value })} />
+                                    <br />
+                                    <Form.Label>Old Password</Form.Label>
+                                    <Form.Control type="password" placeholder="Old Password" size="lg" onChange={(e) => this.setState({ oldPassword1: e.target.value })}/>
+                                    <br />
+                                    <Form.Control type="password" placeholder="Confirm Old Password" size="lg" onChange={(e) => this.setState({ oldPassword2: e.target.value })}/>
+                                    <br />
+                                </Form.Group>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={this.handleClose}>
+                                    Close
+                                </Button>
+                                <Button variant="primary" onClick={this.handleEdit}>
+                                    Save Changes
+                                </Button>
+                            </Modal.Footer>
+                        </>
                     </Modal>
                     </MainInside>
                 </Main>
